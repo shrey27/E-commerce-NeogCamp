@@ -1,0 +1,28 @@
+@import '../../styles.css';
+
+/* Features */
+.features {
+  display: flex;
+  flex-direction: column;
+}
+.feature {
+  flex: 1;
+  text-align: center;
+  padding: 1em 0;
+  border: 2px solid var(--border);
+  background-color: var(--button-light);
+}
+
+/* Carousal */
+.slideshow-container {
+  width: 100%;
+  max-width: none;
+  margin-left: -7px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .features {
+    flex-direction: row;
+  }
+}
