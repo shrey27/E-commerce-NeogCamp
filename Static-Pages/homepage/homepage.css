@@ -1,84 +1,5 @@
-/* Navbar */
-.border--btm {
-  border-bottom: 2px solid var(--border);
-}
-.title {
-  font-size: 1em;
-  font-weight: 600;
-  line-height: 16px;
-}
-.menu {
-  position: relative;
-}
-.menu__btn {
-  padding: 1rem;
-}
-.menu__btn__name {
-  display: none;
-}
-.submenu {
-  display: none;
-  position: absolute;
-  top: 2rem;
-  right: 0rem;
-  z-index: 110;
-  background-color: var(--white);
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  transition: display 500ms;
-}
-.submenu__btn {
-  display: flex;
-}
-.submenu__item {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem 0;
-  font-size: 1em;
-  text-align: start;
-  color: var(--heading);
-}
-.submenu__item:hover {
-  background-color: var(--button-light);
-}
-.menu__btn:hover ~ .submenu {
-  display: inline-block;
-}
-.submenu:hover {
-  display: inline-block;
-}
-.start {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import '../../styles.css';
 
-/* Header */
-.header__images {
-  display: flex;
-  flex-direction: column;
-}
-.header__image {
-  margin: 0;
-  width: 100%;
-  object-fit: cover;
-}
-
-/* Categories */
-.categories {
-  display: none;
-}
-
-/* Deals */
-.deals h1 {
-  text-transform: uppercase;
-}
-.deal--cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
 /* Features */
 .features {
   display: flex;
@@ -99,43 +20,8 @@
   margin-left: -7px;
 }
 
-/* Footer */
-.footer--ctr {
-  border-top: 2px solid var(--border);
-}
-
 /* Media Queries */
 @media screen and (min-width: 768px) {
-  .drawer--content {
-    width: 25%;
-  }
-  .menu__btn__name {
-    display: inline;
-  }
-  .submenu {
-    top: 2.5rem;
-    right: 0.5rem;
-  }
-  .start {
-    justify-content: flex-start;
-  }
-  .header__images {
-    flex-direction: row;
-  }
-  .header__image {
-    width: 50%;
-  }
-  .categories {
-    display: flex;
-  }
-  .category {
-    flex: 1;
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-  }
   .features {
     flex-direction: row;
   }
