@@ -61,32 +61,35 @@
   display: none;
 }
 
-
 /* Deals */
 .deals h1 {
   text-transform: uppercase;
 }
-.deal--cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 100%;
+
+/* Hacking the card styles  */
+.card {
+  border-radius: 0;
+  border: none;
 }
-/* Alternate approach 
+.price{
+  gap:0;
+}
 .deal--cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+  grid-template-columns: repeat(2, minmax(30%, 50%));
   justify-content: center;
-  gap: 1rem;
-} */
-
-.card,
-.ecom {
-  width: 90%;
-  height: min-content;
-  max-width: none;
-  max-height: none;
+  gap: 0.25rem;
+}
+.card--banner {
+  height: 50%;
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+}
+.content--rating {
+  padding: 0.5em 0.5em;
+  font-size: 0.75em;
+  border-radius: 20px;
 }
 
 /* Footer */
@@ -120,26 +123,21 @@
     font-weight: 600;
     cursor: pointer;
   }
-  .card,
-  .ecom {
-    width: 40%;
-    height: 35rem;
+  .deal--cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 33%));
+    justify-content: center;
+    gap: 0.25rem;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .card,
-  .ecom {
-    width: 30%;
-    max-width: 30%;
-    height: 35rem;
-    flex: 0 0 auto;
+  .card--banner {
+    height: 60%;
+    width: 100%;
   }
 }
 
 @media screen and (min-width: 1650px) {
   body {
-    max-width: 1650px;
+    width: 1650px;
     margin: auto;
   }
 }
