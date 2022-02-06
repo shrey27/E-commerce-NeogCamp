@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link
+      rel="stylesheet"
+      href="https://apollo-ui.netlify.app/utility/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://apollo-ui.netlify.app/components/drawer/drawer.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="productpage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Drawer -->
+      <div class="drawer flex-ct-ct">
+        <div class="drawer--background"></div>
+        <div class="drawer--content md-s" direction="left">
+          <i class="fas fa-home btn btn--float home"></i>
+          <section class="submenu__items flex-st-ct flex-vertical">
+            <span class="submenu__item md sb">Protein &nbsp</span>
+            <span class="submenu__item md sb">Gym Gear &nbsp</span>
+            <span class="submenu__item md sb">Athletics &nbsp</span>
+            <span class="submenu__item md sb">Nutrition &nbsp</span>
+            <span class="submenu__item md sb">Vegan &nbsp</span>
+            <span class="submenu__item md sb">Clothing</span>
+            <span class="submenu__item md sb">Limited-Edition</span>
+          </section>
+        </div>
+        <span class="drawer--close">
+          <i class="fas fa-times-circle"></i>
+        </span>
+      </div>
+
+      <!-- Navbar -->
+      <nav class="navbar xs-s border--btm">
+        <span class="nav--icons">
+          <i class="fas fa-bars md sb show--drawer"></i>
+        </span>
+        <section class="start">
+          <a href="/">
+            <img class="box__image" src="../../assets/lalogo.jpg" />
+          </a>
+          <span class="box-span">
+            <span class="title heading">LEGION ATHLETICS</span>
+          </span>
+        </section>
+        <section class="middle">
+          <div class="search--ctr">
+            <i class="fas fa-search search--btn"></i>
+            <input
+              type="text"
+              placeholder="Search"
+              class="ipt no--bdr"
+              id="user-name"
+              name="user-name"
+            />
+          </div>
+        </section>
+        <section class="end">
+          <div class="menu">
+            <span class="menu__btn md sb heading">
+              <i class="far fa-user-circle"></i>&nbsp<span
+                class="menu__btn__name"
+                >Account</span
+              >
+            </span>
+            <div class="submenu shadow xs-s">
+              <section class="submenu__btn">
+                <button class="btn btn--float">Sign In</button>
+                <button class="btn">Sign Up</button>
+              </section>
+              <section class="submenu__items flex-st-ct flex-vertical">
+                <span class="submenu__item">My Account</span>
+                <span class="submenu__item">My Order</span>
+                <span class="submenu__item">Cart</span>
+                <span class="submenu__item">Wishlist</span>
+              </section>
+              <section class="submenu__btn flex-st-ct">
+                <button class="btn btn--float btn--wide">Log Out</button>
+              </section>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <header class="header">
+        <section class="categories">
+          <div class="category btn--primary"><span>Protein</span></div>
+          <div class="category btn--float"><span>Gym Gear</span></div>
+          <div class="category btn--primary"><span>Athletics</span></div>
+          <div class="category btn--float"><span>Nutrition</span></div>
+          <div class="category btn--primary"><span>Vegan</span></div>
+          <div class="category btn--float"><span>Clothing</span></div>
+          <div class="category btn--primary"><span>Limited-Edition</span></div>
+        </section>
+      </header>
+      <br /><br />
+
+      <!-- sidebar-code -->
+      <div class="hb--box">
+        <header class="hb--header">
+          <nav class="navbar">
+            <section class="end">
+              <span class="slider btn hb--btn">
+                Filter&nbsp<i class="fas fa-chevron-down"></i>
+              </span>
+            </section>
+          </nav>
+        </header>
+
+        <aside class="hb--aside sm-s hb--open">
+          <span class="heading sm sb">FILTERS</span>
+          <span class="heading sm reg fl-rt">Clear All</span>
+          <br /><br />
+          <h1 class="heading sm sb">Price</h1>
+          <br />
+          <span class="heading sm sb">₹ 2000</span>
+          <span class="heading sm sb fl-rt">₹ 25000</span>
+          <input
+            class="filter__slider"
+            type="range"
+            id="price"
+            name="price"
+            step="500"
+            min="2000"
+            max="25000"
+          /><br /><br />
+          <div class="filter__category">
+            <h1 class="heading sm sb">Category</h1>
+            <label for="mens">
+              <input
+                class="filter__ip"
+                type="checkbox"
+                name="mens"
+                id="mens"
+                value="mens"
+              />&nbsp&nbspMen's
+            </label>
+            <label for="womens">
+              <input
+                class="filter__ip"
+                type="checkbox"
+                name="womens"
+                id="womens"
+                value="womens"
+              />&nbsp&nbspWomen's
+            </label>
+            <label for="kids">
+              <input
+                class="filter__ip"
+                type="checkbox"
+                name="kids"
+                id="kids"
+                value="kids"
+              />&nbsp&nbspKids
+            </label>
+          </div>
+          <br /><br />
+          <div class="filter__rating">
+            <h1 class="heading sm sb">Rating</h1>
+            <label for="4star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="4star&above"
+                value="4star&above"
+              />&nbsp&nbsp4 Star & above
+            </label>
+            <label for="3star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="3star&above"
+                value="3star&above"
+              />&nbsp&nbsp3 Star & above
+            </label>
+            <label for="2star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="2star&above"
+                value="2star&above"
+              />&nbsp&nbsp2 Star & above
+            </label>
+            <label for="1star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="1star&above"
+                value="1star&above"
+              />&nbsp&nbsp1 Star & above
+            </label>
+          </div>
+          <br /><br />
+          <div class="filter__sorting">
+            <h1 class="heading sm sb">Sort By</h1>
+            <label>
+              <input
+                class="filter__ip"
+                type="radio"
+                name="hightolow"
+                id="hightolow"
+                value="hightolow"
+              />&nbsp&nbspHigh to Low
+            </label>
+            <label>
+              <input
+                class="filter__ip"
+                type="radio"
+                name="lowtohigh"
+                id="lowtohigh"
+                value="lowtohigh"
+              />&nbsp&nbspLow to High
+            </label>
+          </div>
+        </aside>
+
+        <main class="hb--main sm-s hb--open">
+          <div class="deal--cards xs-s">
+            <!-- card-1 -->
+            <div class="card ecom">
+              <img
+                src="https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvdGVpbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=600&q=60"
+                alt="Banner"
+                class="card--banner"
+              />
+              <section class="content xs-s">
+                <h1 class="heading sm sb">Whey Protein Concentrate</h1>
+                <p class="price">
+                  <span class="heading md sb price--pmy">₹8,000</span>
+                  <!-- <span class="subheading sm sb price--sec">₹12,000</span> -->
+                  <span class="sm sb xs-s price--ter">33% off</span>
+                </p>
+                <br />
+                <span class="content--tag sb">Free-Delivery</span><br /><br />
+                <span class="content--rating">
+                  4.2<i class="fas fa-star"></i>
+                </span>
+                <!-- <span class="subheading sm sb">&nbsp430 reviews</span> -->
+              </section>
+            </div>
+            <!-- card-2 -->
+            <div class="card ecom">
+              <img
+                src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2hvZXN8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+                alt="Banner"
+                class="card--banner"
+              />
+              <section class="content xs-s">
+                <h1 class="heading sm sb">RUNNING SHOES - MEN</h1>
+                <p class="price">
+                  <span class="heading md sb price--pmy">₹12,000</span>
+                  <!-- <span class="subheading sm sb price--sec">₹18,000</span> -->
+                  <span class="sm sb xs-s price--ter">33% off</span>
+                </p>
+                <br />
+                <span class="content--tag sb">Free-Delivery</span><br /><br />
+                <span class="content--rating">
+                  4.5<i class="fas fa-star"></i>
+                </span>
+                <!-- <span class="subheading sm sb">&nbsp4300 reviews</span> -->
+              </section>
+            </div>
+            <!-- card-3 -->
+            <div class="card ecom">
+              <img
+                src="https://i.pinimg.com/originals/9f/63/17/9f63173c8f34d93cdb99a9b65af25286.jpg"
+                alt="Banner"
+                class="card--banner"
+              />
+              <section class="content xs-s">
+                <h1 class="heading sm sb">Ski Jacket - Women</h1>
+                <p class="price">
+                  <span class="heading md sb price--pmy">₹6,000</span>
+                  <!-- <span class="subheading sm sb price--sec">₹8,000</span> -->
+                  <span class="sm sb xs-s price--ter">25% off</span>
+                </p>
+                <br />
+                <span class="content--tag sb">Free-Delivery</span><br /><br />
+                <span class="content--rating">
+                  4.8<i class="fas fa-star"></i>
+                </span>
+                <!-- <span class="subheading sm sb">&nbsp5300 reviews</span> -->
+               
+              </section>
+            </div>
+            <!-- card-4 -->
+            <div class="card ecom">
+              <img
+                src="https://images.unsplash.com/photo-1566577738928-c49fe1932e84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb3RiYWxsfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                alt="Banner"
+                class="card--banner"
+              />
+              <section class="content xs-s">
+                <h1 class="heading sm sb">RUGBY BALL</h1>
+                <p class="price">
+                  <span class="heading md sb price--pmy">₹2,000</span>
+                  <!-- <span class="subheading sm sb price--sec">₹5,000</span> -->
+                  <span class="sm sb xs-s price--ter">60% off</span>
+                </p>
+                <br />
+                <span class="content--tag sb">Free-Delivery</span><br /><br />
+                <span class="content--rating">
+                  4.0<i class="fas fa-star"></i>
+                </span>
+                <!-- <span class="subheading sm sb">&nbsp400 reviews</span> -->
+               
+              </section>
+            </div>
+            <!-- card-5 -->
+            <div class="card ecom">
+              <img
+                src="https://images.unsplash.com/photo-1638210390620-f5dee405dd3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGVhbnV0JTIwYnV0dGVyfGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+                alt="Banner"
+                class="card--banner"
+              />
+              <section class="content xs-s">
+                <h1 class="heading sm sb">Peanut Butter</h1>
+                <p class="price">
+                  <span class="heading md sb price--pmy">₹1,000</span>
+                  <!-- <span class="subheading sm sb price--sec">₹2,500</span> -->
+                  <span class="sm sb xs-s price--ter">20% off</span>
+                </p>
+                <br />
+                <span class="content--tag sb">Free-Delivery</span><br /><br />
+                <span class="content--rating">
+                  5.0<i class="fas fa-star"></i>
+                </span>
+                <!-- <span class="subheading sm sb">&nbsp8300 reviews</span> -->
+               
+              </section>
+            </div>
+            <!-- end -->
+        </main>
+      </div>
+      <!-- end -->
+
+      <footer class="footer--ctr flex-ct-ct flex-vertical xs-s">
+        <span class="md bd">Contact Me</span>
+        <div>
+          <a href="https://twitter.com/home">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+            />
+          </a>
+          <a href="https://github.com/shrey27">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/glyph-neue/48/000000/github.png"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/shrey27/">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/color/48/000000/linkedin.png"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script src="https://apollo-ui.netlify.app/utility/script.js"></script>
+  </body>
+</html>

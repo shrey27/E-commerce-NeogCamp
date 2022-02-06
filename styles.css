@@ -26,7 +26,6 @@
   right: 0rem;
   z-index: 110;
   background-color: var(--white);
-  border-radius: 10px;
   border: 1px solid var(--border);
   transition: display 500ms;
 }
@@ -56,17 +55,6 @@
   justify-content: center;
 }
 
-/* Header */
-.header__images {
-  display: flex;
-  flex-direction: column;
-}
-.header__image {
-  margin: 0;
-  width: 100%;
-  object-fit: cover;
-}
-
 /* Categories */
 .categories {
   display: none;
@@ -76,11 +64,31 @@
 .deals h1 {
   text-transform: uppercase;
 }
+
+/* Hacking the card styles  */
+.card {
+  border-radius: 0;
+  border: none;
+}
+.price {
+  gap: 0;
+}
 .deal--cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(30%, 50%));
   justify-content: center;
-  gap: 1rem;
+  gap: 0.25rem;
+}
+.card--banner {
+  height: 50%;
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+}
+.content--rating {
+  padding: 0.5em 0.5em;
+  font-size: 0.75em;
+  border-radius: 20px;
 }
 
 /* Footer */
@@ -103,12 +111,6 @@
   .start {
     justify-content: flex-start;
   }
-  .header__images {
-    flex-direction: row;
-  }
-  .header__image {
-    width: 50%;
-  }
   .categories {
     display: flex;
   }
@@ -119,5 +121,29 @@
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
+  }
+  .deal--cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 33%));
+    grid-gap: 1rem;
+  }
+  .card--banner {
+    height: 60%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .deal--cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 25%));
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1650px) {
+  body {
+    width: 1650px;
+    margin: auto;
   }
 }
