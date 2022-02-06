@@ -36,7 +36,7 @@
 .submenu__item {
   display: inline-block;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem;
   font-size: 1em;
   text-align: start;
   color: var(--heading);
@@ -60,6 +60,12 @@
 .categories {
   display: none;
 }
+.fl-rt {
+  float: right;
+}
+.fl-lt {
+  float: left;
+}
 
 /* Deals */
 .deals h1 {
@@ -71,6 +77,7 @@
   border-radius: 0;
   border: none;
   margin: 1em 0;
+  max-width: none;
 }
 .price {
   gap: 0;
@@ -87,7 +94,7 @@
   border-radius: 0;
   margin: 0;
 }
-.price{
+.price {
   margin: 1em 0;
   display: flex;
   align-items: center;
