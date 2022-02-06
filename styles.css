@@ -133,6 +133,14 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .deal--cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 25%));
+    grid-gap: 1rem;
+  }
+}
+
 @media screen and (min-width: 1650px) {
   body {
     width: 1650px;
