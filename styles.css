@@ -26,7 +26,6 @@
   right: 0rem;
   z-index: 110;
   background-color: var(--white);
-  border-radius: 10px;
   border: 1px solid var(--border);
   transition: display 500ms;
 }
@@ -71,8 +70,8 @@
   border-radius: 0;
   border: none;
 }
-.price{
-  gap:0;
+.price {
+  gap: 0;
 }
 .deal--cards {
   display: grid;
@@ -126,8 +125,7 @@
   .deal--cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 33%));
-    justify-content: center;
-    gap: 0.25rem;
+    grid-gap: 1rem;
   }
   .card--banner {
     height: 60%;
