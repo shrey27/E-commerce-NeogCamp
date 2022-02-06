@@ -1,5 +1,6 @@
-@import '/Static-Pages/homepage/homepage.css';
+/* @import '/Static-Pages/homepage/homepage.css';
 @import '/Static-Pages/productpage/productpage.css';
+@import '/Static-Pages/productpage/productpage.css'; */
 
 /* Navbar */
 .border--btm {
@@ -69,6 +70,7 @@
 .card {
   border-radius: 0;
   border: none;
+  margin: 1em 0;
 }
 .price {
   gap: 0;
@@ -95,9 +97,6 @@
   padding: 0.5em 0.5em;
   font-size: 0.75em;
   border-radius: 20px;
-}
-.card--dismiss i {
-  color: var(--button-error);
 }
 
 /* Footer */
@@ -143,7 +142,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .deal--cards.home--cards {
+  .deal--cards {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 25%));
     grid-gap: 1rem;
