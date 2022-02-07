@@ -1,0 +1,25 @@
+@import '../../styles.css';
+
+.login__card {
+  max-width: 100%;
+  margin: auto;
+}
+.ipt {
+  margin: 0 0 0.5em;
+}
+.login__ip {
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: text-top;
+}
+.already {
+  margin: 1rem auto;
+  color: var(--button-link);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .login__card {
+    max-width: 30rem;
+  }
+}
