@@ -1,0 +1,54 @@
+@import '../../styles.css';
+
+/* Cart */
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5em;
+}
+
+/* Card in cart */
+.landscape {
+  height: 16rem;
+  border-radius: 0;
+  width: 100%;
+}
+.landscape .card--banner {
+  border-radius: 0;
+  min-width: 40%;
+}
+.quantity {
+  padding: 0.25em 1.5em;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 2px solid var(--subheading);
+}
+.price {
+  justify-content: flex-start;
+}
+
+/* Cart Total */
+.cart--box {
+  width: 100%;
+  margin: 1em auto;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+}
+
+/* Media Query */
+@media screen and (min-width: 1024px) {
+  .cart {
+    flex-direction: row;
+  }
+  .landscape {
+    width: 80%;
+    margin: 1em auto;
+  }
+  .cart--box {
+    width: 30%;
+  }
+}
