@@ -1,5 +1,6 @@
-@import '/Static-Pages/homepage/homepage.css';
+/* @import '/Static-Pages/homepage/homepage.css';
 @import '/Static-Pages/productpage/productpage.css';
+@import '/Static-Pages/productpage/productpage.css'; */
 
 /* Navbar */
 .border--btm {
@@ -69,6 +70,7 @@
 .card {
   border-radius: 0;
   border: none;
+  margin: 1em 0;
 }
 .price {
   gap: 0;
@@ -77,13 +79,19 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(30%, 50%));
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
 .card--banner {
   height: 50%;
   width: 100%;
   border-radius: 0;
   margin: 0;
+}
+.price{
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .content--rating {
   padding: 0.5em 0.5em;
