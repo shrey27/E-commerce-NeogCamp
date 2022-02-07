@@ -12,7 +12,7 @@
 
 /* Card in cart */
 .landscape {
-  height: 15rem;
+  height: 16rem;
   border-radius: 0;
   width: 100%;
 }
@@ -26,11 +26,17 @@
   border-radius: 20px;
   border: 2px solid var(--subheading);
 }
+.price {
+  justify-content: flex-start;
+}
 
 /* Cart Total */
 .cart--box {
   width: 100%;
   margin: 1em auto;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
 }
 
 /* Media Query */
