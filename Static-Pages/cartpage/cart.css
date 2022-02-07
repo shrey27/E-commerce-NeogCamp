@@ -12,22 +12,28 @@
 
 /* Card in cart */
 .landscape {
-  height: 16rem;
-  border-radius: 0;
-  width: 100%;
-}
-.landscape .card--banner {
-  border-radius: 0;
-  min-width: 40%;
+  display: flex;
+  flex-direction: column;
 }
 .quantity {
-  padding: 0.25em 1.5em;
-  font-weight: 600;
-  border-radius: 20px;
+  padding: 0.25em 0.5em;
+  font-weight: 400;
+  border-radius: 50%;
   border: 2px solid var(--subheading);
+}
+.qty--btn {
+  font-size: 0.5em;
+  padding: 0.25em;
+  border-radius: 50%;
 }
 .price {
   justify-content: flex-start;
+}
+.price--sec {
+  display: none;
+}
+.price--ter {
+  display: none;
 }
 
 /* Cart Total */
@@ -40,6 +46,35 @@
 }
 
 /* Media Query */
+@media screen and (min-width: 400px) {
+  .price--sec {
+    display: inline;
+  }
+  .price--ter {
+    display: inline;
+  }
+  .landscape {
+    flex-direction: row;
+    height: 16rem;
+    border-radius: 0;
+    width: 100%;
+  }
+  .landscape .card--banner {
+    border-radius: 0;
+    min-width: 40%;
+  }
+  .qty--btn {
+    font-size: 0.75em;
+    padding: 0.55em;
+    border-radius: 50%;
+  }
+  .quantity {
+    padding: 0.25em 1.5em;
+    font-weight: 600;
+    border-radius: 20px;
+    border: 2px solid var(--subheading);
+  }
+}
 @media screen and (min-width: 1024px) {
   .cart {
     flex-direction: row;
