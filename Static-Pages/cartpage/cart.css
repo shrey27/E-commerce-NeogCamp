@@ -15,6 +15,10 @@
   display: flex;
   flex-direction: column;
 }
+.landscape .card--banner {
+  border-radius: 0;
+  min-width: 100%;
+}
 .quantity {
   padding: 0.25em 0.5em;
   font-weight: 400;
@@ -29,12 +33,12 @@
 .price {
   justify-content: flex-start;
 }
-.price--sec {
+/* .price--sec {
   display: none;
 }
 .price--ter {
   display: none;
-}
+} */
 
 /* Cart Total */
 .cart--box {
@@ -47,12 +51,12 @@
 
 /* Media Query */
 @media screen and (min-width: 400px) {
-  .price--sec {
+  /* .price--sec {
     display: inline;
   }
   .price--ter {
     display: inline;
-  }
+  } */
   .landscape {
     flex-direction: row;
     height: 16rem;
