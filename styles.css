@@ -76,7 +76,7 @@
 .card {
   border-radius: 0;
   border: none;
-  margin: 1em 0;
+  margin: 2rem 0;
   max-width: none;
 }
 .price {
@@ -87,12 +87,18 @@
   grid-template-columns: 1fr;
   justify-content: center;
   gap: 0.5rem;
+  margin: 0 auto;
 }
 .card--banner {
-  height: 50%;
+  height: 60%;
   width: 100%;
+  object-fit: contain;
   border-radius: 0;
   margin: 0;
+}
+.content{
+  width: 80%;
+  margin: auto;
 }
 .price {
   margin: 1em 0;
@@ -147,25 +153,11 @@
   }
   .deal--cards {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 33%));
-    grid-gap: 1rem;
-  }
-  .card--banner {
-    height: 60%;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .deal--cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 25%));
+    grid-template-columns: repeat(auto-fit, minmax(0, 22%));
     grid-gap: 1rem;
   }
   .deal--cards.home--cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 20%));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(0, 24%));
   }
 }
 

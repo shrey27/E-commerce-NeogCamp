@@ -20,14 +20,14 @@
 }
 .landscape .card--banner {
   border-radius: 0;
-  width: 6rem;
-  height: auto;
+  height: 10rem;
+  width: auto;
 }
 .quantity {
-  padding: 0.25em 1.5em;
+  padding: 0.25em 1em;
   font-weight: 600;
-  border-radius: 20px;
   border: 2px solid var(--subheading);
+  border-radius: 5px;
 }
 .qty--btn {
   font-size: 0.75em;
@@ -40,7 +40,7 @@
 
 /* Cart Total */
 .cart--box {
-  width: 80%;
+  width: 95%;
   margin: 1em auto;
   align-self: flex-start;
   position: sticky;
@@ -48,8 +48,13 @@
 }
 
 @media screen and (min-width: 400px) {
-  .landscape{
+  .landscape {
     flex-direction: row;
+  }
+  .landscape .card--banner {
+    border-radius: 0;
+    width: 6rem;
+    height: auto;
   }
 }
 
@@ -70,9 +75,4 @@
   .cart--box {
     width: 30rem;
   }
-  .quantity {
-    padding: 0.25em 1.75em;
-    border-radius: 20px;
-  }
 }
-
