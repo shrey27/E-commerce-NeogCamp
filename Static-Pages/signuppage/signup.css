@@ -1,0 +1,20 @@
+@import '../../styles.css';
+
+.login__card {
+  max-width: 30rem;
+  margin: auto;
+}
+.ipt {
+  margin: 0 0 0.5em;
+}
+.login__ip {
+  width: 1.25rem;
+  height: 1.25rem;
+  vertical-align: text-top;
+}
+.already {
+  margin: 1rem auto;
+  color: var(--button-link);
+  text-decoration: underline;
+}
+
