@@ -1,7 +1,7 @@
 @import '../../styles.css';
 
 .login__card {
-  max-width: 100%;
+  max-width: 30rem;
   margin: auto;
 }
 .ipt {
@@ -18,8 +18,3 @@
   text-decoration: underline;
 }
 
-@media screen and (min-width: 768px) {
-  .login__card {
-    max-width: 30rem;
-  }
-}
