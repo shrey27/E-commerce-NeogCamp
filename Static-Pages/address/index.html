@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Page</title>
+    <link
+      rel="stylesheet"
+      href="https://apollo-ui.netlify.app/utility/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://apollo-ui.netlify.app/components/drawer/drawer.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="address.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Drawer -->
+      <div class="drawer flex-ct-ct">
+        <div class="drawer--background"></div>
+        <div class="drawer--content md-s" direction="left">
+          <i class="fas fa-home btn btn--float home"></i>
+          <section class="submenu__items flex-st-ct flex-vertical">
+            <span class="submenu__item md sb">Protein &nbsp</span>
+            <span class="submenu__item md sb">Gym Gear &nbsp</span>
+            <span class="submenu__item md sb">Athletics &nbsp</span>
+            <span class="submenu__item md sb">Nutrition &nbsp</span>
+            <span class="submenu__item md sb">Vegan &nbsp</span>
+            <span class="submenu__item md sb">Clothing</span>
+            <span class="submenu__item md sb">Limited-Edition</span>
+          </section>
+        </div>
+        <span class="drawer--close">
+          <i class="fas fa-times-circle"></i>
+        </span>
+      </div>
+
+      <!-- Navbar -->
+      <nav class="navbar xs-s border--btm">
+        <section class="start">
+          <a href="/">
+            <img class="box__image" src="../../assets/lalogo.jpg" />
+          </a>
+          <span class="box-span">
+            <span class="title heading">LEGION ATHLETICS</span>
+          </span>
+        </section>
+        <section class="end">
+          <div class="menu">
+            <span class="menu__btn md sb heading">
+              <i class="far fa-user-circle"></i>&nbsp<span
+                class="menu__btn__name"
+                >Account</span
+              >
+            </span>
+            <div class="submenu shadow xs-s">
+              <section class="submenu__btn">
+                <button class="btn btn--float">Sign In</button>
+                <button class="btn">Sign Up</button>
+              </section>
+              <section class="submenu__items flex-st-ct flex-vertical">
+                <span class="submenu__item">My Account</span>
+                <span class="submenu__item">My Order</span>
+                <span class="submenu__item"
+                  >Cart
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="fas fa-shopping-cart md fl-rt"
+                  ></i
+                ></span>
+                <span class="submenu__item"
+                  >Wishlist
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="far fa-heart md fl-rt"
+                  ></i
+                ></span>
+              </section>
+              <section class="submenu__btn flex-st-ct">
+                <button class="btn btn--float btn--wide">Log Out</button>
+              </section>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <main>
+        <!-- manage address -->
+        <div class="card shdw">
+          <h1 class="md cen heading btn--success xs-s">Manage Address</h1>
+        </div>
+        <!-- Address -->
+        <div class="card shdw">
+          <h1 class="heading btn--float md sb xs-s">Shrey Pandey</h1>
+          <div class="sm-s">
+            <h2 class="heading md">Home</h2>
+            <h2 class="heading sm">76</h2>
+            <h2 class="heading sm">Gandhi Nagar</h2>
+            <h2 class="heading sm">Behind Railway lines</h2>
+            <h2 class="heading sm">Jaipur</h2>
+            <h2 class="heading sm">Rajasthan</h2>
+            <h2 class="heading sm">302006</h2>
+            <h2 class="heading sm">Phone No. 9898989898</h2>
+            <h2 class="heading sm">Email ID: shreypandey27@gmail.com</h2>
+            <button class="btn btn--primary sb">UPDATE</button>
+            <button class="btn sb">DELETE</button>
+          </div>
+        </div>
+        <!-- Address -->
+        <div class="card shdw">
+          <h1 class="heading btn--float md sb xs-s">Shrey Pandey</h1>
+          <div class="sm-s">
+            <h2 class="heading md">Home</h2>
+            <h2 class="heading sm">76</h2>
+            <h2 class="heading sm">Gandhi Nagar</h2>
+            <h2 class="heading sm">Behind Railway lines</h2>
+            <h2 class="heading sm">Jaipur</h2>
+            <h2 class="heading sm">Rajasthan</h2>
+            <h2 class="heading sm">302006</h2>
+            <h2 class="heading sm">Phone No. 9898989898</h2>
+            <h2 class="heading sm">Email ID: shreypandey27@gmail.com</h2>
+            <button class="btn btn--primary sb">UPDATE</button>
+            <button class="btn sb">DELETE</button>
+          </div>
+        </div>
+        <!-- New Address -->
+        <div class="card shdw">
+          <div class="flex-ct-sb btn--error xs-s">
+            <h1 class="md">Add New Address</h1>
+            <i class="fas fa-chevron-right fl-rt"></i>
+          </div>
+        </div>
+        <!-- Address Form -->
+        <div class="card shdw">
+          <h1 class="btn--success md sb cen xs-s">NEW ADDRESS</h1>
+          <form action="#" class="sm-s">
+            <div class="fields">
+              <label for="name--field" class="lbl">Name:</label>
+              <input
+                class="ipt sm-s"
+                type="text"
+                name="name"
+                id="name--field"
+                pattern="+[A-Za-z]"
+                title="Name should only contain one or more alphabets"
+                autocomplete="off"
+                value="Shrey Pandey"
+              />
+            </div>
+            <div class="fields">
+              <label for="email--field" class="lbl">Email:</label>
+              <input
+                class="ipt sm-s"
+                type="email"
+                name="email"
+                id="email--field"
+                title="Enter a valid Email ID"
+                autocomplete="email"
+                value="shreypandey27@gmail.com"
+              />
+            </div>
+            <div class="fields">
+              <label for="phone--field" class="lbl">Phone:</label>
+              <input
+                class="ipt sm-s"
+                type="number"
+                min="1000000000"
+                max="9999999999"
+                name="phone"
+                id="phone--field"
+                pattern="[0-9]"
+                title="Enter a valid 10 digits mobile number"
+                autocomplete="mobile"
+                value="9999999909"
+              />
+            </div>
+            <div class="fields">
+              <label for="dob--field" class="lbl">Date of Birth:</label>
+              <input
+                class="ipt sm-s"
+                type="date"
+                name="dob"
+                id="dob--field"
+                autocomplete="off"
+                value="1980-08-26"
+              />
+            </div>
+            <div class="fields">
+              <label for="add_one" class="lbl">House No.</label>
+              <input
+                class="ipt sm-s"
+                type="text"
+                name="add_one"
+                id="add_one"
+                autocomplete="off"
+                value="76"
+              />
+            </div>
+            <div class="fields">
+              <label for="add_two" class="lbl">Area</label>
+              <input
+                class="ipt sm-s"
+                type="text"
+                name="add_two"
+                id="add_two"
+                autocomplete="off"
+                value="Gandhi Nagar"
+              />
+            </div>
+            <div class="fields">
+              <label for="landmark" class="lbl">Landmark</label>
+              <input
+                class="ipt sm-s"
+                type="text"
+                name="landmark"
+                id="landmark"
+                autocomplete="off"
+                value="Behind Railway Lines"
+              />
+            </div>
+            <div class="fields">
+              <label for="state" class="lbl">State</label>
+              <select id="state" name="state" class="ipt select sm-s" required>
+                <option value="" class="subheading" selected>
+                  -- Select a State --
+                </option>
+                <option value="raj" selected>Rajasthan</option>
+                <option value="utr">Uttrakhand</option>
+                <option value="ktk">Karnataka</option>
+                <option value="ker">Kerala</option>
+              </select>
+            </div>
+            <div class="fields">
+              <label for="city" class="lbl">City</label>
+              <select id="city" name="city" class="ipt select sm-s" required>
+                <option value="" class="subheading" selected>
+                  -- Select a City --
+                </option>
+                <option value="jaipur">Jaipur</option>
+                <option value="ajmer" selected>Ajmer</option>
+                <option value="bikaner">Bikaner</option>
+                <option value="jodhpur">Jodhpur</option>
+              </select>
+            </div>
+            <div class="fields">
+              <label for="pincode" class="lbl">Pincode</label>
+              <input
+                class="ipt sm-s"
+                type="number"
+                pattern="[0-9]{6}"
+                name="pincode"
+                id="pincode"
+                autocomplete="mobile"
+                value="198600"
+                required
+              />
+            </div>
+            <div class="fields">
+              <label for="type" class="lbl">Address Type</label>
+              <select id="type" name="type" class="ipt select sm-s" required>
+                <option value="" class="subheading" selected>
+                  -- Select a Type --
+                </option>
+                <option value="Home" selected>Home</option>
+                <option value="Office">Office</option>
+                <option value="Relative">Relative</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--wide btn--float sb">
+              ADD ADDRESS
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="https://apollo-ui.netlify.app/utility/script.js"></script>
+  </body>
+</html>
