@@ -1,0 +1,35 @@
+@import '../../styles.css';
+
+.card {
+  max-width: none;
+  max-height: none;
+  width: 90%;
+  height: auto;
+  margin: 2rem auto;
+}
+.fields {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.lbl {
+  display: inline-block;
+  flex: 1;
+}
+.ipt {
+  display: inline-block;
+  flex: 5;
+}
+.card button {
+  margin: 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: 40%;
+  }
+  .fields {
+    flex-direction: row;
+  }
+}
