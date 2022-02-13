@@ -1,0 +1,37 @@
+@import '../../styles.css';
+
+.landscape {
+  height: 90%;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+.landscape .card--banner {
+  width: 60%;
+}
+.content {
+  width: 90%;
+  margin: 0;
+}
+.stack__item {
+  margin: 1rem 0;
+  border: 1px solid var(--subheading);
+}
+.highlight {
+  color: var(--button-success);
+}
+@media screen and (min-width: 768px) {
+  .landscape {
+    width: 70%;
+    flex-direction: row;
+  }
+  .landscape .card--banner {
+    width: 40%;
+  }
+  .stack__item {
+    margin: 0;
+    border: none;
+  }
+}

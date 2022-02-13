@@ -78,6 +78,8 @@
   border: none;
   margin: 2rem 0;
   max-width: none;
+  max-height: none;
+  cursor: pointer;
 }
 .price {
   gap: 0;
@@ -96,7 +98,7 @@
   border-radius: 0;
   margin: 0;
 }
-.content{
+.content {
   width: 80%;
   margin: auto;
 }

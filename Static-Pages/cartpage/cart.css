@@ -4,6 +4,7 @@
 .cart {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 /* Card in cart */
@@ -14,14 +15,15 @@
   display: flex;
   flex-direction: column;
   height: auto;
-  width: fit-content;
+  width: max-content;
   border-radius: 0;
   margin: 1rem auto;
 }
 .landscape .card--banner {
   border-radius: 0;
-  height: 10rem;
-  width: auto;
+  height: auto;
+  width: 10rem;
+  margin: auto;
 }
 .quantity {
   padding: 0.25em 1em;
@@ -37,10 +39,16 @@
 .price {
   justify-content: flex-start;
 }
-
+.align {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.btn--size {
+  width: 90%;
+}
 /* Cart Total */
 .cart--box {
-  width: 95%;
+  width: 90%;
   margin: 1em auto;
   align-self: flex-start;
   position: sticky;
@@ -48,31 +56,31 @@
 }
 
 @media screen and (min-width: 400px) {
+}
+
+@media screen and (min-width: 768px) {
+  .align {
+    text-align: start;
+    margin-bottom: 0.5em;
+  }
+  .btn--size {
+    width: auto;
+  }
+  .cart {
+    flex-direction: row;
+  }
+  .card--container {
+    width: 50%;
+  }
   .landscape {
     flex-direction: row;
   }
   .landscape .card--banner {
     border-radius: 0;
-    width: 6rem;
+    width: 8rem;
     height: auto;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .cart {
-    flex-direction: row;
-  }
-  .card--container {
-    max-width: 50%;
-  }
-  .landscape {
-    margin: 1rem auto;
-  }
-  .landscape .card--banner {
-    width: 10rem;
-    height: 10rem;
-  }
   .cart--box {
-    width: 30rem;
+    max-width: 30rem;
   }
 }
