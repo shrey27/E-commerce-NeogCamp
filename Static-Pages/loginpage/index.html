@@ -83,10 +83,24 @@
                 <button class="btn">Sign Up</button>
               </section>
               <section class="submenu__items flex-st-ct flex-vertical">
-                <span class="submenu__item ">My Account</span>
-                <span class="submenu__item ">My Order</span>
-                <span class="submenu__item ">Cart <i icon-badge="3" bdg-size="medium" class="fas fa-shopping-cart md fl-rt"></i></span>
-                <span class="submenu__item ">Wishlist <i icon-badge="3" bdg-size="medium" class="far fa-heart md fl-rt"></i></span>
+                <span class="submenu__item">My Account</span>
+                <span class="submenu__item">My Order</span>
+                <span class="submenu__item"
+                  >Cart
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="fas fa-shopping-cart md fl-rt"
+                  ></i
+                ></span>
+                <span class="submenu__item"
+                  >Wishlist
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="far fa-heart md fl-rt"
+                  ></i
+                ></span>
               </section>
               <section class="submenu__btn flex-st-ct">
                 <button class="btn btn--float btn--wide">Log Out</button>
@@ -96,63 +110,68 @@
         </section>
       </nav>
 
-      <header class="header">
-        <section class="categories">
-          <div class="category btn--primary"><span>Protein</span></div>
-          <div class="category btn--float"><span>Gym Gear</span></div>
-          <div class="category btn--primary"><span>Athletics</span></div>
-          <div class="category btn--float"><span>Nutrition</span></div>
-          <div class="category btn--primary"><span>Vegan</span></div>
-          <div class="category btn--float"><span>Clothing</span></div>
-          <div class="category btn--primary"><span>Limited-Edition</span></div>
-        </section>
-      </header>
-      <br /><br />
-
       <main>
-          <div class="card login__card shdw sm-s">
-            <h1 class="md sb cen">LOGIN</h1>
-            <br />
-            <hr />
-            <br />
-            <label for="user-name">
-                <span class="lbl">Username</span>
-                <input
-                  type="text"
-                  placeholder="Enter Username"
-                  class="ipt"
-                  id="user-name"
-                  name="user-name"
-                /> </label>
+        <div class="app--login shdw">
+          <h1 class="md sb cen">LOGIN</h1>
+          <br />
+          <hr />
+          <br />
+          <form action="https://www.google.com">
+            <label for="user-name" class="lbl">
+              Username*<input
+                type="text"
+                placeholder="Enter Username"
+                class="ipt ipt--man"
+                id="user-name"
+                name="user-name"
+                required
+                autocomplete="off"
+              />
+              <span class="ipt--error">This field is mandatory</span>
+            </label>
             <br /><br />
-            <label for="pswd"><span class="lbl">Password*</span>
-                <input
-                    type="password"
-                    placeholder="Enter Password"
-                    class="ipt ipt--man"
-                    id="pswd"
-                    name="password"
-                    required
-                />
+            <label for="pswd" class="lbl">
+              Password*<input
+                type="password"
+                placeholder="Enter Password"
+                class="ipt ipt--man"
+                id="pswd"
+                name="password"
+                autocomplete="off"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required
+              />
             </label>
             <span class="ipt--error">This field is mandatory</span>
             <br /><br />
-            <span class="remember flex-ct-sb xs-s">
-                <label for="remember">
-                    <input
-                      class="login__ip"
-                      type="checkbox"
-                      name="remember"
-                      id="remember"
-                    />&nbsp&nbspRemember Me
-                </label>
-            </span>
-            <button class="btn btn--wide btn--float bd">Log In</button>
-            <a href="" class="forgot sm">Forgot Password?</a>
-          </div>
+            <label for="remember"
+              ><input
+                class="login__ip"
+                type="checkbox"
+                name="remember"
+                id="remember"
+              />&nbsp&nbspRemember Me</label
+            >
+            <br /><br />
+            <button type="submit" class="btn btn--wide btn--float">
+              Log In
+            </button>
+          </form>
+          <br />
+          <a href="" class="forgot sm">Forgot Password?</a>
+        </div>
+
+        <div class="app--login shdw">
+          <h1 class="md sb cen sm-s">FORGOT PASSWORD</h1>
+          <hr />
+          <p class="heading sm sb sm-s">
+            A temporary password has been sent to your email. Please enter that
+            password in the current password field on
+            <a href="../forgot/" class="forgot">this&nbsp;</a>page.
+          </p>
         </div>
       </main>
-
     </div>
     <script src="https://apollo-ui.netlify.app/utility/script.js"></script>
   </body>

@@ -1,20 +1,28 @@
 @import '../../styles.css';
 
-.login__card {
-  max-width: 30rem;
-  margin: auto;
-}
-.ipt {
-  margin: 0 0 0.5em;
-}
-.login__ip {
-  width: 1.25rem;
-  height: 1.25rem;
-  vertical-align: text-top;
+.app--login {
+  width: 90%;
+  background-color: var(--white);
+  margin: 2rem auto;
+  padding: 1rem;
 }
 .already {
-  margin: 1rem auto;
   color: var(--button-link);
   text-decoration: underline;
 }
+.ipt--error {
+  display: none;
+  margin: 0.5rem 0;
+}
+.ipt--error.show--error {
+  display: inline-block;
+}
+.btn {
+  margin: 0;
+}
 
+@media screen and (min-width: 768px) {
+  .app--login {
+    width: 30rem;
+  }
+}

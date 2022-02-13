@@ -6,6 +6,9 @@
   margin: 2rem auto;
   padding: 1rem;
 }
+.forgot {
+  color: var(--button-float);
+}
 .ipt--error {
   display: inline-block;
   margin: 0.5rem 0;
@@ -13,9 +16,7 @@
 .btn {
   margin: 0;
 }
-.forgot {
-  color: var(--button-float);
-}
+
 @media screen and (min-width: 768px) {
   .app--login {
     width: 30rem;
