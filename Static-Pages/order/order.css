@@ -1,0 +1,36 @@
+@import '../../styles.css';
+
+.card--container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.landscape {
+  width: 15rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mar {
+  margin: 0.25rem 0;
+}
+@media screen and (min-width: 768px) {
+  .landscape {
+    width: 34rem;
+    flex-direction: row;
+  }
+  .align {
+    align-items: flex-start;
+  }
+  .mar {
+    margin: 0.5rem 0;
+  }
+}
