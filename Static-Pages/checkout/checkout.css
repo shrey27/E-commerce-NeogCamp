@@ -3,7 +3,7 @@
 .card {
   max-width: none;
   max-height: none;
-  width: 90%;
+  width: 80%;
   height: auto;
   margin: 2rem auto;
 }
@@ -25,14 +25,13 @@
 .card button {
   margin: 1rem 0;
 }
-@media screen and (max-width: 350px) {
-  .manage {
-    flex-direction: column;
-  }
+.select {
+  background-color: var(--white);
 }
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width:1024px) {
   .card {
-    width: 50%;
+    width: 30%;
   }
   .fields {
     flex-direction: row;
