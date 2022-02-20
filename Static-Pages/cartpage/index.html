@@ -7,11 +7,11 @@
     <title>Cart Page</title>
     <link
       rel="stylesheet"
-      href="https://apollo-ui.netlify.app/utility/common.css"
+      href="https://apolloui-neog.netlify.app/utility/common.css"
     />
     <link
       rel="stylesheet"
-      href="https://apollo-ui.netlify.app/components/drawer/drawer.css"
+      href="https://apolloui-neog.netlify.app/components/drawer/drawer.css"
     />
     <link
       rel="stylesheet"
@@ -24,31 +24,8 @@
   </head>
   <body>
     <div class="container">
-      <!-- Drawer -->
-      <div class="drawer flex-ct-ct">
-        <div class="drawer--background"></div>
-        <div class="drawer--content md-s" direction="left">
-          <i class="fas fa-home btn btn--float home"></i>
-          <section class="submenu__items flex-st-ct flex-vertical">
-            <span class="submenu__item md sb">Protein &nbsp</span>
-            <span class="submenu__item md sb">Gym Gear &nbsp</span>
-            <span class="submenu__item md sb">Athletics &nbsp</span>
-            <span class="submenu__item md sb">Nutrition &nbsp</span>
-            <span class="submenu__item md sb">Vegan &nbsp</span>
-            <span class="submenu__item md sb">Clothing</span>
-            <span class="submenu__item md sb">Limited-Edition</span>
-          </section>
-        </div>
-        <span class="drawer--close">
-          <i class="fas fa-times-circle"></i>
-        </span>
-      </div>
-
       <!-- Navbar -->
       <nav class="navbar xs-s border--btm">
-        <span class="nav--icons">
-          <i class="fas fa-bars md sb show--drawer"></i>
-        </span>
         <section class="start">
           <a href="/">
             <img class="box__image" src="../../assets/lalogo.jpg" />
@@ -110,19 +87,6 @@
         </section>
       </nav>
 
-      <header class="header">
-        <section class="categories">
-          <div class="category btn--primary"><span>Protein</span></div>
-          <div class="category btn--float"><span>Gym Gear</span></div>
-          <div class="category btn--primary"><span>Athletics</span></div>
-          <div class="category btn--float"><span>Nutrition</span></div>
-          <div class="category btn--primary"><span>Vegan</span></div>
-          <div class="category btn--float"><span>Clothing</span></div>
-          <div class="category btn--primary"><span>Limited-Edition</span></div>
-        </section>
-      </header>
-      <br /><br />
-
       <main>
         <div class="cart sm-s">
           <div class="card--container">
@@ -133,7 +97,7 @@
                 alt="Banner"
                 class="card--banner"
               />
-              <section class="content  sm-s">
+              <section class="content sm-s">
                 <h1 class="align heading sm sb">Whey Protein Concentrate</h1>
                 <p class="align">
                   <span class="heading sm sb price--pmy">₹8,000</span>
@@ -176,59 +140,38 @@
                 </button>
               </section>
             </div>
-            <!-- card-3 -->
-            <div class="landscape shdw xs-s">
-              <img
-                src="https://i.pinimg.com/originals/9f/63/17/9f63173c8f34d93cdb99a9b65af25286.jpg"
-                alt="Banner"
-                class="card--banner"
-              />
-              <section class="content  sm-s">
-                <h1 class="align heading sm sb">Ski Jacket - Women</h1>
-                <p>
-                  <span class="heading sm sb price--pmy">₹8,000</span>
-                  <span class="subheading sm xs-s sb price--sec">₹18,000</span>
-                  <span class="sm sb price--ter">33% off</span>
-                </p>
-                <h1 class="align">
-                  <i class="fas fa-minus btn qty--btn"></i>
-                  <span class="quantity">1</span>
-                  <i class="fas fa-plus btn qty--btn"></i>
-                </h1>
-                <button class="btn btn--error btn--size">Delete</button>
-                <button class="btn btn--float btn--size">
-                  Move to Wishlist
-                </button>
-              </section>
-            </div>
             <!-- end -->
           </div>
 
           <div class="card cart--box shdw md-s">
-            <h1 class="sm sb">CART ITEMS</h1>
-            <br />
+            <h1 class="md sb">CART ITEMS</h1>
             <hr />
-            <br />
-            <span class="sm sb">Price</span>
-            <span class="sm sb fl-rt">₹3000</span><br /><br />
-            <span class="sm sb">Discount</span>
-            <span class="sm sb fl-rt">₹1000</span><br /><br />
-            <span class="sm sb">Delivery</span>
-            <span class="sm sb fl-rt">₹500</span><br /><br />
+            <p class="mg-half">
+              <span class="sm sb">Price</span>
+              <span class="sm sb fl-rt">₹3000</span>
+            </p>
+            <p class="mg-half">
+              <span class="sm sb">Discount</span>
+              <span class="sm sb fl-rt">₹1000</span>
+            </p>
+            <p class="mg-half">
+              <span class="sm sb">Delivery</span>
+              <span class="sm sb fl-rt">₹500</span>
+            </p>
             <hr />
-            <br />
-            <span class="md sb">TOTAL</span>
-            <span class="md sb fl-rt">₹2500</span><br /><br />
+            <p class="mg-half">
+              <span class="sb">TOTAL</span>
+              <span class="sb fl-rt">₹2500</span>
+            </p>
             <hr />
-            <br />
-            <button class="btn btn--wide btn--dark md bd">Place Order</button>
+            <button class="btn btn--wide btn--dark mg-half bd">Place Order</button>
           </div>
         </div>
       </main>
       <!-- end -->
 
       <footer class="footer--ctr flex-ct-ct flex-vertical xs-s">
-        <span class="md bd">Contact Me</span>
+        <span class="md bl mg-half">Connect with me</span>
         <div>
           <a href="https://twitter.com/home">
             <img
@@ -251,6 +194,6 @@
         </div>
       </footer>
     </div>
-    <script src="https://apollo-ui.netlify.app/utility/script.js"></script>
+    <script src="https://apolloui-neog.netlify.app/utility/script.js"></script>
   </body>
 </html>

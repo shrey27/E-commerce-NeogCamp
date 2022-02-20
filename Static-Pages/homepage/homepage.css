@@ -1,5 +1,13 @@
 @import '../../styles.css';
 
+/* Ecom card */
+.card--banner{
+  height: 47%;
+}
+.ecom{
+  height: 25rem;
+}
+
 /* Features */
 .features {
   display: flex;
@@ -14,15 +22,24 @@
 }
 
 /* Carousal */
-.slideshow-container {
+.carousal--container {
   width: 100%;
-  max-width: none;
-  margin-left: -7px;
+}
+.carousal {
+  width: 99%;
+  margin: auto;
 }
 
 /* Media Queries */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .features {
     flex-direction: row;
+  }
+  .carousal {
+    width: 100%;
+  }
+ 
+  .card--banner{
+    height: 48%;
   }
 }

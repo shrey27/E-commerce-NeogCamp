@@ -3,7 +3,7 @@
 .card {
   max-width: none;
   max-height: none;
-  width: 90%;
+  width: 85%;
   height: auto;
   margin: 2rem auto;
 }
@@ -20,20 +20,21 @@
 }
 .ipt {
   display: inline-block;
-  flex: 5;
+  flex: 3;
 }
 .card button {
   margin: 1rem 0;
 }
-.manage {
-  flex-direction: column;
+.select {
+  background-color: var(--white);
 }
-@media screen and (min-width: 400px) {
-  .manage {
-    flex-direction: row;
-  }
+.clr {
+  color: var(--badge-online);
 }
-@media screen and (min-width: 1024px) {
+.sq {
+  border-radius: 0;
+}
+@media screen and (min-width: 768px) {
   .card {
     width: 50%;
   }

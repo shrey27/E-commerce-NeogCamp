@@ -20,3 +20,10 @@ label {
 .fl-rt {
   float: right;
 }
+/* Ecom card */
+.card--banner {
+  height: 47%;
+}
+.ecom {
+  height: 25rem;
+}

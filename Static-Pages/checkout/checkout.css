@@ -1,11 +1,21 @@
 @import '../../styles.css';
+@import '../cartpage/cart.css';
 
+/* Checkout container */
+.chk--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Address styling */
 .card {
   max-width: none;
   max-height: none;
-  width: 80%;
+  width: 70%;
   height: auto;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 .fields {
   display: flex;
@@ -28,12 +38,36 @@
 .select {
   background-color: var(--white);
 }
-
-@media screen and (min-width:1024px) {
+.add--container {
+  width: 100%;
+}
+/* Cart styling */
+.cart {
+  flex-direction: column;
+}
+.card--container {
+  width: 100%;
+}
+.cart--box {
+  max-width: 70%;
+}
+/* Media Query */
+@media screen and (min-width: 768px) {
   .card {
-    width: 30%;
+    width: 100%;
   }
   .fields {
     flex-direction: row;
+  }
+  .chk--container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .cart--box {
+    max-width: 50%;
+  }
+  .add--container {
+    width: 40%;
   }
 }
