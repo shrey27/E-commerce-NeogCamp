@@ -10,6 +10,9 @@ body {
 .mg-full {
   margin: 1rem 0;
 }
+.disp-block{
+  display: block;
+}
 /* Drawer */
 .drawer--content {
   width: 50%;

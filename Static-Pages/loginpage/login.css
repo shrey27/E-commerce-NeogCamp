@@ -7,8 +7,7 @@
   padding: 1rem;
 }
 .ipt--error {
-  display: inline-block;
-  margin: 0.5rem 0;
+  display: block;
 }
 .btn {
   margin: 0;

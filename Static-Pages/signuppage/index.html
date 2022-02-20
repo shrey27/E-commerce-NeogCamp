@@ -112,52 +112,57 @@
 
       <main>
         <div class="app--login shdw">
-          <h1 class="md sb cen">SIGN UP</h1>
-          <br />
+          <h1 class="md sb cen mg-full">SIGN UP</h1>
           <hr />
-          <br />
-          <form action="https://www.google.com">
-            <label for="user-name" class="lbl">
-              Username*<input
-                type="text"
-                placeholder="Enter Username"
-                class="ipt ipt--man"
-                id="user-name"
-                name="user-name"
-                required
-                autocomplete="off"
-              />
+          <form action="https://www.google.com" class="mg-full">
+            <div class="mg-half">
+              <label for="user-name" class="lbl">
+                Username*<input
+                  type="text"
+                  placeholder="Enter Username"
+                  class="ipt ipt--man"
+                  id="user-name"
+                  name="user-name"
+                  required
+                  autocomplete="off"
+                />
+                <span class="ipt--error">This field is mandatory</span>
+              </label>
+            </div>
+
+            <div class="mg-half">
+              <label for="email" class="lbl">
+                Email Id*<input
+                  type="email"
+                  placeholder="Enter Email Id"
+                  class="ipt ipt--man"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="off"
+                />
+                <span class="ipt--error">This field is mandatory</span>
+              </label>
+            </div>
+
+            <div class="mg-half">
+              <label for="pswd" class="lbl">
+                Password*<input
+                  type="password"
+                  placeholder="Enter Password"
+                  class="ipt ipt--man"
+                  id="pswd"
+                  name="password"
+                  autocomplete="off"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                  required
+                />
+              </label>
               <span class="ipt--error">This field is mandatory</span>
-            </label>
-            <br /><br />
-            <label for="email" class="lbl">
-              Email Id*<input
-                type="email"
-                placeholder="Enter Email Id"
-                class="ipt ipt--man"
-                id="email"
-                name="email"
-                required
-                autocomplete="off"
-              />
-              <span class="ipt--error">This field is mandatory</span>
-            </label>
-            <br /><br />
-            <label for="pswd" class="lbl">
-              Password*<input
-                type="password"
-                placeholder="Enter Password"
-                class="ipt ipt--man"
-                id="pswd"
-                name="password"
-                autocomplete="off"
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
-                required
-              />
-            </label>
-            <span class="ipt--error">This field is mandatory</span>
-            <br /><br />
+            </div>
+
+            <div class="mg-half">
             <label for="pswd-cnf" class="lbl">
               Confirm Password*<input
                 type="password"
@@ -172,12 +177,12 @@
               />
             </label>
             <span class="ipt--error show--error">This field is mandatory</span>
-            <br /><br />
+          </div>
+          
             <button type="submit" class="btn btn--wide btn--float">
               Sign up
             </button>
           </form>
-          <br />
           <a href="" class="already sm">Already have an account?</a>
         </div>
       </main>
