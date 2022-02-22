@@ -27,7 +27,8 @@ Version deployed: v1.0
 * CSS from [Apollo-UI](https://apolloui-neog.netlify.app/)
 * Vanilla JS
 * Deployment on Netlify.com
-### Upcoming upagrades
+
+### Upcoming Changes
 * Dynamic behaviour with React JS
 * Backend integration using MERN Stack
 
