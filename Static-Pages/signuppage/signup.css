@@ -10,11 +10,11 @@
   color: var(--button-link);
   text-decoration: underline;
 }
-.ipt--error {
+.input--error {
   display: none;
   margin: 0.5rem 0;
 }
-.ipt--error.show--error {
+.input--error.show--error {
   display: inline-block;
 }
 .btn {

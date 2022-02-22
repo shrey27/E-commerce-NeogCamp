@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment Page</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
     <link
       rel="stylesheet"
       href="https://apolloui-neog.netlify.app/utility/common.css"
@@ -31,12 +32,12 @@
             <img class="box__image" src="../../assets/lalogo.jpg" />
           </a>
           <span class="box-span">
-            <span class="title heading">LEGION ATHLETICS</span>
+            <span class="title primary">LEGION ATHLETICS</span>
           </span>
         </section>
         <section class="end">
           <div class="menu">
-            <span class="menu__btn md sb heading">
+            <span class="menu__btn md sb primary">
               <i class="far fa-user-circle"></i>&nbsp<span
                 class="menu__btn__name"
                 >Account</span
@@ -78,7 +79,9 @@
       <main>
         <!-- Choose an option -->
         <div class="card shdw">
-          <h1 class="heading md sb xs-s cen mg-half">Select a Payment Option</h1>
+          <h1 class="primary md sb xs-s cen mg-half">
+            Select a Payment Option
+          </h1>
           <hr />
           <div class="sm-s mg-half">
             <ul class="stack">
@@ -89,11 +92,11 @@
                     alt="Avatar"
                     class="avatar avatar--sm sq"
                   />
-                  <h1 class="heading sm sb">Debit Card/ Credit Card</h1>
+                  <h1 class="primary sm sb">Debit Card/ Credit Card</h1>
                 </div>
                 <i class="fas fa-chevron-right fl-rt"></i>
               </li>
-  
+
               <li class="flex-ct-sb shadow xs-s mg-full">
                 <div class="flex-ct-st">
                   <img
@@ -101,11 +104,11 @@
                     alt="Avatar"
                     class="avatar avatar--sm sq"
                   />
-                  <h1 class="heading sm sb">UPI</h1>
+                  <h1 class="primary sm sb">UPI</h1>
                 </div>
                 <i class="fas fa-chevron-right fl-rt"></i>
               </li>
-  
+
               <li class="flex-ct-sb shadow xs-s mg-full">
                 <div class="flex-ct-st">
                   <img
@@ -113,7 +116,7 @@
                     alt="Avatar"
                     class="avatar avatar--sm sq"
                   />
-                  <h1 class="heading sm sb">Cash on Delivery</h1>
+                  <h1 class="primary sm sb">Cash on Delivery</h1>
                 </div>
                 <i class="fas fa-chevron-right fl-rt"></i>
               </li>
@@ -122,13 +125,13 @@
         </div>
         <!-- New UPI ID -->
         <div class="card shdw">
-          <h1 class="heading md sb cen xs-s">ENTER UPI ID</h1>
+          <h1 class="primary md sb cen xs-s">ENTER UPI ID</h1>
           <hr />
           <form action="#" class="sm-s">
             <div class="fields">
-              <label for="upiid" class="lbl md sb">UPI ID</label>
+              <label for="upiid" class="label md sb">UPI ID</label>
               <input
-                class="ipt sm-s"
+                class="input sm-s"
                 type="text"
                 name="upiid"
                 id="upiid"
@@ -145,10 +148,10 @@
 
         <!-- Deal with cards -->
         <div class="card">
-          <h1 class="md cen heading btn--success xs-s">Select a Card</h1>
+          <h1 class="md cen primary btn--success xs-s">Select a Card</h1>
         </div>
         <div class="card">
-          <h1 class="md cen heading btn--success xs-s">Manage Cards</h1>
+          <h1 class="md cen primary btn--success xs-s">Manage Cards</h1>
         </div>
         <!-- Card -->
         <div class="card shdw">
@@ -157,16 +160,16 @@
             <button class="btn btn--icons sb">SELECT</button>
           </div>
           <div class="sm-s">
-            <h2 class="heading sm">
+            <h2 class="primary sm">
               TYPE: <span class="clr">DEBIT CARD</span>
             </h2>
-            <h2 class="heading sm">
+            <h2 class="primary sm">
               CARD NO. <span class="clr">1234-1234-1234</span>
             </h2>
-            <h2 class="heading sm">
+            <h2 class="primary sm">
               NAME: <span class="clr">SHREY PANDEY</span>
             </h2>
-            <h2 class="heading sm">EXPIRY: <span class="clr">06/32</span></h2>
+            <h2 class="primary sm">EXPIRY: <span class="clr">06/32</span></h2>
             <button class="btn btn--primary sb">EDIT</button>
             <button class="btn sb">DELETE</button>
           </div>
@@ -178,16 +181,16 @@
             <button class="btn btn--icons sb">SELECT</button>
           </div>
           <div class="sm-s">
-            <h2 class="heading sm">
+            <h2 class="primary sm">
               TYPE: <span class="clr">DEBIT CARD</span>
             </h2>
-            <h2 class="heading sm">
+            <h2 class="primary sm">
               CARD NO. <span class="clr">1234-1234-1234</span>
             </h2>
-            <h2 class="heading sm">
+            <h2 class="primary sm">
               NAME: <span class="clr">SHREY PANDEY</span>
             </h2>
-            <h2 class="heading sm">EXPIRY: <span class="clr">06/32</span></h2>
+            <h2 class="primary sm">EXPIRY: <span class="clr">06/32</span></h2>
             <button class="btn btn--primary sb">EDIT</button>
             <button class="btn sb">DELETE</button>
           </div>
@@ -204,9 +207,9 @@
           <h1 class="btn--success md sb cen xs-s">NEW CARD</h1>
           <form action="#" class="sm-s">
             <div class="fields">
-              <label for="card_no" class="lbl">CARD NUMBER</label>
+              <label for="card_no" class="label">CARD NUMBER</label>
               <input
-                class="ipt sm-s"
+                class="input sm-s"
                 type="number"
                 name="card_no"
                 id="card_no"
@@ -218,9 +221,9 @@
               />
             </div>
             <div class="fields">
-              <label for="owner" class="lbl">CARD NAME</label>
+              <label for="owner" class="label">CARD NAME</label>
               <input
-                class="ipt sm-s"
+                class="input sm-s"
                 type="text"
                 pattern="[a-zA-Z]"
                 name="owner"
@@ -231,9 +234,9 @@
               />
             </div>
             <div class="fields">
-              <label for="expiry" class="lbl">EXPIRY DATE</label>
+              <label for="expiry" class="label">EXPIRY DATE</label>
               <input
-                class="ipt sm-s"
+                class="input sm-s"
                 type="month"
                 name="expiry"
                 id="expiry"
@@ -242,9 +245,9 @@
               />
             </div>
             <div class="fields">
-              <label for="type" class="lbl">CARD TYPE</label>
-              <select id="type" name="type" class="ipt select sm-s" required>
-                <option value="" class="subheading" selected>
+              <label for="type" class="label">CARD TYPE</label>
+              <select id="type" name="type" class="input select sm-s" required>
+                <option value="" class="primary--light" selected>
                   -- Select a Type --
                 </option>
                 <option value="cc">Credit Card</option>

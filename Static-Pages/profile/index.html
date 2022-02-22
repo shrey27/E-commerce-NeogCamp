@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
     <link
       rel="stylesheet"
       href="https://apolloui-neog.netlify.app/utility/common.css"
@@ -20,7 +21,7 @@
   </head>
   <body>
     <nav class="navbar xs-s border--btm">
-      <span class="nav--icons">
+      <span class="nav__icons">
         <i class="fas fa-bars md sb show--drawer"></i>
       </span>
       <section class="start">
@@ -28,7 +29,7 @@
           <img class="box__image" src="../../assets/lalogo.jpg" />
         </a>
         <span class="box-span">
-          <span class="title heading">LEGION ATHLETICS</span>
+          <span class="title primary">LEGION ATHLETICS</span>
         </span>
       </section>
       <section class="middle">
@@ -37,7 +38,7 @@
           <input
             type="text"
             placeholder="Search"
-            class="ipt no--bdr"
+            class="input no--bdr"
             id="user-name"
             name="user-name"
           />
@@ -45,7 +46,7 @@
       </section>
       <section class="end">
         <div class="menu">
-          <span class="menu__btn md sb heading">
+          <span class="menu__btn md sb primary">
             <i class="far fa-user-circle"></i>&nbsp<span class="menu__btn__name"
               >Account</span
             >
@@ -85,13 +86,13 @@
 
     <main>
       <div class="card shadow sm-s">
-        <h1 class="heading md sb sm-s">UPDATE PROFILE</h1>
+        <h1 class="primary md sb sm-s">UPDATE PROFILE</h1>
         <hr />
         <form action="../homepage/" class="sm-s">
           <div class="fields">
-            <label for="name--field" class="lbl">Name:</label>
+            <label for="name--field" class="label">Name:</label>
             <input
-              class="ipt sm-s"
+              class="input sm-s"
               type="text"
               name="name"
               id="name--field"
@@ -102,9 +103,9 @@
             />
           </div>
           <div class="fields">
-            <label for="email--field" class="lbl">Email:</label>
+            <label for="email--field" class="label">Email:</label>
             <input
-              class="ipt sm-s"
+              class="input sm-s"
               type="email"
               name="email"
               id="email--field"
@@ -114,9 +115,9 @@
             />
           </div>
           <div class="fields">
-            <label for="phone--field" class="lbl">Phone:</label>
+            <label for="phone--field" class="label">Phone:</label>
             <input
-              class="ipt sm-s"
+              class="input sm-s"
               type="number"
               min="1000000000"
               max="9999999999"
@@ -129,9 +130,9 @@
             />
           </div>
           <div class="fields">
-            <label for="dob--field" class="lbl">DOB:</label>
+            <label for="dob--field" class="label">DOB:</label>
             <input
-              class="ipt sm-s"
+              class="input sm-s"
               type="date"
               name="dob"
               id="dob--field"
@@ -145,9 +146,9 @@
           <div class="flex-ct-sb manage">
             <button type="submit" class="btn btn--icons sb md-s">
               Manage Passwords
-             </button>
+            </button>
             <button type="submit" class="btn btn--error sb md-s">
-             Manage Address
+              Manage Address
             </button>
           </div>
         </form>

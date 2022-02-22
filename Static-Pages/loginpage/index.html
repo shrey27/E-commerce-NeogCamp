@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
     <link
       rel="stylesheet"
       href="https://apolloui-neog.netlify.app/utility/common.css"
@@ -31,7 +32,7 @@
             <img class="box__image" src="../../assets/lalogo.jpg" />
           </a>
           <span class="box-span">
-            <span class="title heading">LEGION ATHLETICS</span>
+            <span class="title primary">LEGION ATHLETICS</span>
           </span>
         </section>
         <section class="middle">
@@ -40,7 +41,7 @@
             <input
               type="text"
               placeholder="Search"
-              class="ipt no--bdr"
+              class="input no--bdr"
               id="user-name"
               name="user-name"
             />
@@ -48,7 +49,7 @@
         </section>
         <section class="end">
           <div class="menu">
-            <span class="menu__btn md sb heading">
+            <span class="menu__btn md sb primary">
               <i class="far fa-user-circle"></i>&nbsp<span
                 class="menu__btn__name"
                 >Account</span
@@ -89,30 +90,32 @@
 
       <main>
         <div class="app--login shdw">
-          <h1 class="md sb cen mg-half">LOGIN</h1>
+          <h1 class="md sb cen mg-full">LOGIN</h1>
           <hr />
-          <form action="https://www.google.com" class="mg-half">
+          <form action="https://www.google.com" class="mg-full">
             <div>
-              <label for="user-name" class="lbl">
+              <label for="user-name" class="label">
                 Username*<input
                   type="text"
                   placeholder="Enter Username"
-                  class="ipt ipt--man"
+                  class="input input--man"
                   id="user-name"
                   name="user-name"
                   required
                   autocomplete="off"
                 />
-                <span class="ipt--error mg-half">This field is mandatory</span>
+                <span class="input--error mg-half"
+                  >This field is mandatory</span
+                >
               </label>
             </div>
 
             <div class="mg-half">
-              <label for="pswd" class="lbl">
+              <label for="pswd" class="label">
                 Password*<input
                   type="password"
                   placeholder="Enter Password"
-                  class="ipt ipt--man"
+                  class="input input--man"
                   id="pswd"
                   name="password"
                   autocomplete="off"
@@ -121,11 +124,11 @@
                   required
                 />
               </label>
-              <span class="ipt--error mg-half">This field is mandatory</span>
+              <span class="input--error mg-half">This field is mandatory</span>
             </div>
 
             <div class="mg-full">
-              <label for="remember"
+              <label for="remember" class="sm"
                 ><input
                   class="login__ip"
                   type="checkbox"
@@ -135,7 +138,7 @@
               >
             </div>
 
-            <button type="submit" class="btn btn--wide btn--float">
+            <button type="submit" class="btn btn--wide btn--float sb">
               Log In
             </button>
           </form>
@@ -146,7 +149,7 @@
         <div class="app--login shdw">
           <h1 class="md sb cen sm-s">FORGOT PASSWORD</h1>
           <hr />
-          <p class="heading sm sb sm-s">
+          <p class="primary sm sb sm-s">
             A temporary password has been sent to your email. Please enter that
             password in the current password field on
             <a href="../forgot/" class="forgot">this&nbsp;</a>page.

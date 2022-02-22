@@ -19,7 +19,7 @@
   border-radius: 0;
   margin: 1rem auto;
 }
-.landscape .card--banner {
+.landscape .card__banner {
   border-radius: 0;
   height: auto;
   width: 10rem;
@@ -28,7 +28,7 @@
 .quantity {
   padding: 0.25em 1em;
   font-weight: 600;
-  border: 2px solid var(--subheading);
+  border: 2px solid var(--primary--light);
   border-radius: 5px;
 }
 .qty--btn {
@@ -75,7 +75,7 @@
   .landscape {
     flex-direction: row;
   }
-  .landscape .card--banner {
+  .landscape .card__banner {
     border-radius: 0;
     width: 8rem;
     height: auto;

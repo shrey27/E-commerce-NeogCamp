@@ -14,11 +14,11 @@
   flex-direction: column;
   margin: 0.5rem 0;
 }
-.lbl {
+.label {
   display: inline-block;
   flex: 1;
 }
-.ipt {
+.input {
   display: inline-block;
   flex: 5;
 }

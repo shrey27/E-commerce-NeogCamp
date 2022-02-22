@@ -1,10 +1,10 @@
 @import '../../styles.css';
 
 /* Ecom card */
-.card--banner{
+.card__banner {
   height: 47%;
 }
-.ecom{
+.ecom {
   height: 25rem;
 }
 
@@ -17,7 +17,7 @@
   flex: 1;
   text-align: center;
   padding: 1em 0;
-  border: 2px solid var(--border);
+  border: 2px solid var(--primary--light);
   background-color: var(--button-light);
 }
 
@@ -38,8 +38,8 @@
   .carousal {
     width: 100%;
   }
- 
-  .card--banner{
+
+  .card__banner {
     height: 48%;
   }
 }
