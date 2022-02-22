@@ -97,7 +97,7 @@ body {
   gap: 0.5rem;
   margin: 0 auto;
 }
-.card--banner {
+.card__banner {
   height: 60%;
   width: 100%;
   object-fit: contain;

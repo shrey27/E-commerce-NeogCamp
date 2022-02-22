@@ -46,7 +46,7 @@
 
       <!-- Navbar -->
       <nav class="navbar xs-s border--btm">
-        <span class="nav--icons">
+        <span class="nav__icons">
           <i class="fas fa-bars md sb show--drawer"></i>
         </span>
         <section class="start">
@@ -98,26 +98,13 @@
         </section>
       </nav>
 
-      <!-- Carousal -->
-      <header class="header">
-        <section class="categories">
-          <div class="category btn--primary"><span>Protein</span></div>
-          <div class="category btn--float"><span>Gym Gear</span></div>
-          <div class="category btn--primary"><span>Athletics</span></div>
-          <div class="category btn--float"><span>Nutrition</span></div>
-          <div class="category btn--primary"><span>Vegan</span></div>
-          <div class="category btn--float"><span>Clothing</span></div>
-          <div class="category btn--primary"><span>Limited-Edition</span></div>
-        </section>
-      </header>
-
       <!-- Product Details -->
       <main class="product">
         <div class="card landscape">
           <img
             src="https://m.media-amazon.com/images/I/413GuC4J4FL.jpg"
             alt="Banner"
-            class="card--banner"
+            class="card__banner"
           />
           <section class="content xs-s">
             <h1 class="primary lg bl xs-s cen">Whey Protein Concentrate</h1>
@@ -169,12 +156,10 @@
               </li>
             </ul>
 
-            <button class="btn btn--error btn--wide sb mg-half">
-              Add to Cart
-            </button>
-            <button class="btn btn--float btn--wide sb mg-half">
-              Add to Wishlist
-            </button>
+            <div class="button__ctr">
+              <button class="btn btn--error sb mg-half">Add to Cart</button>
+              <button class="btn btn--float sb mg-half">Add to Wishlist</button>
+            </div>
           </section>
         </div>
       </main>

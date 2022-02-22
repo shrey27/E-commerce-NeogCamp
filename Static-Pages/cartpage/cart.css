@@ -19,7 +19,7 @@
   border-radius: 0;
   margin: 1rem auto;
 }
-.landscape .card--banner {
+.landscape .card__banner {
   border-radius: 0;
   height: auto;
   width: 10rem;
@@ -75,7 +75,7 @@
   .landscape {
     flex-direction: row;
   }
-  .landscape .card--banner {
+  .landscape .card__banner {
     border-radius: 0;
     width: 8rem;
     height: auto;

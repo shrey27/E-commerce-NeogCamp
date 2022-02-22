@@ -1,7 +1,7 @@
 @import '../../styles.css';
 
 /* Ecom card */
-.card--banner {
+.card__banner {
   height: 47%;
 }
 .ecom {
@@ -39,7 +39,7 @@
     width: 100%;
   }
 
-  .card--banner {
+  .card__banner {
     height: 48%;
   }
 }
