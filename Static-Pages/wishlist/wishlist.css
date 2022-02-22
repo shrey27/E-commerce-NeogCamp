@@ -1,6 +1,6 @@
 @import '../../styles.css';
 
-.content--rating {
+.content__rating {
   display: inline-block;
   margin: 0.5rem 0;
 }

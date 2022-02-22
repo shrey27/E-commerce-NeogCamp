@@ -9,7 +9,7 @@
 .forgot {
   color: var(--button-float);
 }
-.ipt--error {
+.input--error {
   display: inline-block;
   margin: 0.5rem 0;
 }
