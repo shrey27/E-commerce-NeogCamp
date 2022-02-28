@@ -13,7 +13,9 @@
   margin: 0;
 }
 .forgot {
-  color: var(--button-float);
+  color: var(--button-link);
+  text-decoration: underline;
+  font-weight: 500;
 }
 @media screen and (min-width: 768px) {
   .app--login {

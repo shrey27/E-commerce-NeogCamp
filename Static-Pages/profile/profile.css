@@ -1,5 +1,8 @@
 @import '../../styles.css';
 
+li {
+  list-style: none;
+}
 .card {
   max-width: none;
   max-height: none;
@@ -28,6 +31,39 @@
 .manage {
   flex-direction: column;
 }
+
+/* Aside */
+/* Aside title */
+.aside__title {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.btn--auth {
+  border: 2px solid var(--tertiary);
+  color: var(--tertiary);
+  font-size: 1.25rem;
+  font-size: 600;
+}
+.btn--auth:hover {
+  border: 2px solid var(--tertiary);
+  color: var(--white);
+  background-color: var(--tertiary--light);
+}
+.stack__item {
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.stack__item:hover {
+  background-color: var(--tertiary--light);
+  color: var(--white);
+}
+.stack__item i {
+  float: right;
+  margin-top: 5px;
+}
+
 @media screen and (min-width: 400px) {
   .manage {
     flex-direction: row;

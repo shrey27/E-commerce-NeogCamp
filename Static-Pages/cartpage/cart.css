@@ -56,9 +56,17 @@
 }
 
 @media screen and (min-width: 400px) {
+  .landscape {
+    flex-direction: row;
+  }
+  .landscape .card__banner {
+    border-radius: 0;
+    width: 10rem;
+    height: auto;
+  }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .align {
     text-align: start;
     margin-bottom: 0.5em;
@@ -72,14 +80,7 @@
   .card--container {
     width: 50%;
   }
-  .landscape {
-    flex-direction: row;
-  }
-  .landscape .card__banner {
-    border-radius: 0;
-    width: 8rem;
-    height: auto;
-  }
+
   .cart--box {
     max-width: 30rem;
   }

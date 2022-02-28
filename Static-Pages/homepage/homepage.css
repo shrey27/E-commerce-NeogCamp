@@ -1,13 +1,5 @@
 @import '../../styles.css';
 
-/* Ecom card */
-.card__banner {
-  height: 47%;
-}
-.ecom {
-  height: 25rem;
-}
-
 /* Features */
 .features {
   display: flex;
@@ -30,16 +22,52 @@
   margin: auto;
 }
 
+/* Shortcuts */
+.shortcuts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+.shortcut {
+  margin: auto;
+  flex: 1 0 40%;
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Button */
+.btn--all {
+  color: var(--white);
+  background-color: var(--tertiary);
+  font-size: 1.5rem;
+  padding: 0.75rem 2rem;
+}
+
 /* Media Queries */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 309px) {
+  .shortcut {
+    flex: 1 0 40%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shortcut {
+    flex: 1 0 25%;
+  }
+}
+@media screen and (min-width: 1052px) {
   .features {
     flex-direction: row;
   }
   .carousal {
     width: 100%;
   }
-
-  .card__banner {
-    height: 48%;
+  .shortcut {
+    flex: 1 0 8%;
+    font-size: 1.5rem;
   }
 }

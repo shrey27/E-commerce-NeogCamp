@@ -16,14 +16,12 @@ label {
 }
 .filter__slider {
   width: 100%;
+  background-color: var(--tertiary);
 }
 .fl-rt {
   float: right;
 }
-/* Ecom card */
-.card__banner {
-  height: 47%;
-}
-.ecom {
-  height: 25rem;
+.clear__btn {
+  border-bottom: 1px solid var(--primary);
+  cursor: pointer;
 }

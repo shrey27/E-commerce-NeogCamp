@@ -3,9 +3,11 @@
 .card {
   max-width: none;
   max-height: none;
-  width: 90%;
   height: auto;
-  margin: 2rem auto;
+  margin: 1rem auto;
+}
+.address {
+  width: 90%;
 }
 .fields {
   display: flex;
@@ -30,8 +32,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .card {
-    width: 50%;
+  .address {
+    width: 40%;
   }
   .fields {
     flex-direction: row;
