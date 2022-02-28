@@ -116,13 +116,20 @@ body {
 
 /* Hacking the card styles  */
 .deal--cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+/* .deal--cards {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
   margin: 0 auto;
-}
+} */
 .card {
   border-radius: 0;
   border: none;
@@ -133,7 +140,6 @@ body {
 }
 .ecom {
   max-height: none;
-  width: 17rem;
   padding: 0;
   margin: 0.5rem;
 }
