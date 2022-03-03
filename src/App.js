@@ -2,7 +2,8 @@
 // import Products from './products';
 // import Product from './product';
 // import Signin from './authentication/Signin';
-import Signup from './authentication/Signup';
+// import Signup from './authentication/Signup';
+import Address from './address';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <Products /> */}
       {/* <Product /> */}
       {/* <Signin /> */}
-      <Signup />
+      {/* <Signup /> */}
+      <Address />
     </div>
   );
 }

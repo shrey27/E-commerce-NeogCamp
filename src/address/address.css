@@ -1,0 +1,42 @@
+@import '../common/styles.css';
+
+.card {
+  max-width: none;
+  max-height: none;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 0;
+}
+.address {
+  width: 90%;
+  cursor: pointer;
+}
+.fields {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.label {
+  display: inline-block;
+  flex: 1;
+}
+.input {
+  display: inline-block;
+  flex: 5;
+}
+.select {
+  background-color: var(--white);
+}
+.btn--add {
+  margin: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .address {
+    width: 40%;
+  }
+  .fields {
+    flex-direction: row;
+  }
+}
