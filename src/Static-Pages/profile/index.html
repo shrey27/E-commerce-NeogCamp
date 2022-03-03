@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/utility/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/components/drawer/drawer.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <nav class="navbar xs-s border--btm">
+      <span class="nav__icons">
+        <i class="fas fa-bars md sb show--drawer"></i>
+      </span>
+      <section class="start">
+        <a href="/">
+          <img class="box__image" src="../../assets/lalogo.jpg" />
+        </a>
+        <span class="box-span">
+          <span class="title primary">LEGION ATHLETICS</span>
+        </span>
+      </section>
+      <section class="middle">
+        <div class="search--ctr">
+          <i class="fas fa-search search--btn"></i>
+          <input
+            type="text"
+            placeholder="Search"
+            class="input no--bdr"
+            id="user-name"
+            name="user-name"
+          />
+        </div>
+      </section>
+      <section class="end">
+        <div class="menu">
+          <span class="menu__btn md sb primary">
+            <i class="far fa-user-circle"></i>&nbsp<span class="menu__btn__name"
+              >Account</span
+            >
+          </span>
+          <div class="submenu shadow xs-s">
+            <section class="submenu__btn">
+              <button class="btn btn--float">Sign In</button>
+              <button class="btn">Sign Up</button>
+            </section>
+            <section class="submenu__items flex-st-ct flex-vertical">
+              <span class="submenu__item">My Account</span>
+              <span class="submenu__item">My Order</span>
+              <span class="submenu__item"
+                >Cart
+                <i
+                  icon-badge="3"
+                  bdg-size="medium"
+                  class="fas fa-shopping-cart md fl-rt"
+                ></i
+              ></span>
+              <span class="submenu__item"
+                >Wishlist
+                <i
+                  icon-badge="3"
+                  bdg-size="medium"
+                  class="far fa-heart md fl-rt"
+                ></i
+              ></span>
+            </section>
+            <section class="submenu__btn flex-st-ct">
+              <button class="btn btn--float btn--wide">Log Out</button>
+            </section>
+          </div>
+        </div>
+      </section>
+    </nav>
+
+    <header class="header">
+      <section class="categories">
+        <div class="category"><span>Protein</span></div>
+        <div class="category"><span>Gym Gear</span></div>
+        <div class="category"><span>Athletics</span></div>
+        <div class="category"><span>Nutrition</span></div>
+        <div class="category"><span>Vegan</span></div>
+        <div class="category"><span>Clothing</span></div>
+        <div class="category"><span>Limited-Edition</span></div>
+      </section>
+    </header>
+
+    <div class="hb--box">
+      <header class="hb--header">
+        <nav class="navbar">
+          <section class="end xs-s">
+            <span class="slider btn hb--btn">
+              Account&nbsp<i class="fas fa-chevron-down"></i>
+            </span>
+          </section>
+        </nav>
+      </header>
+
+      <aside class="hb--aside sm-s shadow">
+        
+        <div class="mg-full">
+          <h1 class="primary sm reg aside__title">MY ACCOUNT</h1>
+          <ul class="stack">
+            <li class="stack__item primary sm">
+              Profile Settings <i class="fa-solid fa-chevron-right"></i>
+            </li>
+            <li class="stack__item primary sm">
+              Manage Address <i class="fa-solid fa-chevron-right"></i>
+            </li>
+            <li class="stack__item primary sm">
+              Update Password <i class="fa-solid fa-chevron-right"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="mg-full">
+          <h1 class="primary sm reg aside__title">MY STUFF</h1>
+          <ul class="stack">
+            <li class="stack__item primary sm">
+              Manage Cards <i class="fa-solid fa-chevron-right"></i>
+            </li>
+            <li class="stack__item primary sm">
+              My Orders <i class="fa-solid fa-chevron-right"></i>
+            </li>
+            <li class="stack__item primary sm">
+              My Wishlist <i class="fa-solid fa-chevron-right"></i>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn btn--auth btn--wide">Logout</button>
+      </aside>
+
+      <main class="hb--main hb--open">
+        <div class="card shadow sm-s">
+          <h1 class="primary md sb mg-half">UPDATE PROFILE</h1>
+          <hr />
+          <form action="../homepage/">
+            <div class="fields">
+              <label for="name--field" class="label">Name:</label>
+              <input
+                class="input sm-s"
+                type="text"
+                name="name"
+                id="name--field"
+                pattern="+[A-Za-z]"
+                title="Name should only contain one or more alphabets"
+                autocomplete="off"
+                value="Carl Jones"
+              />
+            </div>
+            <div class="fields">
+              <label for="email--field" class="label">Email:</label>
+              <input
+                class="input sm-s"
+                type="email"
+                name="email"
+                id="email--field"
+                title="Enter a valid Email ID"
+                autocomplete="email"
+                value="carljones2345@gmail.com"
+              />
+            </div>
+            <div class="fields">
+              <label for="phone--field" class="label">Phone:</label>
+              <input
+                class="input sm-s"
+                type="number"
+                min="1000000000"
+                max="9999999999"
+                name="phone"
+                id="phone--field"
+                pattern="[0-9]"
+                title="Enter a valid 10 digits mobile number"
+                autocomplete="mobile"
+                value="9999999909"
+              />
+            </div>
+            <div class="fields">
+              <label for="dob--field" class="label">DOB:</label>
+              <input
+                class="input sm-s"
+                type="date"
+                name="dob"
+                id="dob--field"
+                autocomplete="off"
+                value="1980-08-26"
+              />
+            </div>
+            <button type="submit" class="btn btn--wide btn--float sb mg-half">
+              UPDATE
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <!-- Footer -->
+    <footer class="footer--ctr flex-ct-ct flex-vertical sm-s">
+      <span class="md bl mg-half">Connect with me</span>
+      <div>
+        <a href="https://twitter.com/home">
+          <img
+            class="box__image__sm"
+            src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+          />
+        </a>
+        <a href="https://github.com/shrey27">
+          <img
+            class="box__image__sm"
+            src="https://img.icons8.com/glyph-neue/48/000000/github.png"
+          />
+        </a>
+        <a href="https://www.linkedin.com/in/shrey27/">
+          <img
+            class="box__image__sm"
+            src="https://img.icons8.com/color/48/000000/linkedin.png"
+          />
+        </a>
+      </div>
+      <span class="primary sm reg mg-half"
+        >© 2022 Legion Athletics Pvt Ltd. All rights reserved.</span
+      >
+    </footer>
+    <script src="https://apolloui-neog.netlify.app/utility/script.js"></script>
+  </body>
+</html>

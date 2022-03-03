@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/utility/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/components/drawer/drawer.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar xs-s border--btm">
+        <section class="start">
+          <a href="/">
+            <img class="box__image" src="../../assets/lalogo.jpg" />
+          </a>
+          <span class="box-span">
+            <span class="title primary">LEGION ATHLETICS</span>
+          </span>
+        </section>
+        <section class="middle">
+          <div class="search--ctr">
+            <i class="fas fa-search search--btn"></i>
+            <input
+              type="text"
+              placeholder="Search"
+              class="input no--bdr"
+              id="user-name"
+              name="user-name"
+            />
+          </div>
+        </section>
+        <section class="end">
+          <div class="menu">
+            <span class="menu__btn md sb primary">
+              <i class="far fa-user-circle"></i>&nbsp<span
+                class="menu__btn__name"
+                >Account</span
+              >
+            </span>
+            <div class="submenu shadow xs-s">
+              <section class="submenu__btn">
+                <button class="btn btn--float">Sign In</button>
+                <button class="btn">Sign Up</button>
+              </section>
+              <section class="submenu__items flex-st-ct flex-vertical">
+                <span class="submenu__item">My Account</span>
+                <span class="submenu__item">My Order</span>
+                <span class="submenu__item"
+                  >Cart
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="fas fa-shopping-cart md fl-rt"
+                  ></i
+                ></span>
+                <span class="submenu__item"
+                  >Wishlist
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="far fa-heart md fl-rt"
+                  ></i
+                ></span>
+              </section>
+              <section class="submenu__btn flex-st-ct">
+                <button class="btn btn--float btn--wide">Log Out</button>
+              </section>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <main>
+        <div class="cart sm-s">
+          <div class="card--container">
+            <!-- card-1 -->
+            <div class="landscape shdw">
+              <img
+                src="https://m.media-amazon.com/images/I/413GuC4J4FL.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content sm-s">
+                <h1 class="align primary sm sb">Whey Protein Concentrate</h1>
+                <p class="align">
+                  <span class="primary sm sb price--pmy">₹8,000</span>
+                  <span class="primary--light sm xs-s sb price--sec"
+                    >₹18,000</span
+                  >
+                  <span class="sm sb price--ter">33% off</span>
+                </p>
+                <h1 class="align">
+                  <i class="fas fa-minus btn qty--btn"></i>
+                  <span class="quantity">1</span>
+                  <i class="fas fa-plus btn qty--btn"></i>
+                </h1>
+                <button class="btn btn--error btn--size">Delete Item</button>
+                <button class="btn btn--float btn--size">
+                  Move to Wishlist
+                </button>
+              </section>
+            </div>
+            <!-- card-2 -->
+            <div class="landscape shdw">
+              <img
+                src="https://m.media-amazon.com/images/I/413GuC4J4FL.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content sm-s">
+                <h1 class="align primary sm sb">Whey Protein Concentrate</h1>
+                <p class="align">
+                  <span class="primary sm sb price--pmy">₹8,000</span>
+                  <span class="primary--light sm xs-s sb price--sec"
+                    >₹18,000</span
+                  >
+                  <span class="sm sb price--ter">33% off</span>
+                </p>
+                <h1 class="align">
+                  <i class="fas fa-minus btn qty--btn"></i>
+                  <span class="quantity">1</span>
+                  <i class="fas fa-plus btn qty--btn"></i>
+                </h1>
+                <button class="btn btn--error btn--size">Delete Item</button>
+                <button class="btn btn--float btn--size">
+                  Move to Wishlist
+                </button>
+              </section>
+            </div>
+            <!-- end -->
+          </div>
+
+          <div class="card cart--box shdw md-s">
+            <h1 class="md sb">CART ITEMS</h1>
+            <hr />
+            <p class="mg-half">
+              <span class="sm sb">Price</span>
+              <span class="sm sb fl-rt">₹3000</span>
+            </p>
+            <p class="mg-half">
+              <span class="sm sb">Discount</span>
+              <span class="sm sb fl-rt">₹1000</span>
+            </p>
+            <p class="mg-half">
+              <span class="sm sb">Delivery</span>
+              <span class="sm sb fl-rt">₹500</span>
+            </p>
+            <hr />
+            <p class="mg-half">
+              <span class="sb">TOTAL</span>
+              <span class="sb fl-rt">₹2500</span>
+            </p>
+            <hr />
+            <button class="btn btn--wide btn--dark mg-half bd">
+              Place Order
+            </button>
+          </div>
+        </div>
+      </main>
+      <!-- end -->
+
+      <footer class="footer--ctr flex-ct-ct flex-vertical xs-s">
+        <span class="md bl mg-half">Connect with me</span>
+        <div>
+          <a href="https://twitter.com/home">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+            />
+          </a>
+          <a href="https://github.com/shrey27">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/glyph-neue/48/000000/github.png"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/shrey27/">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/color/48/000000/linkedin.png"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script src="https://apolloui-neog.netlify.app/utility/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/utility/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/components/drawer/drawer.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="productpage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar xs-s border--btm">
+        <section class="start">
+          <a href="/">
+            <img class="box__image" src="../../assets/lalogo.jpg" />
+          </a>
+          <span class="box-span">
+            <span class="title primary">LEGION ATHLETICS</span>
+          </span>
+        </section>
+        <section class="middle">
+          <div class="search--ctr">
+            <i class="fas fa-search search--btn"></i>
+            <input
+              type="text"
+              placeholder="Search"
+              class="input no--bdr"
+              id="user-name"
+              name="user-name"
+            />
+          </div>
+        </section>
+        <section class="end">
+          <div class="menu">
+            <span class="menu__btn md sb primary">
+              <i class="far fa-user-circle"></i>&nbsp<span
+                class="menu__btn__name"
+                >Account</span
+              >
+            </span>
+            <div class="submenu shadow xs-s">
+              <section class="submenu__btn">
+                <button class="btn btn--float">Sign In</button>
+                <button class="btn">Sign Up</button>
+              </section>
+              <section class="submenu__items flex-st-ct flex-vertical">
+                <span class="submenu__item">My Account</span>
+                <span class="submenu__item">My Order</span>
+                <span class="submenu__item"
+                  >Cart
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="fas fa-shopping-cart md fl-rt"
+                  ></i
+                ></span>
+                <span class="submenu__item"
+                  >Wishlist
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="far fa-heart md fl-rt"
+                  ></i
+                ></span>
+              </section>
+              <section class="submenu__btn flex-st-ct">
+                <button class="btn btn--float btn--wide">Log Out</button>
+              </section>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <!-- sidebar-code -->
+      <div class="hb--box">
+        <header class="hb--header">
+          <nav class="navbar">
+            <section class="end xs-s">
+              <span class="slider btn hb--btn">
+                Filter&nbsp<i class="fas fa-chevron-down"></i>
+              </span>
+            </section>
+          </nav>
+        </header>
+
+        <aside class="hb--aside sm-s">
+          <span class="primary sm sb">FILTERS</span>
+          <span class="primary sm reg fl-rt clear__btn">Clear All</span>
+
+          <h1 class="primary sm sb mg-full">Price</h1>
+
+          <span class="primary sm sb">₹ 2000</span>
+          <span class="primary sm sb fl-rt">₹ 25000</span>
+          <input
+            class="filter__slider mg-full"
+            type="range"
+            id="price"
+            name="price"
+            step="500"
+            min="2000"
+            max="25000"
+          />
+          <div class="filter__category mg-full">
+            <h1 class="primary sm sb">Category</h1>
+            <label for="mens">
+              <input
+                class="filter__ip"
+                type="checkbox"
+                name="mens"
+                id="mens"
+                value="mens"
+              />&nbsp&nbspMen's
+            </label>
+            <label for="womens">
+              <input
+                class="filter__ip"
+                type="checkbox"
+                name="womens"
+                id="womens"
+                value="womens"
+              />&nbsp&nbspWomen's
+            </label>
+            <label for="kids">
+              <input
+                class="filter__ip"
+                type="checkbox"
+                name="kids"
+                id="kids"
+                value="kids"
+              />&nbsp&nbspKids
+            </label>
+          </div>
+
+          <div class="filter__rating mg-full">
+            <h1 class="primary sm sb">Rating</h1>
+            <label for="4star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="4star&above"
+                value="4star&above"
+              />&nbsp&nbsp4 Star & above
+            </label>
+            <label for="3star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="3star&above"
+                value="3star&above"
+              />&nbsp&nbsp3 Star & above
+            </label>
+            <label for="2star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="2star&above"
+                value="2star&above"
+              />&nbsp&nbsp2 Star & above
+            </label>
+            <label for="1star&above">
+              <input
+                class="filter__ip"
+                type="radio"
+                name="rating"
+                id="1star&above"
+                value="1star&above"
+              />&nbsp&nbsp1 Star & above
+            </label>
+          </div>
+
+          <div class="filter__sorting mg-full">
+            <h1 class="primary sm sb">Sort By</h1>
+            <label>
+              <input
+                class="filter__ip"
+                type="radio"
+                name="hightolow"
+                id="hightolow"
+                value="hightolow"
+              />&nbsp&nbspHigh to Low
+            </label>
+            <label>
+              <input
+                class="filter__ip"
+                type="radio"
+                name="lowtohigh"
+                id="lowtohigh"
+                value="lowtohigh"
+              />&nbsp&nbspLow to High
+            </label>
+          </div>
+        </aside>
+
+        <main class="hb--main sm-s hb--open">
+          <h1 class="primary lg xs-s cen">TOP DEALS</h1>
+          <div class="deal--cards xs-s">
+            <!-- card - 1 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Fuel Ambition Gift Box</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card-2 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://s1.thcdn.com/productimg/300/300/13598922-1394929380171673.jpg
+              "
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Vegan Bundle</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card-3 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://static.thcdn.com/images/xsmall/webp//productimg/original/12949455-1834924183341159.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Vegan Brownie</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card-4 -->
+            <div class="card ecom nostock">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://s1.thcdn.com/productimg/300/300/12708205-7894888116404280.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Protein Starter Pack</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card - 5 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://static.thcdn.com/images/xsmall/webp//productimg/original/10530943-1224889444460882.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">
+                  Impact Whey Protein Isolate
+                </h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card - 6 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Fuel Ambition Gift Box</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card-7 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://s1.thcdn.com/productimg/300/300/13598922-1394929380171673.jpg
+              "
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Vegan Bundle</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card-8 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://static.thcdn.com/images/xsmall/webp//productimg/original/12949455-1834924183341159.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Vegan Brownie</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card - 9 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://static.thcdn.com/images/xsmall/webp//productimg/original/10530943-1224889444460882.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">
+                  Impact Whey Protein Isolate
+                </h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card - 10 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Fuel Ambition Gift Box</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card-11 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://s1.thcdn.com/productimg/300/300/13598922-1394929380171673.jpg
+              "
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Vegan Bundle</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- card-12 -->
+            <div class="card ecom">
+              <div class="card__wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </div>
+              <img
+                src="https://static.thcdn.com/images/xsmall/webp//productimg/original/12949455-1834924183341159.jpg"
+                alt="Banner"
+                class="card__banner"
+              />
+              <section class="content xs-s">
+                <h1 class="primary sm sb mg-half">Vegan Brownie</h1>
+                <div class="price__ctr md">
+                  <h1 class="primary md sb price__val">₹8,000</h1>
+                  <h1 class="tag sm">
+                    <i class="fa-solid fa-tags"></i>Upto 30% Off
+                  </h1>
+                </div>
+                <span class="content__rating mg-half"
+                  >4.2<i class="fas fa-star"></i
+                ></span>
+              </section>
+              <button class="btn btn--wide cart__btn">Add to Cart</button>
+            </div>
+            <!-- end -->
+          </div>
+        </main>
+      </div>
+      <!-- end -->
+
+      <footer class="footer--ctr flex-ct-ct flex-vertical xs-s">
+        <span class="md bl mg-half">Connect with me</span>
+        <div>
+          <a href="https://twitter.com/home">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/color/48/000000/twitter--v1.png"
+            />
+          </a>
+          <a href="https://github.com/shrey27">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/glyph-neue/48/000000/github.png"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/shrey27/">
+            <img
+              class="box__image__sm"
+              src="https://img.icons8.com/color/48/000000/linkedin.png"
+            />
+          </a>
+        </div>
+        <span class="primary sm reg mg-half"
+          >© 2022 Legion Athletics Pvt Ltd. All rights reserved.</span
+        >
+      </footer>
+    </div>
+    <script src="https://apolloui-neog.netlify.app/utility/script.js"></script>
+  </body>
+</html>

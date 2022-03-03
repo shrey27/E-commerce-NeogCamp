@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Page</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/utility/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/components/drawer/drawer.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="address.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Drawer -->
+      <div class="drawer flex-ct-ct">
+        <div class="drawer__background"></div>
+        <div class="drawer__content md-s" direction="left">
+          <i class="fas fa-home btn btn--float home"></i>
+          <section class="submenu__items flex-st-ct flex-vertical">
+            <span class="submenu__item md sb">Protein &nbsp</span>
+            <span class="submenu__item md sb">Gym Gear &nbsp</span>
+            <span class="submenu__item md sb">Athletics &nbsp</span>
+            <span class="submenu__item md sb">Nutrition &nbsp</span>
+            <span class="submenu__item md sb">Vegan &nbsp</span>
+            <span class="submenu__item md sb">Clothing</span>
+            <span class="submenu__item md sb">Limited-Edition</span>
+          </section>
+        </div>
+        <span class="drawer__close">
+          <i class="fas fa-times-circle"></i>
+        </span>
+      </div>
+
+      <!-- Navbar -->
+      <nav class="navbar xs-s border--btm">
+        <section class="start">
+          <a href="/">
+            <img class="box__image" src="../../assets/lalogo.jpg" />
+          </a>
+          <span class="box-span">
+            <span class="title primary">LEGION ATHLETICS</span>
+          </span>
+        </section>
+        <section class="end">
+          <div class="menu">
+            <span class="menu__btn md sb primary">
+              <i class="far fa-user-circle"></i>&nbsp<span
+                class="menu__btn__name"
+                >Account</span
+              >
+            </span>
+            <div class="submenu shadow xs-s">
+              <section class="submenu__btn">
+                <button class="btn btn--float">Sign In</button>
+                <button class="btn">Sign Up</button>
+              </section>
+              <section class="submenu__items flex-st-ct flex-vertical">
+                <span class="submenu__item">My Account</span>
+                <span class="submenu__item">My Order</span>
+                <span class="submenu__item"
+                  >Cart
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="fas fa-shopping-cart md fl-rt"
+                  ></i
+                ></span>
+                <span class="submenu__item"
+                  >Wishlist
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="far fa-heart md fl-rt"
+                  ></i
+                ></span>
+              </section>
+              <section class="submenu__btn flex-st-ct">
+                <button class="btn btn--float btn--wide">Log Out</button>
+              </section>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <main>
+        <!-- manage address -->
+        <div class="card address shdw">
+          <h1 class="md cen primary btn--success xs-s">Select an Address</h1>
+        </div>
+        <div class="card address shdw">
+          <h1 class="md cen primary btn--success xs-s">Manage Address</h1>
+        </div>
+        <!-- Address -->
+        <div class="card address shdw">
+          <div class="flex-ct-sb btn--float xs-s">
+            <h1 class="md sb">Home</h1>
+            <button class="btn btn--icons sb">SELECT</button>
+          </div>
+          <div class="sm-s">
+            <h1 class="primary md mg-half">Shrey Pandey</h1>
+            <span class="primary sm sb"
+              ><i class="fa-regular fa-address-book tertiary md"></i
+            ></span>
+            <span class="primary sm sb">76,</span>
+            <span class="primary sm sb">Gandhi Nagar,</span>
+            <span class="primary sm sb">Behind Railway lines,</span>
+            <span class="primary sm sb">Jaipur,</span>
+            <span class="primary sm sb">Rajasthan</span>
+            <span class="primary sm sb">302006</span>
+            <h1 class="primary sm sb mg-half">
+              <i class="fa-solid fa-mobile-screen-button tertiary md"></i
+              >&nbsp;&nbsp;9898989898
+            </h1>
+            <h1 class="primary sm sb">
+              <i class="fa-solid fa-envelope tertiary md"></i
+              >shreypandey27@gmail.com
+            </h1>
+            <button class="btn btn--primary sb">UPDATE</button>
+            <button class="btn sb">DELETE</button>
+          </div>
+        </div>
+        <!-- Address -->
+        <div class="card address shdw">
+          <div class="flex-ct-sb btn--float xs-s">
+            <h1 class="md sb">Home</h1>
+            <button class="btn btn--icons sb">SELECT</button>
+          </div>
+          <div class="sm-s">
+            <h1 class="primary md mg-half">Shrey Pandey</h1>
+            <span class="primary sm sb"
+              ><i class="fa-regular fa-address-book tertiary md"></i
+            ></span>
+            <span class="primary sm sb">76,</span>
+            <span class="primary sm sb">Gandhi Nagar,</span>
+            <span class="primary sm sb">Behind Railway lines,</span>
+            <span class="primary sm sb">Jaipur,</span>
+            <span class="primary sm sb">Rajasthan</span>
+            <span class="primary sm sb">302006</span>
+            <h1 class="primary sm sb mg-half">
+              <i class="fa-solid fa-mobile-screen-button tertiary md"></i
+              >&nbsp;&nbsp;9898989898
+            </h1>
+            <h1 class="primary sm sb">
+              <i class="fa-solid fa-envelope tertiary md"></i
+              >shreypandey27@gmail.com
+            </h1>
+            <button class="btn btn--primary sb">UPDATE</button>
+            <button class="btn sb">DELETE</button>
+          </div>
+        </div>
+        <!-- New Address -->
+        <div class="card address shdw">
+          <div class="flex-ct-sb btn--error xs-s">
+            <h1 class="md">Add New Address</h1>
+            <i class="fas fa-chevron-right fl-rt"></i>
+          </div>
+        </div>
+        <!-- Address Form -->
+        <div class="card address shdw">
+          <h1 class="btn--success md sb cen xs-s">NEW ADDRESS</h1>
+          <form action="#" class="sm-s">
+            <div class="fields">
+              <label for="name--field" class="label">Name:</label>
+              <input
+                class="input sm-s"
+                type="text"
+                name="name"
+                id="name--field"
+                pattern="+[A-Za-z]"
+                title="Name should only contain one or more alphabets"
+                autocomplete="off"
+                value="Shrey Pandey"
+              />
+            </div>
+            <div class="fields">
+              <label for="email--field" class="label">Email:</label>
+              <input
+                class="input sm-s"
+                type="email"
+                name="email"
+                id="email--field"
+                title="Enter a valid Email ID"
+                autocomplete="email"
+                value="shreypandey27@gmail.com"
+              />
+            </div>
+            <div class="fields">
+              <label for="phone--field" class="label">Phone:</label>
+              <input
+                class="input sm-s"
+                type="number"
+                min="1000000000"
+                max="9999999999"
+                name="phone"
+                id="phone--field"
+                pattern="[0-9]"
+                title="Enter a valid 10 digits mobile number"
+                autocomplete="mobile"
+                value="9999999909"
+              />
+            </div>
+            <div class="fields">
+              <label for="dob--field" class="label">Date of Birth:</label>
+              <input
+                class="input sm-s"
+                type="date"
+                name="dob"
+                id="dob--field"
+                autocomplete="off"
+                value="1980-08-26"
+              />
+            </div>
+            <div class="fields">
+              <label for="add_one" class="label">House No.</label>
+              <input
+                class="input sm-s"
+                type="text"
+                name="add_one"
+                id="add_one"
+                autocomplete="off"
+                value="76"
+              />
+            </div>
+            <div class="fields">
+              <label for="add_two" class="label">Area</label>
+              <input
+                class="input sm-s"
+                type="text"
+                name="add_two"
+                id="add_two"
+                autocomplete="off"
+                value="Gandhi Nagar"
+              />
+            </div>
+            <div class="fields">
+              <label for="landmark" class="label">Landmark</label>
+              <input
+                class="input sm-s"
+                type="text"
+                name="landmark"
+                id="landmark"
+                autocomplete="off"
+                value="Behind Railway Lines"
+              />
+            </div>
+            <div class="fields">
+              <label for="state" class="label">State</label>
+              <select
+                id="state"
+                name="state"
+                class="input select sm-s"
+                required
+              >
+                <option value="" class="primary--light" selected>
+                  -- Select a State --
+                </option>
+                <option value="raj" selected>Rajasthan</option>
+                <option value="utr">Uttrakhand</option>
+                <option value="ktk">Karnataka</option>
+                <option value="ker">Kerala</option>
+              </select>
+            </div>
+            <div class="fields">
+              <label for="city" class="label">City</label>
+              <select id="city" name="city" class="input select sm-s" required>
+                <option value="" class="primary--light" selected>
+                  -- Select a City --
+                </option>
+                <option value="jaipur">Jaipur</option>
+                <option value="ajmer" selected>Ajmer</option>
+                <option value="bikaner">Bikaner</option>
+                <option value="jodhpur">Jodhpur</option>
+              </select>
+            </div>
+            <div class="fields">
+              <label for="pincode" class="label">Pincode</label>
+              <input
+                class="input sm-s"
+                type="number"
+                pattern="[0-9]{6}"
+                name="pincode"
+                id="pincode"
+                autocomplete="mobile"
+                value="198600"
+                required
+              />
+            </div>
+            <div class="fields">
+              <label for="type" class="label">Address Type</label>
+              <select id="type" name="type" class="input select sm-s" required>
+                <option value="" class="primary--light" selected>
+                  -- Select a Type --
+                </option>
+                <option value="Home" selected>Home</option>
+                <option value="Office">Office</option>
+                <option value="Relative">Relative</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--wide btn--float sb">
+              ADD ADDRESS
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="https://apolloui-neog.netlify.app/utility/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Page</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/lalogo.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/utility/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://apolloui-neog.netlify.app/components/drawer/drawer.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="payment.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar xs-s border--btm">
+        <section class="start">
+          <a href="/">
+            <img class="box__image" src="../../assets/lalogo.jpg" />
+          </a>
+          <span class="box-span">
+            <span class="title primary">LEGION ATHLETICS</span>
+          </span>
+        </section>
+        <section class="end">
+          <div class="menu">
+            <span class="menu__btn md sb primary">
+              <i class="far fa-user-circle"></i>&nbsp<span
+                class="menu__btn__name"
+                >Account</span
+              >
+            </span>
+            <div class="submenu shadow xs-s">
+              <section class="submenu__btn">
+                <button class="btn btn--float">Sign In</button>
+                <button class="btn">Sign Up</button>
+              </section>
+              <section class="submenu__items flex-st-ct flex-vertical">
+                <span class="submenu__item">My Account</span>
+                <span class="submenu__item">My Order</span>
+                <span class="submenu__item"
+                  >Cart
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="fas fa-shopping-cart md fl-rt"
+                  ></i
+                ></span>
+                <span class="submenu__item"
+                  >Wishlist
+                  <i
+                    icon-badge="3"
+                    bdg-size="medium"
+                    class="far fa-heart md fl-rt"
+                  ></i
+                ></span>
+              </section>
+              <section class="submenu__btn flex-st-ct">
+                <button class="btn btn--float btn--wide">Log Out</button>
+              </section>
+            </div>
+          </div>
+        </section>
+      </nav>
+
+      <main>
+        <!-- Choose an option -->
+        <div class="card shdw">
+          <h1 class="primary md sb xs-s cen mg-half">
+            Select a Payment Option
+          </h1>
+          <hr />
+          <div class="sm-s mg-half">
+            <ul class="stack">
+              <li class="flex-ct-sb shadow xs-s mg-full">
+                <div class="flex-ct-st">
+                  <img
+                    src="../../assets/card.png"
+                    alt="Avatar"
+                    class="avatar avatar--sm sq"
+                  />
+                  <h1 class="primary sm sb">Debit Card/ Credit Card</h1>
+                </div>
+                <i class="fas fa-chevron-right fl-rt"></i>
+              </li>
+
+              <li class="flex-ct-sb shadow xs-s mg-full">
+                <div class="flex-ct-st">
+                  <img
+                    src="../../assets/upi.png"
+                    alt="Avatar"
+                    class="avatar avatar--sm sq"
+                  />
+                  <h1 class="primary sm sb">UPI</h1>
+                </div>
+                <i class="fas fa-chevron-right fl-rt"></i>
+              </li>
+
+              <li class="flex-ct-sb shadow xs-s mg-full">
+                <div class="flex-ct-st">
+                  <img
+                    src="../../assets/cash.png"
+                    alt="Avatar"
+                    class="avatar avatar--sm sq"
+                  />
+                  <h1 class="primary sm sb">Cash on Delivery</h1>
+                </div>
+                <i class="fas fa-chevron-right fl-rt"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- New UPI ID -->
+        <div class="card shdw">
+          <h1 class="primary md sb cen xs-s">ENTER UPI ID</h1>
+          <hr />
+          <form action="#" class="sm-s">
+            <div class="fields">
+              <label for="upiid" class="label md sb">UPI ID</label>
+              <input
+                class="input sm-s"
+                type="text"
+                name="upiid"
+                id="upiid"
+                autocomplete="off"
+                placeholder="Enter UPI ID"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn--wide btn--float sb">
+              PROCEED TO PAYMENT
+            </button>
+          </form>
+        </div>
+
+        <!-- Deal with cards -->
+        <div class="card">
+          <h1 class="md cen primary btn--success xs-s">Select a Card</h1>
+        </div>
+        <div class="card">
+          <h1 class="md cen primary btn--success xs-s">Manage Cards</h1>
+        </div>
+        <!-- Card -->
+        <div class="card shdw">
+          <div class="flex-ct-sb btn--float xs-s">
+            <h1 class="md sb">Shrey Pandey</h1>
+            <button class="btn btn--icons sb">SELECT</button>
+          </div>
+          <div class="sm-s">
+            <h2 class="primary sm">
+              TYPE: <span class="clr">DEBIT CARD</span>
+            </h2>
+            <h2 class="primary sm">
+              CARD NO. <span class="clr">1234-1234-1234</span>
+            </h2>
+            <h2 class="primary sm">
+              NAME: <span class="clr">SHREY PANDEY</span>
+            </h2>
+            <h2 class="primary sm">EXPIRY: <span class="clr">06/32</span></h2>
+            <button class="btn btn--primary sb">EDIT</button>
+            <button class="btn sb">DELETE</button>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="card shdw">
+          <div class="flex-ct-sb btn--float xs-s">
+            <h1 class="md sb">Shrey Pandey</h1>
+            <button class="btn btn--icons sb">SELECT</button>
+          </div>
+          <div class="sm-s">
+            <h2 class="primary sm">
+              TYPE: <span class="clr">DEBIT CARD</span>
+            </h2>
+            <h2 class="primary sm">
+              CARD NO. <span class="clr">1234-1234-1234</span>
+            </h2>
+            <h2 class="primary sm">
+              NAME: <span class="clr">SHREY PANDEY</span>
+            </h2>
+            <h2 class="primary sm">EXPIRY: <span class="clr">06/32</span></h2>
+            <button class="btn btn--primary sb">EDIT</button>
+            <button class="btn sb">DELETE</button>
+          </div>
+        </div>
+        <!-- New Address -->
+        <div class="card shdw">
+          <div class="flex-ct-sb btn--error xs-s">
+            <h1 class="md">Add New Card</h1>
+            <i class="fas fa-chevron-right fl-rt"></i>
+          </div>
+        </div>
+        <!-- Address Form -->
+        <div class="card shdw">
+          <h1 class="btn--success md sb cen xs-s">NEW CARD</h1>
+          <form action="#" class="sm-s">
+            <div class="fields">
+              <label for="card_no" class="label">CARD NUMBER</label>
+              <input
+                class="input sm-s"
+                type="number"
+                name="card_no"
+                id="card_no"
+                pattern="+[0-9]"
+                title="Enter valid card number"
+                autocomplete="off"
+                placeholder="CARD NUMBER"
+                required
+              />
+            </div>
+            <div class="fields">
+              <label for="owner" class="label">CARD NAME</label>
+              <input
+                class="input sm-s"
+                type="text"
+                pattern="[a-zA-Z]"
+                name="owner"
+                id="owner"
+                autocomplete="off"
+                placeholder="CARD NAME"
+                required
+              />
+            </div>
+            <div class="fields">
+              <label for="expiry" class="label">EXPIRY DATE</label>
+              <input
+                class="input sm-s"
+                type="month"
+                name="expiry"
+                id="expiry"
+                value="2022-06"
+                required
+              />
+            </div>
+            <div class="fields">
+              <label for="type" class="label">CARD TYPE</label>
+              <select id="type" name="type" class="input select sm-s" required>
+                <option value="" class="primary--light" selected>
+                  -- Select a Type --
+                </option>
+                <option value="cc">Credit Card</option>
+                <option value="dc">Debit Card</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--wide btn--float sb">
+              ADD CARD
+            </button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="https://apolloui-neog.netlify.app/utility/script.js"></script>
+  </body>
+</html>
