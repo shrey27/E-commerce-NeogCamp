@@ -53,6 +53,18 @@ body {
   background-color: var(--primary--light);
 }
 
+.btn--auth {
+  border: 2px solid var(--tertiary);
+  color: var(--tertiary);
+  font-size: 1.25rem;
+  font-size: 600;
+}
+.btn--auth:hover {
+  border: 2px solid var(--tertiary);
+  color: var(--white);
+  background-color: var(--tertiary--light);
+}
+
 @media screen and (min-width: 1650px) {
   body {
     width: 1650px;
