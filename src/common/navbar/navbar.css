@@ -57,7 +57,15 @@
   align-items: center;
   justify-content: center;
 }
-
+[bdg-size='medium']:after {
+  right: -6px;
+  top: -6px;
+  min-width: 4px;
+  min-height: 4px;
+  font-size: 7px;
+  padding: 4px;
+  line-height: 4px;
+}
 @media screen and (min-width: 1024px) {
   .title {
     font-size: 1.25rem;

@@ -37,7 +37,7 @@ export default function Navbar() {
         </section>
         <section class='end'>
           <div class='menu'>
-            <span class='menu__btn md sb primary'>
+            <span class='menu__btn lg sb primary'>
               <i class='far fa-user-circle'></i>
               <span class='menu__btn__name'>Account</span>
             </span>

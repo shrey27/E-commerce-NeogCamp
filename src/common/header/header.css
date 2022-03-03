@@ -52,9 +52,6 @@
 .categories {
   display: none;
 }
-.category {
-  cursor: pointer;
-}
 
 /* Media Queries */
 @media screen and (min-width: 338px) {

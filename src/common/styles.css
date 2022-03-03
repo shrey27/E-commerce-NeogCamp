@@ -20,6 +20,9 @@ body {
 .md {
   font-size: 1rem;
 }
+.lg {
+  font-size: 1.5rem;
+}
 .disp-block {
   display: block;
 }
