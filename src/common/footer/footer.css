@@ -1,0 +1,6 @@
+@import '../styles.css';
+
+/* Footer */
+.footer--ctr {
+  border-top: 2px solid var(--primary--light);
+}

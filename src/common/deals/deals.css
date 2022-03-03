@@ -1,0 +1,136 @@
+@import '../styles.css';
+
+/* Deals */
+.deals h1 {
+  text-transform: uppercase;
+}
+
+/* Hacking the card styles  */
+.deal--cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+/* .deal--cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+  } */
+.card {
+  border-radius: 0;
+  border: none;
+  margin: 2rem 0;
+  max-width: none;
+  max-height: none;
+  cursor: pointer;
+}
+.ecom {
+  height: fit-content;
+  padding: 0;
+  margin: 0.5rem;
+}
+.nostock {
+  background-color: var(--white);
+  opacity: 0.5;
+  position: relative;
+}
+.nostock::before {
+  content: 'Out of Stock';
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.nostock > .cart__btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: var(--white);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.card__banner {
+  border-radius: 0;
+  height: 55%;
+  width: 100%;
+}
+.content {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 0.5rem 0.25rem;
+}
+.price__val {
+  color: var(--tertiary);
+}
+.content__rating {
+  display: inline-block;
+  background-color: var(--rating);
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+.card__dismiss,
+.card__wishlist {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  color: var(--dismiss);
+  font-size: 1rem;
+}
+.card__wishlist {
+  color: var(--tag);
+}
+.cart__btn {
+  display: inline;
+  outline: none;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  width: 100%;
+  color: white;
+  background-color: var(--tertiary);
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgba(129, 113, 113, 0.02);
+}
+.cart__btn:hover {
+  background-color: var(--tertiary--light);
+  outline: none;
+  border: none;
+}
+.tag {
+  color: var(--tag);
+}
+.price__ctr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Media Queries */
+@media screen and (min-width: 300px) {
+  .price__ctr {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .card__dismiss,
+  .card__wishlist {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.05rem;
+    font-size: 1.75rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content {
+    padding: 0 1rem 0.25rem;
+  }
+}

@@ -1,4 +1,4 @@
-import './styles.css';
+import './navbar.css';
 import Drawer from './Drawer';
 import { useState } from 'react';
 
