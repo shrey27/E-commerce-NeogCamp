@@ -54,7 +54,7 @@ export default function Navbar() {
                   <i
                     icon-badge='3'
                     bdg-size='medium'
-                    class='fas fa-shopping-cart md fl-rt'
+                    class='fas fa-shopping-cart lg fl-rt'
                   ></i>
                 </span>
                 <span class='submenu__item sb'>
@@ -62,7 +62,7 @@ export default function Navbar() {
                   <i
                     icon-badge='3'
                     bdg-size='medium'
-                    class='far fa-heart md fl-rt'
+                    class='far fa-heart lg fl-rt'
                   ></i>
                 </span>
                 <span class='submenu__item sb'>Manage Account</span>

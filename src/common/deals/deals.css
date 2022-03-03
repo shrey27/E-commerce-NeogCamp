@@ -63,7 +63,7 @@
 .content {
   margin: 0 auto;
   width: 100%;
-  padding: 0 0.5rem 0.25rem;
+  padding: 0 0.75rem 0.35rem;
 }
 .price__val {
   color: var(--tertiary);
@@ -72,8 +72,9 @@
   display: inline-block;
   background-color: var(--rating);
   color: var(--primary);
-  font-weight: bold;
-  font-size: 0.75rem;
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 0.35rem 0 0.35rem 0.35rem;
 }
 .card__dismiss,
 .card__wishlist {
@@ -105,6 +106,7 @@
 }
 .tag {
   color: var(--tag);
+  font-weight: 500;
 }
 .price__ctr {
   display: flex;
@@ -126,11 +128,5 @@
     top: 0.35rem;
     right: 0.05rem;
     font-size: 1.75rem;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .content {
-    padding: 0 1rem 0.25rem;
   }
 }

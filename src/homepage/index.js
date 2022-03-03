@@ -78,9 +78,9 @@ export default function HomePage() {
     <React.Fragment>
       <Navbar />
       <Header />
-      <Deals items={[...items].slice(0, 5)} />
+      <Deals items={[...items].slice(0, 5)} name='Top Deals'/>
       <Banner source='carousal-3.jpeg' />
-      <Deals items={[...items].slice(-5)} />
+      <Deals items={[...items].slice(-5)} name='Best-Sellers'/>
       <div class='flex-ct-ct xs-s'>
         <button class='btn btn--all btn--lg sb cen'>View All</button>
       </div>

@@ -26,7 +26,7 @@
   display: none;
   position: absolute;
   top: 2rem;
-  right: 0rem;
+  right: 0;
   z-index: 100;
   background-color: var(--white);
   border: 1px solid var(--primary--light);
@@ -36,11 +36,12 @@
   display: flex;
 }
 .submenu__item {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 1rem;
-  font-size: 1em;
-  text-align: start;
+  font-size: 1rem;
   color: var(--primary);
 }
 .submenu__item:hover {
@@ -58,12 +59,12 @@
   justify-content: center;
 }
 [bdg-size='medium']:after {
-  right: -6px;
-  top: -6px;
+  right: -10px;
+  top: -10px;
   min-width: 4px;
   min-height: 4px;
-  font-size: 7px;
-  padding: 4px;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.3rem;
   line-height: 4px;
 }
 @media screen and (min-width: 1024px) {

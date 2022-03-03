@@ -11,6 +11,9 @@
   --tag: rgb(177, 3, 32);
   --rating: rgb(255, 191, 29);
 }
+html {
+  font-size: 85%;
+}
 body {
   margin: 0;
   padding: 0;
