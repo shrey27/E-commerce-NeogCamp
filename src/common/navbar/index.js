@@ -2,19 +2,21 @@ import './navbar.css';
 import Drawer from './Drawer';
 import { useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ noDrawer }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
-      <Drawer open={open} setOpen={setOpen} />
+      <Drawer open={open} setOpen={setOpen}/>
       <nav class='navbar xs-s border--btm'>
-        <span class='nav__icons'>
-          <i
-            class='fas fa-bars md sb show--drawer'
-            onClick={() => setOpen(true)}
-          ></i>
-        </span>
+        {!noDrawer && (
+          <span class='nav__icons'>
+            <i
+              class='fas fa-bars md sb show--drawer'
+              onClick={() => setOpen(true)}
+            ></i>
+          </span>
+        )}
         <section class='start'>
           <a href='/'>
             <img class='box__image' src='lalogo.jpg' alt='logo' />
