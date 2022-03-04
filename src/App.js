@@ -3,7 +3,8 @@
 // import Product from './product';
 // import Signin from './authentication/Signin';
 // import Signup from './authentication/Signup';
-import Address from './address';
+// import Address from './address';
+import Cart from './cart';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <Product /> */}
       {/* <Signin /> */}
       {/* <Signup /> */}
-      <Address />
+      {/* <Address /> */}
+      <Cart />
     </div>
   );
 }

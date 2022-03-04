@@ -1,11 +1,11 @@
 export default function Drawer({ open, setOpen }) {
   return (
     <div>
-      <div
-        class={`drawer__background ${open && 'drawer__open'}`}
-        onClick={() => setOpen(false)}
-      ></div>
       <div class={`drawer flex-ct-ct ${open && 'drawer__open'}`}>
+        <div
+          class={`drawer__background ${open && 'drawer__open'}`}
+          onClick={() => setOpen(false)}
+        ></div>
         <div class='drawer__content' direction='left'>
           <h1 class='btn--float home xs-s'>
             <i class='fas fa-home'></i>

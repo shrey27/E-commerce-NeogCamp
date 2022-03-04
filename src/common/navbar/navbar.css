@@ -3,6 +3,7 @@
 /* Drawer */
 .drawer__content {
   width: 50%;
+  z-index: 100;
 }
 /* Navbar */
 .border--btm {
