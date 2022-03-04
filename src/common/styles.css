@@ -21,8 +21,8 @@ body {
   height: 100vh;
 }
 .dark {
-  background-color: var(--primary--light);
-  color: var(--footer--one);
+  background-color: var(--primary);
+  color: var(--white);
 }
 .md {
   font-size: 1rem;
@@ -35,6 +35,9 @@ body {
 }
 .tertiary {
   color: var(--tertiary);
+}
+.tag--clr {
+  color: var(--tag);
 }
 .shadow {
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),

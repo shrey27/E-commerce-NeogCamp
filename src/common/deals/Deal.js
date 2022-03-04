@@ -8,12 +8,12 @@ export default function Deal(props) {
   return (
     <div class='card ecom shadow'>
       {wishlist && (
-        <span class='card__dismiss'>
-          <i
-            class='fa-regular fa-heart'
-            style={{ color: `${added ? 'var(--tag)' : 'var(--tertiary)'}` }}
-            onClick={() => setAdded((e) => !e)}
-          ></i>
+        <span class='card__dismiss' onClick={() => setAdded((e) => !e)}>
+          {added ? (
+            <i class='fa-solid fa-heart tag--clr'></i>
+          ) : (
+            <i class='fa-regular fa-heart tertiary'></i>
+          )}
         </span>
       )}
       {close && (

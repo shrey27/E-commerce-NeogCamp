@@ -45,7 +45,7 @@
   background-color: var(--white);
   color: var(--primary);
   border: 2px solid var(--primary);
-  margin: 0.35rem 0.25rem 0.35rem 0.45rem;
+  margin: 0.35rem 0.25rem 0.55rem 0.65rem;
 }
 .card__banner {
   border-radius: 0;
@@ -86,8 +86,8 @@
   font-size: 1rem;
   font-weight: 500;
   padding: 0.5rem;
-  width: 95%;
-  margin: 0.5rem 0.25rem 0.5rem 0.45rem;
+  width: 92%;
+  margin: 0.5rem 0.25rem 0.5rem 0.65rem;
   color: white;
   background-color: var(--tertiary);
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
