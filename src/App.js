@@ -10,7 +10,8 @@
 // import Wishlist from './wishlist';
 // import PaymentSelection from './payment/PaymentSelection';
 // import OrderSummary from './summary';
-import Profile from './profile';
+// import Profile from './profile';
+import ChangePassword from './authentication/ChangePassword';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       {/* <Wishlist/> */}
       {/* <PaymentSelection /> */}
       {/* <OrderSummary /> */}
-      <Profile />
+      {/* <Profile /> */}
+      <ChangePassword />
     </div>
   );
 }
