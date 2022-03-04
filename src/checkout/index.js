@@ -4,6 +4,7 @@ import Navbar from '../common/navbar';
 import Category from '../common/header/Category';
 import Footer from '../common/footer';
 import AddressCard from '../address/AddressCard';
+import PaymentCard from '../payment/PaymentCard';
 import CartItem from '../cart/CartItem';
 const address = {
   name: 'Shrey Pandey',
@@ -43,17 +44,36 @@ const cartList = [
     quantity: 1
   }
 ];
-export default function Checkout() {
+const card = {
+  bank: 'adc pvt ltd.',
+  name: 'abc',
+  number: '123412341234',
+  month: '08',
+  year: '22',
+  type: 'debit'
+};
+
+export default function Checkout(props) {
+  const { paymentType='UPI' } = props;
   return (
     <Fragment>
       <Navbar />
       <Category />
-
       <h1 class='lg cen xs-s mg-half'>CHECKOUT DETAILS</h1>
       <main class='checkout__container'>
         <div class='checkout__address'>
-          <AddressCard {...address} title='Delivery Address'/>
-          <AddressCard {...address} title='Delivery Address'/>
+          <AddressCard {...address} title='Delivery Address' noEdit={true} />
+          {paymentType === 'CARD' && <PaymentCard {...card} noEdit={true} />}
+          {paymentType === 'UPI' && (
+            <PaymentCard {...card} upiId='abc@okcdc' noEdit={true} />
+          )}
+          {paymentType === 'CASH' && (
+            <div class='card payment shdw'>
+              <div class='flex-ct-sb btn--auth xs-s'>
+                <h1 class='lg sb'>Mode of Payment: CASH</h1>
+              </div>
+            </div>
+          )}
         </div>
         <div class='checkout__cart'>
           {cartList &&

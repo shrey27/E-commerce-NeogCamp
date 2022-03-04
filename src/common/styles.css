@@ -64,6 +64,7 @@ body {
 .btn--auth {
   border: 2px solid var(--tertiary);
   color: var(--tertiary);
+  font-weight: normal;
 }
 .btn--auth:hover {
   border: 2px solid var(--tertiary);

@@ -13,6 +13,7 @@ export default function AddressCard(props) {
     city,
     state,
     pincode,
+    noEdit,
     select
   } = props;
   return (
@@ -43,8 +44,12 @@ export default function AddressCard(props) {
         <h1 class='primary sm sb'>
           <i class='fa-solid fa-envelope tertiary md'></i> {email}
         </h1>
-        <button class='btn btn--auth--solid btn--add sb'>UPDATE</button>
-        <button class='btn btn--add sb'>DELETE</button>
+        {!noEdit && (
+          <div>
+            <button class='btn btn--auth--solid btn--add sb'>UPDATE</button>
+            <button class='btn btn--add sb'>DELETE</button>
+          </div>
+        )}
       </div>
     </div>
   );

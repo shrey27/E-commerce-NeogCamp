@@ -3,4 +3,9 @@
 /* Footer */
 .footer--ctr {
   border-top: 2px solid var(--primary--light);
+  max-height: min-content;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

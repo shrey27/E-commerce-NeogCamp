@@ -1,9 +1,9 @@
 @import '../common/styles.css';
 
-.address {
+.payment {
   max-width: 400px;
   width: 90%;
-  margin: 1rem;
+  margin: 1rem auto 2.5rem;
   cursor: pointer;
 }
 .fields {
@@ -19,21 +19,35 @@
 }
 .input {
   display: inline-block;
-  flex: 5;
+  flex: 3;
 }
 .select {
   background-color: var(--white);
 }
-.btn--add {
-  margin: 0.5rem;
+.clr {
+  color: var(--badge-online);
 }
-.address__line {
-  display: inline-flex;
-  align-items: flex-start;
+.sq {
+  border-radius: 0;
+}
+.stack li {
+  transition: transform 300ms;
+}
+.stack li:hover {
+  background-color: var(--white);
+  transform: scale(1.05);
+}
+.pageheader {
+  width: 100%;
+  padding: 1rem 2rem;
+  color: var(--primary);
+  font-size: 1.35rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-  .address {
-    max-width: 40%;
+  .payment {
+    max-width: 50%;
   }
   .fields {
     flex-direction: row;

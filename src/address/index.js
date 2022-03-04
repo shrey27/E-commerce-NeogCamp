@@ -31,13 +31,22 @@ const addressList = [
 export default function Address({ select }) {
   return (
     <Fragment>
-      <h1 class='primary lg cen xs-s mg-full'>{select ? 'SELECT AN': 'MANAGE'} ADDRESS</h1>
+      <h1 class='primary lg cen xs-s mg-full'>
+        {select ? 'SELECT AN ADDRESS' : 'MANAGE YOUR ADDRESS'}{' '}
+      </h1>
       {addressList &&
         addressList.map((elem, index) => {
-          return <AddressCard key={index * 2} {...elem} title='Edit Address' select={select} />;
+          return (
+            <AddressCard
+              key={index * 2}
+              {...elem}
+              title='Edit Address'
+              select={select}
+            />
+          );
         })}
       <div class='card address shdw'>
-        <div class='flex-ct-sb btn--error xs-s'>
+        <div class='flex-ct-sb btn--auth xs-s'>
           <h1 class='md'>Add New Address</h1>
           <i class='fas fa-chevron-right fl-rt'></i>
         </div>
