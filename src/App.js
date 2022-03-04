@@ -9,7 +9,9 @@
 // import Checkout from './checkout';
 // import Wishlist from './wishlist';
 // import PaymentSelection from './payment/PaymentSelection';
-import OrderSummary from './summary';
+// import OrderSummary from './summary';
+import Profile from './profile';
+
 function App() {
   return (
     <div className=''>
@@ -24,7 +26,8 @@ function App() {
       {/* <Checkout /> */}
       {/* <Wishlist/> */}
       {/* <PaymentSelection /> */}
-      <OrderSummary />
+      {/* <OrderSummary /> */}
+      <Profile />
     </div>
   );
 }
