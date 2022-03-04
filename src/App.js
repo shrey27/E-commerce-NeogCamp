@@ -4,7 +4,9 @@
 // import Signin from './authentication/Signin';
 // import Signup from './authentication/Signup';
 // import Address from './address';
-import Cart from './cart';
+// import Cart from './cart';
+// import AddressSelection from './address/AddressSelection';
+import Checkout from './checkout';
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
       {/* <Signin /> */}
       {/* <Signup /> */}
       {/* <Address /> */}
-      <Cart />
+      {/* <Cart /> */}
+      {/* <AddressSelection /> */}
+      <Checkout />
     </div>
   );
 }

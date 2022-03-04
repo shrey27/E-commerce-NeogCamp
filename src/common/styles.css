@@ -53,6 +53,7 @@ body {
   background-color: var(--primary--light);
 }
 
+/* New Button */
 .btn--auth {
   border: 2px solid var(--tertiary);
   color: var(--tertiary);
@@ -63,6 +64,22 @@ body {
   border: 2px solid var(--tertiary);
   color: var(--white);
   background-color: var(--tertiary--light);
+}
+.btn--auth--solid {
+  border: 2px solid var(--tertiary--light);
+  background-color: var(--tertiary--light);
+  color: var(--white);
+}
+.btn--auth--solid:hover {
+  border: 2px solid var(--tertiary--light);
+}
+/* Card reset */
+.card {
+  max-width: none;
+  max-height: none;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 0;
 }
 
 @media screen and (min-width: 1650px) {
