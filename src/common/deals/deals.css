@@ -39,21 +39,13 @@
   opacity: 0.5;
   position: relative;
 }
-.nostock::before {
-  content: 'Out of Stock';
-  color: var(--black);
-  font-size: 1.5rem;
-  font-weight: 600;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-.nostock > .cart__btn {
+.nostock ~ .cart__btn {
   cursor: not-allowed;
   pointer-events: none;
   background-color: var(--white);
   color: var(--primary);
   border: 2px solid var(--primary);
+  margin: 0.35rem 0.25rem 0.35rem 0.45rem;
 }
 .card__banner {
   border-radius: 0;
@@ -80,7 +72,7 @@
 .card__wishlist {
   position: absolute;
   top: 1rem;
-  right: 0.5rem;
+  right: 0.25rem;
   color: var(--dismiss);
   font-size: 1rem;
 }
@@ -91,9 +83,11 @@
   display: inline;
   outline: none;
   border: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
   padding: 0.5rem;
-  width: 100%;
+  width: 95%;
+  margin: 0.5rem 0.25rem 0.5rem 0.45rem;
   color: white;
   background-color: var(--tertiary);
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),

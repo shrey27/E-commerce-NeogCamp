@@ -13,7 +13,8 @@ export const items = [
     title: 'Vegan Bundle',
     price: 8000,
     discount: 30,
-    rating: 4.2
+    rating: 4.2,
+    nostock: true
   },
   {
     source:

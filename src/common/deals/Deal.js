@@ -1,10 +1,34 @@
+import { useState } from 'react';
 import './deals.css';
 
 export default function Deal(props) {
-  const { source, title, price, discount, rating } = props;
+  const { source, title, price, discount, rating, nostock, wishlist, close } =
+    props;
+  const [added, setAdded] = useState(false);
   return (
     <div class='card ecom shadow'>
-      <img src={source} alt='Banner' class='card__banner' />
+      {wishlist && (
+        <span class='card__dismiss'>
+          <i
+            class='fa-regular fa-heart'
+            style={{ color: `${added ? 'var(--tag)' : 'var(--tertiary)'}` }}
+            onClick={() => setAdded((e) => !e)}
+          ></i>
+        </span>
+      )}
+      {close && (
+        <span class='card__dismiss'>
+          <i
+            class='fas fa-times-circle'
+            style={{ color: 'var(--tertiary)' }}
+          ></i>
+        </span>
+      )}
+      <img
+        src={source}
+        alt='Banner'
+        class={`card__banner ${nostock && 'nostock'}`}
+      />
       <section class='content'>
         <h1 class='primary sm sb mg-half'>{title}</h1>
         <div class='price__ctr'>
@@ -19,6 +43,9 @@ export default function Deal(props) {
           <i class='fas fa-star'></i>
         </span>
       </section>
+      <button class='btn btn--wide cart__btn' disabled={nostock}>
+        {nostock ? 'Out of Stock' : 'Add to Cart'}
+      </button>
     </div>
   );
 }

@@ -151,7 +151,7 @@ export default function Products() {
 
         {/* Products Listing */}
         <main class='hb--main sm-s'>
-          <Deals items={items} name='Products' />
+          <Deals items={items} name='Products' wishlist={true}/>
         </main>
       </div>
       <Footer />
