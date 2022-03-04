@@ -52,8 +52,8 @@ export default function Cart() {
           </p>
           <hr />
           <p class='mg-half'>
-            <span class='sb'>TOTAL</span>
-            <span class='sb fl-rt'>₹2500</span>
+            <span class='sm sb'>TOTAL</span>
+            <span class='sm sb fl-rt'>₹2500</span>
           </p>
           <hr />
           <button class='btn btn--wide btn--dark mg-half bd'>

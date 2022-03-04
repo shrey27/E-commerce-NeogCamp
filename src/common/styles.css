@@ -57,8 +57,6 @@ body {
 .btn--auth {
   border: 2px solid var(--tertiary);
   color: var(--tertiary);
-  font-size: 1.25rem;
-  font-size: 600;
 }
 .btn--auth:hover {
   border: 2px solid var(--tertiary);
@@ -66,12 +64,13 @@ body {
   background-color: var(--tertiary--light);
 }
 .btn--auth--solid {
-  border: 2px solid var(--tertiary--light);
+  border: none;
   background-color: var(--tertiary--light);
   color: var(--white);
 }
 .btn--auth--solid:hover {
-  border: 2px solid var(--tertiary--light);
+  border: none;
+  background-color: var(--tertiary);
 }
 /* Card reset */
 .card {

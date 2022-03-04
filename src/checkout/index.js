@@ -78,8 +78,8 @@ export default function Checkout() {
             </p>
             <hr />
             <p class='mg-half'>
-              <span class='sb'>TOTAL</span>
-              <span class='sb fl-rt'>₹2500</span>
+              <span class='sm sb'>TOTAL</span>
+              <span class='sm sb fl-rt'>₹2500</span>
             </p>
             <hr />
             <button class='btn btn--wide btn--dark mg-half bd'>
@@ -88,48 +88,6 @@ export default function Checkout() {
           </div>
         </div>
       </main>
-      {/* <main>
-        <h1 class='lg cen xs-s mg-full'>CHECKOUT ORDER DETAILS</h1>
-
-        <div class='checkout__section'>
-          <div class='checkout__address'>
-            <h1 class='md xs-s mg-full'>SELECTED ADDRESS</h1>
-            <AddressCard {...address} />
-          </div>
-          <div class='checkout__cart'>
-            {cartList &&
-              cartList.map((elem, index) => {
-                return <CartItem key={index * 2} {...elem} />;
-              })}
-          </div>
-        </div>
-
-        <div class='checkout__total shdw md-s'>
-          <h1 class='md sb'>CART ITEMS</h1>
-          <hr />
-          <p class='mg-half'>
-            <span class='sm sb'>Price</span>
-            <span class='sm sb fl-rt'>₹3000</span>
-          </p>
-          <p class='mg-half'>
-            <span class='sm sb'>Discount</span>
-            <span class='sm sb fl-rt'>₹1000</span>
-          </p>
-          <p class='mg-half'>
-            <span class='sm sb'>Delivery</span>
-            <span class='sm sb fl-rt'>₹500</span>
-          </p>
-          <hr />
-          <p class='mg-half'>
-            <span class='sb'>TOTAL</span>
-            <span class='sb fl-rt'>₹2500</span>
-          </p>
-          <hr />
-          <button class='btn btn--wide btn--dark mg-half bd'>
-            Place Order
-          </button>
-        </div>
-      </main> */}
 
       <Footer />
     </Fragment>

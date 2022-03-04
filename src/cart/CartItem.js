@@ -13,12 +13,15 @@ export default function CartItem(props) {
           <span class='sm sb price--ter'>{discount}% off</span>
         </p>
         <h1 class='align'>
-          <i class='fas fa-minus btn qty--btn'></i>
+          {quantity === 1 ? (
+            <i class='fa-regular fa-trash-can btn qty--btn'></i>
+          ) : (
+            <i class='fas fa-minus btn qty--btn'></i>
+          )}
           <span class='quantity'>{quantity}</span>
           <i class='fas fa-plus btn qty--btn'></i>
         </h1>
-        <button class='btn btn--error btn--size'>Delete Item</button>
-        <button class='btn btn--float btn--size'>Move to Wishlist</button>
+        <button class='btn btn--auth btn--size'>Move to Wishlist</button>
       </section>
     </div>
   );
