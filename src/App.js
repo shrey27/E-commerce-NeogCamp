@@ -6,10 +6,10 @@
 // import Address from './address';
 // import Cart from './cart';
 // import AddressSelection from './address/AddressSelection';
-import Checkout from './checkout';
+// import Checkout from './checkout';
 // import Wishlist from './wishlist';
-import PaymentSelection from './payment/PaymentSelection';
-
+// import PaymentSelection from './payment/PaymentSelection';
+import OrderSummary from './summary';
 function App() {
   return (
     <div className=''>
@@ -23,7 +23,8 @@ function App() {
       {/* <AddressSelection /> */}
       {/* <Checkout /> */}
       {/* <Wishlist/> */}
-      <PaymentSelection />
+      {/* <PaymentSelection /> */}
+      <OrderSummary />
     </div>
   );
 }

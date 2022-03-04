@@ -4,6 +4,8 @@
 .footer--ctr {
   border-top: 2px solid var(--primary--light);
   max-height: min-content;
+}
+.fixed {
   position: absolute;
   bottom: 0;
   left: 0;

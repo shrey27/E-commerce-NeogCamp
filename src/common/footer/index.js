@@ -1,8 +1,10 @@
 import './footer.css';
 
-export default function Footer() {
+export default function Footer({ fixed }) {
   return (
-    <footer class='footer--ctr flex-ct-ct flex-vertical sm-s'>
+    <footer
+      class={`footer--ctr flex-ct-ct flex-vertical sm-s ${fixed && 'fixed'}`}
+    >
       <span class='md bl mg-half'>Connect with me</span>
       <div>
         <a href='https://twitter.com/home'>

@@ -72,7 +72,7 @@ export default function PaymentSelection() {
       ) : (
         <div>
           <h1 class='pageheader shadow' onClick={methodHandler.bind(this, '')}>
-          <i class="fa-solid fa-chevron-left"></i>Change Mode of Payment
+            <i class='fa-solid fa-chevron-left'></i>Change Mode of Payment
           </h1>
           {method === 'UPI' ? (
             <Payment select={true} upi={true} />
@@ -81,7 +81,7 @@ export default function PaymentSelection() {
           )}
         </div>
       )}
-      <Footer />
+      <Footer fixed={true} />
     </Fragment>
   );
 }
