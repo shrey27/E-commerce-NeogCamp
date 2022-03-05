@@ -39,6 +39,10 @@ body {
 .tag--clr {
   color: var(--tag);
 }
+.tag {
+  color: var(--tag);
+  font-weight: 500;
+}
 .shadow {
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
     0 0 0 1px rgba(129, 113, 113, 0.02);

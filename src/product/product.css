@@ -1,8 +1,10 @@
 @import '../common/styles.css';
 
 /* Single Product page */
-
-.landscape {
+.product {
+  width: 100%;
+}
+.card__product {
   height: 90%;
   width: 90%;
   margin: 0 auto;
@@ -10,8 +12,9 @@
   flex-direction: column;
   gap: 2rem;
   border: none;
+  display: flex;
 }
-.landscape .card__banner {
+.card__product .card__banner {
   width: 60%;
 }
 .content {
@@ -22,7 +25,7 @@
   background-color: var(--rating);
   color: var(--primary);
 }
-.stack__item {
+.product__stack__item {
   margin: 1rem 0;
 }
 .highlight {
@@ -38,20 +41,18 @@
 .price--sec {
   color: var(--primary--light);
 }
-.tag {
-  color: var(--tag);
-}
+
 @media screen and (min-width: 400px) {
   .button__ctr {
     flex-direction: row;
   }
 }
 @media screen and (min-width: 1024px) {
-  .landscape {
+  .card__product {
     width: 80%;
     flex-direction: row;
   }
-  .landscape .card__banner {
+  .card__product .card__banner {
     width: 40%;
   }
   .stack__item {

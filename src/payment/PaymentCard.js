@@ -4,19 +4,8 @@ import { usePmtCtx } from './paymentContext';
 import PaymentForm from './PaymentForm';
 
 export default function PaymentCard(props) {
-  const {
-    id,
-    upiId,
-    bank,
-    name,
-    number,
-    type,
-    month,
-    year,
-    noEdit,
-    redirect,
-    select
-  } = props;
+  const { id, upiId, bank, name, number, type, month, year, noEdit, select } =
+    props;
   const { modeId, openModeForm } = usePmtCtx();
   return (
     <Fragment>
@@ -33,24 +22,17 @@ export default function PaymentCard(props) {
               <h2 class='primary sm mg-half'>
                 UPI ID: <span class='clr'>{upiId}</span>
               </h2>
-              {!noEdit &&
-                (redirect ? (
-                  <div class='flex-ct-sb mg-half'>
-                    <button class='btn btn--auth--solid sb'>
-                      EDIT DETAILS
-                    </button>
-                  </div>
-                ) : (
-                  <div class='flex-ct-sb mg-half'>
-                    <button
-                      class='btn btn--auth--solid sb'
-                      onClick={openModeForm.bind(this, id)}
-                    >
-                      UPDATE
-                    </button>
-                    <button class='btn sb'>DELETE</button>
-                  </div>
-                ))}
+              {!noEdit && (
+                <div class='flex-ct-sb mg-half'>
+                  <button
+                    class='btn btn--auth--solid sb'
+                    onClick={openModeForm.bind(this, id)}
+                  >
+                    UPDATE
+                  </button>
+                  <button class='btn sb'>DELETE</button>
+                </div>
+              )}
             </div>
           </div>
         )
@@ -78,22 +60,17 @@ export default function PaymentCard(props) {
                 {month}/{year}
               </span>
             </h2>
-            {!noEdit &&
-              (redirect ? (
-                <div class='flex-ct-sb mg-half'>
-                  <button class='btn btn--auth--solid sb'>EDIT DETAILS</button>
-                </div>
-              ) : (
-                <div class='flex-ct-sb mg-half'>
-                  <button
-                    class='btn btn--auth--solid sb'
-                    onClick={openModeForm.bind(this, id)}
-                  >
-                    UPDATE
-                  </button>
-                  <button class='btn sb'>DELETE</button>
-                </div>
-              ))}
+            {!noEdit && (
+              <div class='flex-ct-sb mg-half'>
+                <button
+                  class='btn btn--auth--solid sb'
+                  onClick={openModeForm.bind(this, id)}
+                >
+                  UPDATE
+                </button>
+                <button class='btn sb'>DELETE</button>
+              </div>
+            )}
           </div>
         </div>
       )}

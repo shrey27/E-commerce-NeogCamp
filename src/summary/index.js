@@ -38,11 +38,12 @@ export default function OrderSummary() {
       <h1 class='primary lg sb cen mg-full'>ORDER SUMMARY</h1>
       <hr />
       <hr />
-      {order &&
-        order.map((elem, index) => {
-          return <SummaryCard key={index * 2} {...elem} />;
-        })}
-
+      <div class='card--container'>
+        {order &&
+          order.map((elem, index) => {
+            return <SummaryCard key={index * 2} {...elem} />;
+          })}
+      </div>
       <Footer />
     </Fragment>
   );

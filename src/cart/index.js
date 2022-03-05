@@ -29,13 +29,13 @@ export default function Cart() {
       <Navbar />
       <Category />
       <div class='cart sm-s'>
-        <div class='card--container'>
+        <div class='cart__container'>
           {cartList &&
             cartList.map((elem, index) => {
               return <CartItem key={index * 2} {...elem} />;
             })}
         </div>
-        <div class='cart--box shdw md-s'>
+        <div class='cart__box shdw md-s'>
           <h1 class='md sb'>CART ITEMS</h1>
           <hr />
           <p class='mg-half'>

@@ -1,6 +1,9 @@
 import { Fragment } from 'react';
 import './payment.css';
 import PaymentCard from './PaymentCard';
+import { PaymentProvider } from './paymentContext';
+import { usePmtCtx } from './paymentContext';
+import PaymentForm from './PaymentForm';
 
 const cardList = [
   {
@@ -35,16 +38,22 @@ export default function PaymentMode({ upi }) {
             {cardList &&
               cardList.map((elem, index) => {
                 return (
-                  <PaymentCard
-                    key={index * 2}
-                    {...elem}
-                    select={true}
-                    redirect={true}
-                  />
+                  <PaymentProvider>
+                    <PaymentCard
+                      key={index * 2}
+                      {...elem}
+                      select={true}
+                      redirect={true}
+                    />
+                  </PaymentProvider>
                 );
               })}
+
             <div class='card payment shdw'>
-              <div class='flex-ct-sb btn--auth xs-s'>
+              <div
+                class='flex-ct-sb btn--auth xs-s'
+                // onClick={openModeForm.bind(this, 0)}
+              >
                 <h1 class='md'>Add New Card</h1>
                 <i class='fas fa-chevron-right fl-rt'></i>
               </div>
@@ -58,16 +67,17 @@ export default function PaymentMode({ upi }) {
             {upiList &&
               upiList.map((elem, index) => {
                 return (
-                  <PaymentCard
-                    key={index * 2}
-                    {...elem}
-                    select={true}
-                    redirect={true}
-                  />
+                  <PaymentProvider>
+                    <PaymentCard key={index * 2} {...elem} select={true} />
+                  </PaymentProvider>
                 );
               })}
+
             <div class='card payment shdw'>
-              <div class='flex-ct-sb btn--auth xs-s'>
+              <div
+                class='flex-ct-sb btn--auth xs-s'
+                // onClick={openModeForm.bind(this, 100)}
+              >
                 <h1 class='md'>Add New UPI ID</h1>
                 <i class='fas fa-chevron-right fl-rt'></i>
               </div>

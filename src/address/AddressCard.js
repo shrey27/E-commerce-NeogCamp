@@ -17,7 +17,6 @@ export default function AddressCard(props) {
     state,
     pincode,
     noEdit,
-    redirect,
     select
   } = props;
   const { formId, openForm } = useAddrCtx();
@@ -54,22 +53,17 @@ export default function AddressCard(props) {
             <h1 class='primary sm sb'>
               <i class='fa-solid fa-envelope tertiary md'></i> {email}
             </h1>
-            {!noEdit &&
-              (redirect ? (
-                <div class='flex-ct-sb mg-half'>
-                  <button class='btn btn--auth--solid sb'>EDIT DETAILS</button>
-                </div>
-              ) : (
-                <div class='flex-ct-sb mg-half'>
-                  <button
-                    class='btn btn--auth--solid sb'
-                    onClick={openForm.bind(this, id)}
-                  >
-                    UPDATE
-                  </button>
-                  <button class='btn sb'>DELETE</button>
-                </div>
-              ))}
+            {!noEdit && (
+              <div class='flex-ct-sb mg-half'>
+                <button
+                  class='btn btn--auth--solid sb'
+                  onClick={openForm.bind(this, id)}
+                >
+                  UPDATE
+                </button>
+                <button class='btn sb'>DELETE</button>
+              </div>
+            )}
           </div>
         </div>
       )}

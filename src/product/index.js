@@ -11,7 +11,7 @@ export default function Product() {
       <Category />
 
       <main class='product'>
-        <div class='card landscape'>
+        <div class='card card__product'>
           <img
             src='https://m.media-amazon.com/images/I/413GuC4J4FL.jpg'
             alt='Banner'
@@ -22,21 +22,21 @@ export default function Product() {
             <h1 class='highlight md sb cen mg-half'>Vegetarian</h1>
             <p class='primary md sb mg-half'>
               Elite Platinum Standard 100% Whey Protein Powder 1 lbs, 454 g
-              (Double Rich Chocolate), for Muscle Support & Recovery
+              (Double Rich Chocolate), for Muscle Support and Recovery
             </p>
 
             <ul class='stack'>
-              <li class='stack__item xs-s'>
+              <li class='product__stack__item xs-s'>
                 <span class='primary lg sb price__val'>
                   Discount Price:&nbsp;₹8,000
                 </span>
               </li>
-              <li class='stack__item xs-s'>
+              <li class='product__stack__item xs-s'>
                 <span class='primary lg sb price--sec'>
                   Price:&nbsp;₹18,000
                 </span>
               </li>
-              <li class='stack__item xs-s'>
+              <li class='product__stack__item xs-s'>
                 <span class='tag lg sb'>
                   <i class='fa-solid fa-tags'></i>Upto 30% Off
                 </span>
@@ -89,7 +89,7 @@ export default function Product() {
             </ul>
 
             <div class='button__ctr'>
-              <button class='btn btn--link sb mg-half'>Add to Cart</button>
+              <button class='btn btn--auth--solid sb mg-half'>Add to Cart</button>
               <button class='btn sb mg-half'>Add to Wishlist</button>
             </div>
           </section>

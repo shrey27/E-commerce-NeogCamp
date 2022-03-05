@@ -32,7 +32,7 @@ const addressList = [
     pincode: 122112
   }
 ];
-export default function Address({ select, redirect }) {
+export default function Address({ select }) {
   const { formId, openForm } = useAddrCtx();
   return (
     <Fragment>
@@ -47,7 +47,6 @@ export default function Address({ select, redirect }) {
                 key={index * 2}
                 {...elem}
                 select={select}
-                redirect={redirect}
               />
             );
           })}

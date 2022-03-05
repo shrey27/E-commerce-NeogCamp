@@ -16,22 +16,20 @@ import ChangePassword from './authentication/ChangePassword';
 
 function App() {
   return (
-    <div className='dark'>
+    <div className=''>
       {/* <HomePage /> */}
       {/* <Products /> */}
       {/* <Product /> */}
       {/* <Signin /> */}
       {/* <Signup /> */}
-      {/* <Address /> */}
       {/* <Cart /> */}
-      {/* <AddressSelection /> */}
-      {/* <Checkout /> */}
+      {/* <AddressSelection /> */}    
       {/* <Wishlist/> */}
-      {/* <Payment /> */}
-      {/* <PaymentSelection /> */}
       {/* <OrderSummary /> */}
-      <Profile />
-      {/* <ChangePassword /> */}
+      {/* <Profile /> */}
+
+      {/* <Checkout /> */}
+      {/* <PaymentSelection /> */}
     </div>
   );
 }

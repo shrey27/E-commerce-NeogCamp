@@ -4,13 +4,16 @@ import Navbar from '../common/navbar';
 import Category from '../common/header/Category';
 import Footer from '../common/footer';
 import Address from './';
+import { AddressProvider } from '../address/addressContext';
 
 export default function AddressSelection() {
   return (
     <Fragment>
       <Navbar />
       <Category />
-      <Address select={true} redirect={true} />
+      <AddressProvider>
+        <Address select={true} />
+      </AddressProvider>
       <Footer />
     </Fragment>
   );

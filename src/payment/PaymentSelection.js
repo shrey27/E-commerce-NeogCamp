@@ -4,6 +4,7 @@ import Navbar from '../common/navbar';
 import Category from '../common/header/Category';
 import Footer from '../common/footer';
 import PaymentMode from './PaymentMode';
+import { PaymentProvider } from './paymentContext';
 
 export default function PaymentSelection() {
   const [method, setMethod] = useState('');
@@ -74,11 +75,7 @@ export default function PaymentSelection() {
           <h1 class='pageheader shadow' onClick={methodHandler.bind(this, '')}>
             <i class='fa-solid fa-chevron-left'></i>Change Mode of Payment
           </h1>
-          {method === 'UPI' ? (
-            <PaymentMode upi={true} />
-          ) : (
-            <PaymentMode upi={false} />
-          )}
+          <PaymentMode upi={method === 'UPI'} />
         </div>
       )}
       <Footer />

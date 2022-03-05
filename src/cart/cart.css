@@ -8,10 +8,10 @@
 }
 
 /* Card in cart */
-.card--container {
+.cart__container {
   width: 100%;
 }
-.landscape {
+.cart__landscape {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -19,11 +19,17 @@
   border-radius: 0;
   margin: 1rem auto;
 }
-.landscape .card__banner {
+.cart__landscape .card__banner {
   border-radius: 0;
   height: auto;
   width: 10rem;
   margin: auto;
+  object-fit: contain;
+}
+.cart__content {
+  width: 90%;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 .quantity {
   padding: 0.25rem 1rem;
@@ -39,7 +45,7 @@
 .price {
   justify-content: flex-start;
 }
-.align {
+.cart__align {
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -47,7 +53,7 @@
   width: 90%;
 }
 /* Cart Total */
-.cart--box {
+.cart__box {
   width: 90%;
   max-width: 400px;
   margin: 1rem auto;
@@ -55,12 +61,16 @@
   position: sticky;
   top: 0;
 }
-
+.btn--shift {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (min-width: 400px) {
-  .landscape {
+  .cart__landscape {
     flex-direction: row;
   }
-  .landscape .card__banner {
+  .cart__landscape .card__banner {
     border-radius: 0;
     width: 10rem;
     height: auto;
@@ -68,20 +78,20 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .align {
+  .cart__align {
     text-align: start;
     margin-bottom: 0.5rem;
   }
-  .btn--size {
-    width: auto;
+  .btn--shift {
+    justify-content: flex-start;
   }
   .cart {
     flex-direction: row;
   }
-  .card--container {
+  .cart__container {
     width: 50%;
   }
-  .cart--box {
+  .cart__box {
     max-width: 30rem;
   }
 }

@@ -1,8 +1,5 @@
 @import '../common/styles.css';
 
-li {
-  list-style: none;
-}
 .card__profile {
   max-width: none;
   max-height: none;
@@ -33,6 +30,7 @@ li {
   font-weight: 600;
 }
 .stack__item {
+  list-style: none;
   width: 100%;
   padding: 0.5rem;
   cursor: pointer;
