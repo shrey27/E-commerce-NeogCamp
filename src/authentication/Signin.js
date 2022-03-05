@@ -4,62 +4,55 @@ import Footer from '../common/footer';
 export default function Signin() {
   return (
     <>
-      <Navbar noDrawer={true}/>
-      <main>
-        <div class='app--login shdw'>
-          <h1 class='md sb cen mg-full'>LOGIN</h1>
-          <hr />
-          <form action='https://www.google.com' class='mg-full'>
-            <div>
-              <label for='user-name' class='label'>
-                Username*
-                <input
-                  type='text'
-                  placeholder='Enter Username'
-                  class='input input--man'
-                  id='user-name'
-                  name='user-name'
-                  required
-                  autocomplete='off'
-                />
-                <span class='input--error mg-half'>
-                  This field is mandatory
-                </span>
-              </label>
-            </div>
-
-            <div class='mg-half'>
-              <label for='pswd' class='label'>
-                Password*
-                <input
-                  type='password'
-                  placeholder='Enter Password'
-                  class='input input--man'
-                  id='pswd'
-                  name='password'
-                  autocomplete='off'
-                  pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-                  title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters'
-                  required
-                />
-              </label>
-              <span class='input--error mg-half'>This field is mandatory</span>
-            </div>
-            <div class='mg-full'>
-              <label for='remember' class='sm'>
-                <input
-                  class='login__ip'
-                  type='checkbox'
-                  name='remember'
-                  id='remember'
-                />{' '}
-                Remember Me
-              </label>
-            </div>
-            <button type='submit' class='btn btn--wide btn--float sb'>
-              Log In
-            </button>
-          </form>
+      <Navbar noDrawer={true} />
+      <div class='card authentication shdw'>
+        <h1 class='lg sb cen xs-s mg-full'>LOGIN</h1>
+        <hr />
+        <form action='#' class='sm-s'>
+          <div class='authentication__input'>
+            <label for='email__signin' class='label'>
+              Enter Your Email ID
+            </label>
+            <input
+              class='input sm-s'
+              type='email'
+              name='email__signin'
+              id='email__signin'
+              placeholder='Enter Email'
+              autoComplete='off'
+              required
+            />
+          </div>
+          <div class='authentication__input'>
+            <label for='password__signin' class='label'>
+              Enter Password
+            </label>
+            <input
+              class='input sm-s'
+              type='password'
+              name='password__signin'
+              id='password__signin'
+              autocomplete='off'
+              placeholder='Password'
+              required
+            />
+          </div>
+          <div class='flex-ct-ct signin__remember'>
+            <input
+              class='sm-s'
+              type='checkbox'
+              name='remember__signin'
+              id='remember__signin'
+            />
+            <label for='remember__signin' class='label'>
+              Remember me
+            </label>
+          </div>
+          <button type='submit' class='btn btn--wide btn--auth--solid sb'>
+            LOGIN
+          </button>
+        </form>
+        <div class='signin__links'>
           <a href='/' class='forgot sm'>
             Forgot Password?
           </a>
@@ -67,20 +60,8 @@ export default function Signin() {
             Sign Up
           </a>
         </div>
-        <div class='app--login shdw'>
-          <h1 class='md sb cen sm-s'>FORGOT PASSWORD</h1>
-          <hr />
-          <p class='primary sm sb sm-s'>
-            A temporary password has been sent to your email. Please enter that
-            password in the current password field on{' '}
-            <a href='../forgot/' class='forgot'>
-              this
-            </a>{' '}
-            page.
-          </p>
-        </div>
-      </main>
-      <Footer />
+      </div>
+      <Footer fixed={true} />
     </>
   );
 }

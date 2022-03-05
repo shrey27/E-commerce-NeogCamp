@@ -12,14 +12,13 @@
   justify-content: flex-start;
   flex-direction: column;
   margin: 0.5rem 0;
+  width: 100%;
 }
-.label {
-  display: inline-block;
-  flex: 1;
+.fields .label {
+  width: auto;
 }
-.input {
-  display: inline-block;
-  flex: 3;
+.fields .input {
+  width: 100%;
 }
 .select {
   background-color: var(--white);
@@ -30,10 +29,10 @@
 .sq {
   border-radius: 0;
 }
-.stack li {
+.stack__payment__item {
   transition: transform 300ms;
 }
-.stack li:hover {
+.stack__payment__item:hover {
   background-color: var(--white);
   transform: scale(1.05);
 }
@@ -45,11 +44,20 @@
   font-weight: 600;
   cursor: pointer;
 }
-@media screen and (min-width: 768px) {
+.btn--space {
+  margin: 0 1rem;
+}
+@media screen and (min-width: 1024px) {
   .payment {
     max-width: 50%;
   }
   .fields {
     flex-direction: row;
+  }
+  .fields .label {
+    width: 18%;
+  }
+  .fields .input {
+    width: 82%;
   }
 }

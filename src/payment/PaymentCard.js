@@ -17,7 +17,7 @@ export default function PaymentCard(props) {
               UPI ID: <span class='clr'>{upiId}</span>
             </h2>
             {!noEdit && (
-              <div class='flex-ct-st'>
+              <div class='flex-ct-sb mg-half'>
                 <button class='btn btn--auth--solid sb'>EDIT</button>
                 <button class='btn sb'>DELETE</button>
               </div>
@@ -47,9 +47,9 @@ export default function PaymentCard(props) {
               </span>
             </h2>
             {!noEdit && (
-              <div class='flex-ct-st'>
-                <button class='btn btn--auth--solid sb'>EDIT</button>
-                <button class='btn sb'>DELETE</button>
+              <div class='flex-ct-sb mg-half'>
+                <button class='btn btn--auth--solid btn--space sb'>EDIT</button>
+                <button class='btn btn--space sb'>DELETE</button>
               </div>
             )}
           </div>

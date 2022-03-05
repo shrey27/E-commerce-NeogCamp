@@ -3,7 +3,7 @@ import './payment.css';
 import Navbar from '../common/navbar';
 import Category from '../common/header/Category';
 import Footer from '../common/footer';
-import Payment from './';
+import PaymentMode from './PaymentMode';
 
 export default function PaymentSelection() {
   const [method, setMethod] = useState('');
@@ -23,7 +23,7 @@ export default function PaymentSelection() {
             <div class='sm-s mg-half'>
               <ul class='stack'>
                 <li
-                  class='flex-ct-sb shadow xs-s mg-full'
+                  class='stack__payment__item flex-ct-sb shadow xs-s mg-full'
                   name='CARD'
                   onClick={methodHandler.bind(this, 'CARD')}
                 >
@@ -39,7 +39,7 @@ export default function PaymentSelection() {
                 </li>
 
                 <li
-                  class='flex-ct-sb shadow xs-s mg-full'
+                  class='stack__payment__item flex-ct-sb shadow xs-s mg-full'
                   name='upi'
                   onClick={methodHandler.bind(this, 'UPI')}
                 >
@@ -54,7 +54,7 @@ export default function PaymentSelection() {
                   <i class='fas fa-chevron-right fl-rt'></i>
                 </li>
 
-                <li class='flex-ct-sb shadow xs-s mg-full'>
+                <li class='stack__payment__item flex-ct-sb shadow xs-s mg-full'>
                   <div class='flex-ct-st'>
                     <img
                       src='cash.png'
@@ -75,9 +75,9 @@ export default function PaymentSelection() {
             <i class='fa-solid fa-chevron-left'></i>Change Mode of Payment
           </h1>
           {method === 'UPI' ? (
-            <Payment select={true} upi={true} />
+            <PaymentMode select={true} upi={true} />
           ) : (
-            <Payment select={true} upi={false} />
+            <PaymentMode select={true} upi={false} />
           )}
         </div>
       )}

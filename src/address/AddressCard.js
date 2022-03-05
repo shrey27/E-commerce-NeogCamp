@@ -20,7 +20,7 @@ export default function AddressCard(props) {
     <div class='card address shdw'>
       <div class='flex-ct-sb btn--auth--solid xs-s'>
         <h1 class='lg sb'>{select ? 'Select Address' : title}</h1>
-        {select && <button class='btn btn--icons btn--add sb'>SELECT</button>}
+        {select && <button class='btn btn--icons sb'>SELECT</button>}
       </div>
       <div class='sm-s'>
         <h1 class='lg sb'>{type}</h1>
@@ -45,9 +45,9 @@ export default function AddressCard(props) {
           <i class='fa-solid fa-envelope tertiary md'></i> {email}
         </h1>
         {!noEdit && (
-          <div>
-            <button class='btn btn--auth--solid btn--add sb'>UPDATE</button>
-            <button class='btn btn--add sb'>DELETE</button>
+          <div class='flex-ct-sb mg-half'>
+            <button class='btn btn--auth--solid sb'>UPDATE</button>
+            <button class='btn sb'>DELETE</button>
           </div>
         )}
       </div>

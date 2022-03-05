@@ -16,7 +16,7 @@ export default function AddressForm(props) {
   } = props;
   return (
     <div class='card address shdw'>
-      <h1 class='btn--success md sb cen xs-s'>
+      <h1 class='btn--auth--solid md sb cen xs-s'>
         {update ? 'EDIT THE' : 'ENTER NEW'} DETAILS
       </h1>
       <form action='#' class='sm-s'>
@@ -157,7 +157,7 @@ export default function AddressForm(props) {
             <option value='Relative'>Relative</option>
           </select>
         </div>
-        <button type='submit' class='btn btn--wide btn--float sb'>
+        <button type='submit' class='btn btn--wide btn--auth--solid sb'>
           {update ? 'UPDATE' : 'ADD'} ADDRESS
         </button>
       </form>

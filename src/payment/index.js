@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import './payment.css';
 import PaymentCard from './PaymentCard';
+import PaymentForm from './PaymentForm';
 
 const cardList = [
   {
@@ -22,50 +23,40 @@ const cardList = [
 ];
 const upiList = ['abc@okcdc', 'xyz@okdfd'];
 
-export default function Payment({ select, upi }) {
+export default function Payment() {
   return (
     <>
-      {!upi ? (
-        <Fragment>
-          <h1 class='primary lg cen xs-s mg-full'>
-            {select ? 'SELECT A CARD' : 'MANAGE YOUR CARDS'}
-          </h1>
-          <div class='flex-ct-ct flex-vertical'>
-            {cardList &&
-              cardList.map((elem, index) => {
-                return (
-                  <PaymentCard key={index * 2} {...elem} select={select} />
-                );
-              })}
-            <div class='card payment shdw'>
-              <div class='flex-ct-sb btn--auth xs-s'>
-                <h1 class='md'>Add New Card</h1>
-                <i class='fas fa-chevron-right fl-rt'></i>
-              </div>
+      <Fragment>
+        <h1 class='primary lg cen xs-s mg-full'>MANAGE YOUR CARDS</h1>
+        <div class='flex-ct-ct flex-vertical'>
+          {cardList &&
+            cardList.map((elem, index) => {
+              return <PaymentCard key={index * 2} {...elem} />;
+            })}
+          <div class='card payment shdw'>
+            <div class='flex-ct-sb btn--auth xs-s'>
+              <h1 class='md'>Add New Card</h1>
+              <i class='fas fa-chevron-right fl-rt'></i>
             </div>
           </div>
-        </Fragment>
-      ) : (
-        <Fragment>
-          <h1 class='primary lg cen xs-s mg-full'>
-            {select ? 'SELECT A UPI ID' : "MANAGE YOUR UPI ID's"}
-          </h1>
-          <div class='flex-ct-ct flex-vertical'>
-            {upiList &&
-              upiList.map((elem, index) => {
-                return (
-                  <PaymentCard key={index * 2} upiId={elem} select={select} />
-                );
-              })}
-            <div class='card payment shdw'>
-              <div class='flex-ct-sb btn--auth xs-s'>
-                <h1 class='md'>Add New UPI ID</h1>
-                <i class='fas fa-chevron-right fl-rt'></i>
-              </div>
+        </div>
+      </Fragment>
+      <Fragment>
+        <h1 class='primary lg cen xs-s mg-full'>MANAGE YOUR UPI ID's</h1>
+        <div class='flex-ct-ct flex-vertical'>
+          {upiList &&
+            upiList.map((elem, index) => {
+              return <PaymentCard key={index * 2} upiId={elem} />;
+            })}
+          <div class='card payment shdw'>
+            <div class='flex-ct-sb btn--auth xs-s'>
+              <h1 class='md'>Add New UPI ID</h1>
+              <i class='fas fa-chevron-right fl-rt'></i>
             </div>
           </div>
-        </Fragment>
-      )}
+        </div>
+      </Fragment>
+      <PaymentForm />
     </>
   );
 }

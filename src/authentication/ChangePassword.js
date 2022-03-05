@@ -4,67 +4,54 @@ import { Fragment } from 'react';
 export default function ChangePassword() {
   return (
     <Fragment>
-      <div class='app--login shdw'>
-        <h1 class='md sb cen sm-s'>RESET PASSWORD</h1>
+      <div class='card authentication shdw'>
+        <h1 class='lg sb cen xs-s mg-full'>UPDATE PASSWORD</h1>
         <hr />
-        <form action='../login/' class='mg-full'>
-          <div class='mg-half'>
-            <label for='pswd' class='label'>
-              Current Password*
-              <input
-                type='password'
-                placeholder='Enter Password'
-                class='input input--man'
-                id='pswd'
-                name='password'
-                autocomplete='off'
-                pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-                title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters'
-                required
-              />
-            </label>
-            <p class='input--error'>This field is mandatory</p>
-          </div>
-
-          <div class='mg-half'>
-            <label for='pswd' class='label'>
-              New Password*
-              <input
-                type='password'
-                placeholder='Enter Password'
-                class='input input--man'
-                id='pswd'
-                name='password'
-                autocomplete='off'
-                pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-                title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters'
-                required
-              />
-            </label>
-            <p class='input--error'>This field is mandatory</p>
-          </div>
-
-          <div class='mg-half'>
-            <label for='pswd' class='label'>
-              {' '}
-              Confirm New Password*{' '}
+        <form action='#' class='sm-s'>
+          <div class='authentication__input'>
+            <label for='old__password__change' class='label'>
+              Current Password
             </label>
             <input
+              class='input sm-s'
               type='password'
-              placeholder='Enter Password'
-              class='input input--man'
-              id='pswd'
-              name='password'
+              name='old__password__change'
+              id='old__password__change'
               autocomplete='off'
-              pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-              title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters'
+              placeholder='Password'
               required
             />
-            <p class='input--error'>This field is mandatory</p>
           </div>
-
-          <button type='submit' class='btn btn--wide btn--float mg-full sb'>
-            Set Password
+          <div class='authentication__input'>
+            <label for='new__password__change' class='label'>
+              New Password
+            </label>
+            <input
+              class='input sm-s'
+              type='password'
+              name='new__password__change'
+              id='new__password__change'
+              autocomplete='off'
+              placeholder='Password'
+              required
+            />
+          </div>
+          <div class='authentication__input'>
+            <label for='cnf__password__change' class='label'>
+              Confirm Password
+            </label>
+            <input
+              class='input sm-s'
+              type='password'
+              name='cnf__password__change'
+              id='cnf__password__change'
+              autocomplete='off'
+              placeholder='Password'
+              required
+            />
+          </div>
+          <button type='submit' class='btn btn--wide btn--auth--solid sb'>
+            UPDATE
           </button>
         </form>
       </div>

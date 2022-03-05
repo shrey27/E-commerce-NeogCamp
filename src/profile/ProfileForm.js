@@ -56,7 +56,7 @@ export default function ProfileForm() {
               autocomplete='off'
             />
           </div>
-          <button type='submit' class='btn btn--wide btn--float sb mg-half'>
+          <button type='submit' class='btn btn--wide btn--auth--solid sb mg-half'>
             UPDATE
           </button>
         </form>

@@ -9,7 +9,7 @@ export default function PaymentForm(props) {
     type = 'Credit Card',
     month = '09',
     year = '2022',
-    upiId = 'abc@okcdc',
+    upiId,
   } = props;
   return (
     <Fragment>
@@ -121,7 +121,7 @@ export default function PaymentForm(props) {
               </select>
             </div>
             <div class='xs-s'>
-              <button type='submit' class='btn btn--wide btn--float sb'>
+              <button type='submit' class='btn btn--wide btn--auth--solid sb'>
                 ADD CARD
               </button>
             </div>

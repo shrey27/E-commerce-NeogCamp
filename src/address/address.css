@@ -3,7 +3,7 @@
 .address {
   max-width: 400px;
   width: 90%;
-  margin: 1rem;
+  margin: 1rem auto 2.5rem;
   cursor: pointer;
 }
 .fields {
@@ -12,14 +12,13 @@
   justify-content: flex-start;
   flex-direction: column;
   margin: 0.5rem 0;
+  width: 100%;
 }
-.label {
-  display: inline-block;
-  flex: 1;
+.fields .label {
+  width: auto;
 }
-.input {
-  display: inline-block;
-  flex: 5;
+.fields .input {
+  width: 100%;
 }
 .select {
   background-color: var(--white);
@@ -37,5 +36,11 @@
   }
   .fields {
     flex-direction: row;
+  }
+  .fields .label {
+    width: 18%;
+  }
+  .fields .input {
+    width: 82%;
   }
 }

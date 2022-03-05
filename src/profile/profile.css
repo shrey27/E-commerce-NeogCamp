@@ -21,10 +21,10 @@ li {
   display: inline-block;
   flex: 1;
 }
-.input {
+/* .input {
   display: inline-block;
   flex: 5;
-}
+} */
 .manage {
   flex-direction: column;
 }

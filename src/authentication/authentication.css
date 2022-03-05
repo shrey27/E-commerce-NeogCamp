@@ -1,22 +1,24 @@
 @import url('../common/styles.css');
 
-/* Sign In */
-.app--login {
+/* Authentication Pages */
+.authentication {
   width: 90%;
-  background-color: var(--white);
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 1rem auto;
 }
-.btn {
-  margin: 0;
+.authentication__input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0.5rem 0;
 }
 .forgot {
-  color: var(--button-link);
+  color: var(--tertiary);
   text-decoration: underline;
   font-weight: 500;
 }
 .already {
-  color: var(--button-link);
+  color: var(--tertiary);
   text-decoration: underline;
 }
 .input--error {
@@ -26,10 +28,14 @@
 .input--error.show--error {
   display: inline-block;
 }
-
+.signin__remember {
+  padding: 0 0.5rem;
+}
+.signin__links {
+  padding: 0 1rem 1rem 1rem;
+}
 @media screen and (min-width: 768px) {
-  .app--login {
+  .authentication {
     width: 30rem;
   }
 }
-
