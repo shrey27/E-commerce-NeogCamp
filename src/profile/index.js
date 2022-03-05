@@ -7,6 +7,7 @@ import ProfileForm from './ProfileForm';
 import Address from '../address';
 import Payment from '../payment';
 import ChangePassword from '../authentication/ChangePassword';
+import { AddressProvider } from '../address/addressContext';
 
 export default function Profile() {
   const [optionsOpen, setOptionsOpen] = useState(false);
@@ -15,7 +16,11 @@ export default function Profile() {
   const handleMainContent = (component) => {
     switch (component) {
       case 'ADDRESS':
-        setComponent(<Address />);
+        setComponent(
+          <AddressProvider>
+            <Address />
+          </AddressProvider>
+        );
         break;
       case 'PAYMENT':
         setComponent(<Payment />);

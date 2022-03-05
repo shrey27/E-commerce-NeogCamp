@@ -2,8 +2,11 @@ import { Fragment } from 'react';
 import './address.css';
 import AddressCard from './AddressCard';
 import AddressForm from './AddressForm';
+import { useAddrCtx } from './addressContext';
+
 const addressList = [
   {
+    id: 1,
     name: 'Shrey Pandey',
     email: 'abc@xyz.com',
     mobile: 9090909090,
@@ -16,6 +19,7 @@ const addressList = [
     pincode: 122112
   },
   {
+    id: 2,
     name: 'Shrey Pandey',
     email: 'abc@xyz.com',
     mobile: 9090909090,
@@ -28,7 +32,8 @@ const addressList = [
     pincode: 122112
   }
 ];
-export default function Address({ select }) {
+export default function Address({ select, redirect }) {
+  const { formId, openForm } = useAddrCtx();
   return (
     <Fragment>
       <h1 class='primary lg cen xs-s mg-full'>
@@ -41,19 +46,22 @@ export default function Address({ select }) {
               <AddressCard
                 key={index * 2}
                 {...elem}
-                title='Edit Address'
                 select={select}
+                redirect={redirect}
               />
             );
           })}
-        <div class='card address shdw'>
-          <div class='flex-ct-sb btn--auth xs-s'>
-            <h1 class='md'>Add New Address</h1>
-            <i class='fas fa-chevron-right fl-rt'></i>
+        {formId === 0 ? (
+          <AddressForm />
+        ) : (
+          <div class='card address shdw'>
+            <div class='flex-ct-sb btn--auth xs-s' onClick={() => openForm(0)}>
+              <h1 class='md'>Add New Address</h1>
+              <i class='fas fa-chevron-right fl-rt'></i>
+            </div>
           </div>
-        </div>
+        )}
       </div>
-      <AddressForm/>
     </Fragment>
   );
 }

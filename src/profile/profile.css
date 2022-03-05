@@ -21,10 +21,6 @@ li {
   display: inline-block;
   flex: 1;
 }
-/* .input {
-  display: inline-block;
-  flex: 5;
-} */
 .manage {
   flex-direction: column;
 }
@@ -35,17 +31,6 @@ li {
   margin: 0.5rem 0;
   font-size: 1.25rem;
   font-weight: 600;
-}
-.btn--auth {
-  border: 2px solid var(--tertiary);
-  color: var(--tertiary);
-  font-size: 1.25rem;
-  font-size: 600;
-}
-.btn--auth:hover {
-  border: 2px solid var(--tertiary);
-  color: var(--white);
-  background-color: var(--tertiary--light);
 }
 .stack__item {
   width: 100%;

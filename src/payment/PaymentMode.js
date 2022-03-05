@@ -22,19 +22,19 @@ const cardList = [
 ];
 const upiList = ['abc@okcdc', 'xyz@okdfd'];
 
-export default function PaymentMode({ select, upi }) {
+export default function PaymentMode({ upi }) {
   return (
     <>
       {!upi ? (
         <Fragment>
           <h1 class='primary lg cen xs-s mg-full'>
-            {select ? 'SELECT A CARD' : 'MANAGE YOUR CARDS'}
+            SELECT A CARD
           </h1>
           <div class='flex-ct-ct flex-vertical'>
             {cardList &&
               cardList.map((elem, index) => {
                 return (
-                  <PaymentCard key={index * 2} {...elem} select={select} />
+                  <PaymentCard key={index * 2} {...elem} select={true} redirect={true}/>
                 );
               })}
             <div class='card payment shdw'>
@@ -48,13 +48,13 @@ export default function PaymentMode({ select, upi }) {
       ) : (
         <Fragment>
           <h1 class='primary lg cen xs-s mg-full'>
-            {select ? 'SELECT A UPI ID' : "MANAGE YOUR UPI ID's"}
+            SELECT A UPI ID
           </h1>
           <div class='flex-ct-ct flex-vertical'>
             {upiList &&
               upiList.map((elem, index) => {
                 return (
-                  <PaymentCard key={index * 2} upiId={elem} select={select} />
+                  <PaymentCard key={index * 2} upiId={elem} select={true} redirect={true}/>
                 );
               })}
             <div class='card payment shdw'>

@@ -75,9 +75,9 @@ export default function PaymentSelection() {
             <i class='fa-solid fa-chevron-left'></i>Change Mode of Payment
           </h1>
           {method === 'UPI' ? (
-            <PaymentMode select={true} upi={true} />
+            <PaymentMode upi={true} />
           ) : (
-            <PaymentMode select={true} upi={false} />
+            <PaymentMode upi={false} />
           )}
         </div>
       )}

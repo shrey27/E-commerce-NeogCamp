@@ -62,19 +62,18 @@ body {
 
 /* New Button */
 .btn--auth {
-  border: 2px solid var(--tertiary);
+  border: 2px solid var(--tertiary--light);
   color: var(--tertiary);
-  font-weight: normal;
 }
 .btn--auth:hover {
-  border: 2px solid var(--tertiary);
+  border: 2px solid var(--tertiary--light);
   color: var(--white);
   background-color: var(--tertiary--light);
 }
 .btn--auth--solid {
   border: none;
-  background-color: var(--tertiary--light);
   color: var(--white);
+  background-color: var(--tertiary--light);
 }
 .btn--auth--solid:hover {
   border: none;

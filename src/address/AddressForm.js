@@ -1,19 +1,21 @@
 import './address.css';
+import { useAddrCtx } from './addressContext';
 
 export default function AddressForm(props) {
   const {
-    name = 'sp',
-    email = 'abc@s.com',
-    mobile = 90,
-    type = 'Home',
-    line_1 = 23,
-    line_2 = 'asdasd',
-    landmark = 'sdsad',
-    city = 'Ajmer',
-    state = 'Rajasthan',
-    pincode = 232323,
-    update = true
+    name,
+    email,
+    mobile,
+    type,
+    line_1,
+    line_2,
+    landmark,
+    city,
+    state,
+    pincode,
+    update
   } = props;
+  const { openForm } = useAddrCtx();
   return (
     <div class='card address shdw'>
       <h1 class='btn--auth--solid md sb cen xs-s'>
@@ -157,9 +159,14 @@ export default function AddressForm(props) {
             <option value='Relative'>Relative</option>
           </select>
         </div>
-        <button type='submit' class='btn btn--wide btn--auth--solid sb'>
-          {update ? 'UPDATE' : 'ADD'} ADDRESS
-        </button>
+        <div class='flex-ct-sb'>
+          <button type='submit' class='btn btn--auth--solid sb'>
+            {update ? 'UPDATE' : 'ADD'} ADDRESS
+          </button>
+          <button class='btn btn--auth sb' onClick={openForm.bind(this)}>
+            CANCEL
+          </button>
+        </div>
       </form>
     </div>
   );

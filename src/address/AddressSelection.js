@@ -10,7 +10,7 @@ export default function AddressSelection() {
     <Fragment>
       <Navbar />
       <Category />
-      <Address select={true} />
+      <Address select={true} redirect={true} />
       <Footer />
     </Fragment>
   );

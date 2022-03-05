@@ -2,8 +2,18 @@ import { Fragment } from 'react';
 import './payment.css';
 
 export default function PaymentCard(props) {
-  const { bank, name, number, type, month, year, upiId, noEdit, select } =
-    props;
+  const {
+    bank,
+    name,
+    number,
+    type,
+    month,
+    year,
+    upiId,
+    noEdit,
+    redirect,
+    select
+  } = props;
   return (
     <Fragment>
       {upiId ? (
@@ -16,12 +26,19 @@ export default function PaymentCard(props) {
             <h2 class='primary sm mg-half'>
               UPI ID: <span class='clr'>{upiId}</span>
             </h2>
-            {!noEdit && (
-              <div class='flex-ct-sb mg-half'>
-                <button class='btn btn--auth--solid sb'>EDIT</button>
-                <button class='btn sb'>DELETE</button>
-              </div>
-            )}
+            {!noEdit &&
+              (redirect ? (
+                <div class='flex-ct-sb mg-half'>
+                  <button class='btn btn--auth--solid sb'>EDIT DETAILS</button>
+                </div>
+              ) : (
+                <div class='flex-ct-sb mg-half'>
+                  <button class='btn btn--auth--solid sb'>
+                    UPDATE
+                  </button>
+                  <button class='btn sb'>DELETE</button>
+                </div>
+              ))}
           </div>
         </div>
       ) : (
@@ -46,12 +63,19 @@ export default function PaymentCard(props) {
                 {month}/{year}
               </span>
             </h2>
-            {!noEdit && (
-              <div class='flex-ct-sb mg-half'>
-                <button class='btn btn--auth--solid btn--space sb'>EDIT</button>
-                <button class='btn btn--space sb'>DELETE</button>
-              </div>
-            )}
+            {!noEdit &&
+              (redirect ? (
+                <div class='flex-ct-sb mg-half'>
+                  <button class='btn btn--auth--solid sb'>EDIT DETAILS</button>
+                </div>
+              ) : (
+                <div class='flex-ct-sb mg-half'>
+                  <button class='btn btn--auth--solid sb'>
+                    UPDATE
+                  </button>
+                  <button class='btn sb'>DELETE</button>
+                </div>
+              ))}
           </div>
         </div>
       )}
