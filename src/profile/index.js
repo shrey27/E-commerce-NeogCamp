@@ -8,6 +8,7 @@ import Address from '../address';
 import Payment from '../payment';
 import ChangePassword from '../authentication/ChangePassword';
 import { AddressProvider } from '../address/addressContext';
+import { PaymentProvider } from '../payment/paymentContext';
 
 export default function Profile() {
   const [optionsOpen, setOptionsOpen] = useState(false);
@@ -23,7 +24,11 @@ export default function Profile() {
         );
         break;
       case 'PAYMENT':
-        setComponent(<Payment />);
+        setComponent(
+          <PaymentProvider>
+            <Payment />
+          </PaymentProvider>
+        );
         break;
       case 'PASSWORDS':
         setComponent(<ChangePassword />);

@@ -1,46 +1,61 @@
 import { Fragment } from 'react';
 import './payment.css';
+import { usePmtCtx } from './paymentContext';
+import PaymentForm from './PaymentForm';
 
 export default function PaymentCard(props) {
   const {
+    id,
+    upiId,
     bank,
     name,
     number,
     type,
     month,
     year,
-    upiId,
     noEdit,
     redirect,
     select
   } = props;
+  const { modeId, openModeForm } = usePmtCtx();
   return (
     <Fragment>
       {upiId ? (
-        <div class='card payment shdw'>
-          <div class='flex-ct-sb btn--auth--solid xs-s'>
-            <h1 class='lg sb'>UPI ID</h1>
-            {select && <button class='btn  btn--add sb'>SELECT</button>}
+        modeId === id ? (
+          <PaymentForm {...props} update={true} />
+        ) : (
+          <div class='card payment shdw'>
+            <div class='flex-ct-sb btn--auth--solid xs-s'>
+              <h1 class='lg sb'>UPI ID</h1>
+              {select && <button class='btn  btn--add sb'>SELECT</button>}
+            </div>
+            <div class='sm-s'>
+              <h2 class='primary sm mg-half'>
+                UPI ID: <span class='clr'>{upiId}</span>
+              </h2>
+              {!noEdit &&
+                (redirect ? (
+                  <div class='flex-ct-sb mg-half'>
+                    <button class='btn btn--auth--solid sb'>
+                      EDIT DETAILS
+                    </button>
+                  </div>
+                ) : (
+                  <div class='flex-ct-sb mg-half'>
+                    <button
+                      class='btn btn--auth--solid sb'
+                      onClick={openModeForm.bind(this, id)}
+                    >
+                      UPDATE
+                    </button>
+                    <button class='btn sb'>DELETE</button>
+                  </div>
+                ))}
+            </div>
           </div>
-          <div class='sm-s'>
-            <h2 class='primary sm mg-half'>
-              UPI ID: <span class='clr'>{upiId}</span>
-            </h2>
-            {!noEdit &&
-              (redirect ? (
-                <div class='flex-ct-sb mg-half'>
-                  <button class='btn btn--auth--solid sb'>EDIT DETAILS</button>
-                </div>
-              ) : (
-                <div class='flex-ct-sb mg-half'>
-                  <button class='btn btn--auth--solid sb'>
-                    UPDATE
-                  </button>
-                  <button class='btn sb'>DELETE</button>
-                </div>
-              ))}
-          </div>
-        </div>
+        )
+      ) : modeId === id ? (
+        <PaymentForm {...props} update={true} />
       ) : (
         <div class='card payment shdw'>
           <div class='flex-ct-sb btn--auth--solid xs-s'>
@@ -70,7 +85,10 @@ export default function PaymentCard(props) {
                 </div>
               ) : (
                 <div class='flex-ct-sb mg-half'>
-                  <button class='btn btn--auth--solid sb'>
+                  <button
+                    class='btn btn--auth--solid sb'
+                    onClick={openModeForm.bind(this, id)}
+                  >
                     UPDATE
                   </button>
                   <button class='btn sb'>DELETE</button>

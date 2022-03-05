@@ -16,7 +16,7 @@ import ChangePassword from './authentication/ChangePassword';
 
 function App() {
   return (
-    <div className=''>
+    <div className='dark'>
       {/* <HomePage /> */}
       {/* <Products /> */}
       {/* <Product /> */}

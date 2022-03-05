@@ -20,21 +20,27 @@ const cardList = [
     type: 'credit'
   }
 ];
-const upiList = ['abc@okcdc', 'xyz@okdfd'];
+const upiList = [
+  { id: 3, upiId: 'abc@okcdc' },
+  { id: 4, upiId: 'xyz@okdfd' }
+];
 
 export default function PaymentMode({ upi }) {
   return (
     <>
       {!upi ? (
         <Fragment>
-          <h1 class='primary lg cen xs-s mg-full'>
-            SELECT A CARD
-          </h1>
+          <h1 class='primary lg cen xs-s mg-full'>SELECT A CARD</h1>
           <div class='flex-ct-ct flex-vertical'>
             {cardList &&
               cardList.map((elem, index) => {
                 return (
-                  <PaymentCard key={index * 2} {...elem} select={true} redirect={true}/>
+                  <PaymentCard
+                    key={index * 2}
+                    {...elem}
+                    select={true}
+                    redirect={true}
+                  />
                 );
               })}
             <div class='card payment shdw'>
@@ -47,14 +53,17 @@ export default function PaymentMode({ upi }) {
         </Fragment>
       ) : (
         <Fragment>
-          <h1 class='primary lg cen xs-s mg-full'>
-            SELECT A UPI ID
-          </h1>
+          <h1 class='primary lg cen xs-s mg-full'>SELECT A UPI ID</h1>
           <div class='flex-ct-ct flex-vertical'>
             {upiList &&
               upiList.map((elem, index) => {
                 return (
-                  <PaymentCard key={index * 2} upiId={elem} select={true} redirect={true}/>
+                  <PaymentCard
+                    key={index * 2}
+                    {...elem}
+                    select={true}
+                    redirect={true}
+                  />
                 );
               })}
             <div class='card payment shdw'>

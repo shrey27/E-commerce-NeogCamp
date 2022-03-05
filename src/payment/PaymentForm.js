@@ -1,21 +1,18 @@
 import { Fragment } from 'react';
 import './payment.css';
+import { usePmtCtx } from './paymentContext';
 
 export default function PaymentForm(props) {
-  const {
-    bank = 'ABC pvt. Ltd.',
-    name = 'ABCD',
-    number = 12121212121212,
-    type = 'Credit Card',
-    month = '09',
-    year = '2022',
-    upiId,
-  } = props;
+  const { upiId, bank, name, number, type, month, year, update } = props;
+  const { openModeForm } = usePmtCtx();
+
   return (
     <Fragment>
       {upiId ? (
         <div class='card payment shdw'>
-          <h1 class='tertiary md sb cen xs-s'>ENTER UPI ID</h1>
+          <h1 class='tertiary md sb cen xs-s'>
+            {update ? 'EDIT THE DETAILS' : 'ENTER UPI ID'}
+          </h1>
           <hr />
           <form class='sm-s'>
             <div class='fields'>
@@ -33,16 +30,24 @@ export default function PaymentForm(props) {
                 required
               />
             </div>
-            <div class='xs-s'>
-              <button type='submit' class='btn btn--wide btn--auth--solid sb'>
-                SAVE UPI ID
+            <div class='flex-ct-sb xs-s'>
+              <button type='submit' class='btn btn--auth--solid sb'>
+                {update ? 'UPDATE' : 'ADD'} UPI ID
+              </button>
+              <button
+                class='btn btn--auth sb'
+                onClick={openModeForm.bind(this)}
+              >
+                CANCEL
               </button>
             </div>
           </form>
         </div>
       ) : (
         <div class='card payment shdw'>
-          <h1 class='btn--auth--solid md sb cen xs-s'>NEW CARD</h1>
+          <h1 class='btn--auth--solid md sb cen xs-s'>
+            {update ? 'EDIT THE DETAILS' : 'ENTER CARD DETAILS'}
+          </h1>
           <form action='#' class='sm-s'>
             <div class='fields'>
               <label for='owner' class='label'>
@@ -120,9 +125,15 @@ export default function PaymentForm(props) {
                 <option value='dc'>Debit Card</option>
               </select>
             </div>
-            <div class='xs-s'>
-              <button type='submit' class='btn btn--wide btn--auth--solid sb'>
-                ADD CARD
+            <div class='flex-ct-sb xs-s'>
+              <button type='submit' class='btn btn--auth--solid sb'>
+                {update ? 'UPDATE' : 'ADD'} CARD
+              </button>
+              <button
+                class='btn btn--auth sb'
+                onClick={openModeForm.bind(this)}
+              >
+                CANCEL
               </button>
             </div>
           </form>
