@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import './payment.css';
 import PaymentCard from './PaymentCard';
 import PaymentForm from './PaymentForm';
-import { usePmtCtx } from './paymentContext';
+import { usePmtCtx } from '../context/paymentContext';
 
 const cardList = [
   {

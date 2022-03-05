@@ -1,13 +1,14 @@
 import './navbar.css';
 import Drawer from './Drawer';
 import { useState } from 'react';
+import { useCartCtx } from '../../context/cartContext';
 
 export default function Navbar({ noDrawer }) {
   const [open, setOpen] = useState(false);
-
+  const { totalItems } = useCartCtx();
   return (
     <div>
-      <Drawer open={open} setOpen={setOpen}/>
+      <Drawer open={open} setOpen={setOpen} />
       <nav class='navbar xs-s border--btm'>
         {!noDrawer && (
           <span class='nav__icons'>
@@ -54,7 +55,7 @@ export default function Navbar({ noDrawer }) {
                 <span class='submenu__item sb'>
                   Cart
                   <i
-                    icon-badge='3'
+                    icon-badge={totalItems}
                     bdg-size='medium'
                     class='fas fa-shopping-cart lg fl-rt'
                   ></i>

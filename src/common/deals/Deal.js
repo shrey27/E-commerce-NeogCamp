@@ -1,10 +1,20 @@
 import { useState } from 'react';
 import './deals.css';
+import { useCartCtx } from '../../context/cartContext';
 
 export default function Deal(props) {
-  const { source, title, price, discount, rating, nostock, wishlist, close } =
-    props;
+  const {
+    source,
+    title,
+    price,
+    discount,
+    rating,
+    nostock,
+    wishlist,
+    close
+  } = props;
   const [added, setAdded] = useState(false);
+  const { addToCart } = useCartCtx();
   return (
     <div class='card ecom shadow'>
       {wishlist && (
@@ -43,7 +53,11 @@ export default function Deal(props) {
           <i class='fas fa-star'></i>
         </span>
       </section>
-      <button class='btn btn--wide cart__btn' disabled={nostock}>
+      <button
+        class='btn btn--wide cart__btn'
+        disabled={nostock}
+        onClick={addToCart.bind(this, { ...props })}
+      >
         {nostock ? 'Out of Stock' : 'Add to Cart'}
       </button>
     </div>

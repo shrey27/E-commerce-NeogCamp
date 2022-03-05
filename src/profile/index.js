@@ -7,8 +7,8 @@ import ProfileForm from './ProfileForm';
 import Address from '../address';
 import Payment from '../payment';
 import ChangePassword from '../authentication/ChangePassword';
-import { AddressProvider } from '../address/addressContext';
-import { PaymentProvider } from '../payment/paymentContext';
+import { AddressProvider } from '../context/addressContext';
+import { PaymentProvider } from '../context/paymentContext';
 
 export default function Profile() {
   const [optionsOpen, setOptionsOpen] = useState(false);

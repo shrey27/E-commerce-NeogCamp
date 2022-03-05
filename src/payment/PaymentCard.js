@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import './payment.css';
-import { usePmtCtx } from './paymentContext';
+import { usePmtCtx } from '../context/paymentContext';
 import PaymentForm from './PaymentForm';
 
 export default function PaymentCard(props) {
@@ -16,7 +16,7 @@ export default function PaymentCard(props) {
           <div class='card payment shdw'>
             <div class='flex-ct-sb btn--auth--solid xs-s'>
               <h1 class='lg sb'>UPI ID</h1>
-              {select && <button class='btn  btn--add sb'>SELECT</button>}
+              {select && <button class='btn btn--icons btn--add sb'>SELECT</button>}
             </div>
             <div class='sm-s'>
               <h2 class='primary sm mg-half'>
@@ -42,7 +42,7 @@ export default function PaymentCard(props) {
         <div class='card payment shdw'>
           <div class='flex-ct-sb btn--auth--solid xs-s'>
             <h1 class='lg sb'>{select ? 'Choose Card' : type}</h1>
-            {select && <button class='btn  btn--add sb'>SELECT</button>}
+            {select && <button class='btn btn--icons btn--add sb'>SELECT</button>}
           </div>
           <div class='sm-s'>
             <h2 class='primary sm'>

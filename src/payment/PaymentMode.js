@@ -1,8 +1,7 @@
 import { Fragment } from 'react';
 import './payment.css';
 import PaymentCard from './PaymentCard';
-import { PaymentProvider } from './paymentContext';
-import { usePmtCtx } from './paymentContext';
+import { usePmtCtx } from '../context/paymentContext';
 import PaymentForm from './PaymentForm';
 
 const cardList = [

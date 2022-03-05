@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import './payment.css';
-import { usePmtCtx } from './paymentContext';
+import { usePmtCtx } from '../context/paymentContext';
 
 export default function PaymentForm(props) {
   const { upiId, bank, name, number, type, month, year, update } = props;
