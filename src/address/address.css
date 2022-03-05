@@ -1,7 +1,6 @@
 @import '../common/styles.css';
 
 .address {
-  max-width: 400px;
   width: 90%;
   margin: 1rem auto 2.5rem;
   cursor: pointer;
@@ -32,7 +31,7 @@
 }
 @media screen and (min-width: 768px) {
   .address {
-    max-width: 40%;
+    max-width: 40rem;
   }
   .fields {
     flex-direction: row;

@@ -22,7 +22,7 @@ function App() {
       {/* <Product /> */}
       {/* <Signin /> */}
       {/* <Signup /> */}
-      <Address />
+      {/* <Address /> */}
       {/* <Cart /> */}
       {/* <AddressSelection /> */}
       {/* <Checkout /> */}
@@ -30,7 +30,7 @@ function App() {
       {/* <Payment /> */}
       {/* <PaymentSelection /> */}
       {/* <OrderSummary /> */}
-      {/* <Profile /> */}
+      <Profile />
       {/* <ChangePassword /> */}
     </div>
   );

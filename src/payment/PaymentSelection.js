@@ -81,7 +81,7 @@ export default function PaymentSelection() {
           )}
         </div>
       )}
-      <Footer fixed={true} />
+      <Footer />
     </Fragment>
   );
 }

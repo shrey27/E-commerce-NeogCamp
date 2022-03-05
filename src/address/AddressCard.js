@@ -20,7 +20,7 @@ export default function AddressCard(props) {
     <div class='card address shdw'>
       <div class='flex-ct-sb btn--auth--solid xs-s'>
         <h1 class='lg sb'>{select ? 'Select Address' : title}</h1>
-        {select && <button class='btn btn--icons sb'>SELECT</button>}
+        {select && <button class='btn sb'>SELECT</button>}
       </div>
       <div class='sm-s'>
         <h1 class='lg sb'>{type}</h1>

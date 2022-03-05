@@ -10,9 +10,7 @@ export default function AddressSelection() {
     <Fragment>
       <Navbar />
       <Category />
-      <div class='flex-ct-ct flex-vertical'>
-        <Address select={true} />
-      </div>
+      <Address select={true} />
       <Footer />
     </Fragment>
   );
