@@ -13,6 +13,7 @@ import PaymentSelection from './payment/PaymentSelection';
 import OrderSummary from './summary';
 import Profile from './profile';
 import ChangePassword from './authentication/ChangePassword';
+import { PaymentProvider } from './payment/paymentContext';
 
 function App() {
   return (
@@ -23,13 +24,15 @@ function App() {
       {/* <Signin /> */}
       {/* <Signup /> */}
       {/* <Cart /> */}
-      {/* <AddressSelection /> */}    
+      {/* <AddressSelection /> */}
       {/* <Wishlist/> */}
       {/* <OrderSummary /> */}
       {/* <Profile /> */}
+      <PaymentProvider>
+        <PaymentSelection />
+      </PaymentProvider>
 
       {/* <Checkout /> */}
-      {/* <PaymentSelection /> */}
     </div>
   );
 }

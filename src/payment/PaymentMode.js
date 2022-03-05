@@ -7,6 +7,7 @@ import PaymentForm from './PaymentForm';
 
 const cardList = [
   {
+    id: 1,
     bank: 'adc pvt ltd.',
     name: 'abc',
     number: '123412341234',
@@ -15,6 +16,7 @@ const cardList = [
     type: 'debit'
   },
   {
+    id: 2,
     bank: 'adc pvt ltd.',
     name: 'xyz',
     number: '432143214321',
@@ -29,6 +31,7 @@ const upiList = [
 ];
 
 export default function PaymentMode({ upi }) {
+  const { modeId, openModeForm } = usePmtCtx();
   return (
     <>
       {!upi ? (
@@ -37,27 +40,21 @@ export default function PaymentMode({ upi }) {
           <div class='flex-ct-ct flex-vertical'>
             {cardList &&
               cardList.map((elem, index) => {
-                return (
-                  <PaymentProvider>
-                    <PaymentCard
-                      key={index * 2}
-                      {...elem}
-                      select={true}
-                      redirect={true}
-                    />
-                  </PaymentProvider>
-                );
+                return <PaymentCard key={index * 3} {...elem} select={true} />;
               })}
-
-            <div class='card payment shdw'>
-              <div
-                class='flex-ct-sb btn--auth xs-s'
-                // onClick={openModeForm.bind(this, 0)}
-              >
-                <h1 class='md'>Add New Card</h1>
-                <i class='fas fa-chevron-right fl-rt'></i>
+            {modeId === 0 ? (
+              <PaymentForm />
+            ) : (
+              <div class='card payment shdw'>
+                <div
+                  class='flex-ct-sb btn--auth xs-s'
+                  onClick={openModeForm.bind(this, 0)}
+                >
+                  <h1 class='md'>Add New Card</h1>
+                  <i class='fas fa-chevron-right fl-rt'></i>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </Fragment>
       ) : (
@@ -66,22 +63,22 @@ export default function PaymentMode({ upi }) {
           <div class='flex-ct-ct flex-vertical'>
             {upiList &&
               upiList.map((elem, index) => {
-                return (
-                  <PaymentProvider>
-                    <PaymentCard key={index * 2} {...elem} select={true} />
-                  </PaymentProvider>
-                );
+                return <PaymentCard key={index * 2} {...elem} select={true} />;
               })}
 
-            <div class='card payment shdw'>
-              <div
-                class='flex-ct-sb btn--auth xs-s'
-                // onClick={openModeForm.bind(this, 100)}
-              >
-                <h1 class='md'>Add New UPI ID</h1>
-                <i class='fas fa-chevron-right fl-rt'></i>
+            {modeId === 100 ? (
+              <PaymentForm upiId={true} />
+            ) : (
+              <div class='card payment shdw'>
+                <div
+                  class='flex-ct-sb btn--auth xs-s'
+                  onClick={openModeForm.bind(this, 100)}
+                >
+                  <h1 class='md'>Add New UPI ID</h1>
+                  <i class='fas fa-chevron-right fl-rt'></i>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </Fragment>
       )}
