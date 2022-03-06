@@ -3,31 +3,7 @@ import './payment.css';
 import PaymentCard from './PaymentCard';
 import { usePmtCtx } from '../context/paymentContext';
 import PaymentForm from './PaymentForm';
-
-const cardList = [
-  {
-    id: 1,
-    bank: 'adc pvt ltd.',
-    name: 'abc',
-    number: '123412341234',
-    month: '08',
-    year: '22',
-    type: 'debit'
-  },
-  {
-    id: 2,
-    bank: 'adc pvt ltd.',
-    name: 'xyz',
-    number: '432143214321',
-    month: '09',
-    year: '25',
-    type: 'credit'
-  }
-];
-const upiList = [
-  { id: 3, upiId: 'abc@okcdc' },
-  { id: 4, upiId: 'xyz@okdfd' }
-];
+import { cardList, upiList } from '../common/constants';
 
 export default function PaymentMode({ upi }) {
   const { modeId, openModeForm } = usePmtCtx();

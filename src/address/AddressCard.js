@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import './address.css';
-import { useAddrCtx } from '../context/addressContext';
+import { useAddrCtx, useAddrApiCtx } from '../context/addressContext';
 import AddressForm from './AddressForm';
 
 export default function AddressCard(props) {
@@ -19,7 +19,10 @@ export default function AddressCard(props) {
     noEdit,
     select
   } = props;
+
   const { formId, openForm } = useAddrCtx();
+  const { deleteAddress } = useAddrApiCtx();
+
   return (
     <Fragment>
       {formId && formId === id ? (
@@ -34,23 +37,23 @@ export default function AddressCard(props) {
             <h1 class='lg sb'>{type}</h1>
             <h1 class='primary md sb mg-half'>{name}</h1>
             <div class='address__line'>
-              <span class='primary sm sb'>
+              <span class='primary md sb'>
                 <i class='fa-regular fa-address-book tertiary md'></i>
               </span>
               <span class=''>
-                <span class='primary sm sb'>{line_1},</span>
-                <span class='primary sm sb'>{line_2},</span>
-                <span class='primary sm sb'>{landmark},</span>
-                <span class='primary sm sb'>{city},</span>
-                <span class='primary sm sb'>{state}</span>
-                <span class='primary sm sb'>{pincode}</span>
+                <span class='primary md sb'> {line_1}, </span>
+                <span class='primary md sb'> {line_2}, </span>
+                <span class='primary md sb'> {landmark}, </span>
+                <span class='primary md sb'> {city}, </span>
+                <span class='primary md sb'> {state} </span>
+                <span class='primary md sb'> {pincode} </span>
               </span>
             </div>
-            <h1 class='primary sm sb mg-half'>
+            <h1 class='primary md sb mg-half'>
               <i class='fa-solid fa-mobile-screen-button tertiary md'></i>{' '}
               {mobile}
             </h1>
-            <h1 class='primary sm sb'>
+            <h1 class='primary md sb'>
               <i class='fa-solid fa-envelope tertiary md'></i> {email}
             </h1>
             {!noEdit && (
@@ -61,7 +64,9 @@ export default function AddressCard(props) {
                 >
                   UPDATE
                 </button>
-                <button class='btn sb'>DELETE</button>
+                <button class='btn sb' onClick={deleteAddress.bind(this, id)}>
+                  DELETE
+                </button>
               </div>
             )}
           </div>

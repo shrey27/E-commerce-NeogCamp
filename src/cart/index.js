@@ -6,25 +6,6 @@ import CartItem from './CartItem';
 import { useCartCtx } from '../context/cartContext';
 import { useEffect, useState } from 'react';
 
-// const cartList = [
-//   {
-//     source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
-//     title: 'Whey Protein Concentrate',
-//     price: 8000,
-//     mrp: 18000,
-//     discount: 30,
-//     quantity: 1
-//   },
-//   {
-//     source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
-//     title: 'Whey Protein Concentrate',
-//     price: 8000,
-//     mrp: 18000,
-//     discount: 30,
-//     quantity: 1
-//   }
-// ];
-
 export default function Cart() {
   const { items } = useCartCtx();
   const [cartPrice, setCartPrice] = useState({
@@ -57,8 +38,8 @@ export default function Cart() {
     <>
       <Navbar />
       <Category />
-      {items ? (
-        <img src='empty.webp' alt='empty' class='image__empty img--md'/>
+      {items.length === 0 ? (
+        <img src='empty.webp' alt='empty' class='image__empty img--md' />
       ) : (
         <div class='cart sm-s'>
           <div class='cart__container'>
@@ -94,7 +75,7 @@ export default function Cart() {
           </div>
         </div>
       )}
-      <Footer fixed={items}/>
+      <Footer fixed={items} />
     </>
   );
 }

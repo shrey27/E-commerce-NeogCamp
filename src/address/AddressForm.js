@@ -1,8 +1,9 @@
 import './address.css';
-import { useAddrCtx } from '../context/addressContext';
+import { useAddrCtx, useAddrApiCtx } from '../context/addressContext';
 
 export default function AddressForm(props) {
   const {
+    id,
     name,
     email,
     mobile,
@@ -16,6 +17,18 @@ export default function AddressForm(props) {
     update
   } = props;
   const { openForm } = useAddrCtx();
+  const { addNewAddress, updateAddress } = useAddrApiCtx();
+
+  const submitHandler = () => {
+    openForm();
+    addNewAddress({ name: 'nick-3 jones' });
+  };
+
+  const updateHandler = () => {
+    openForm();
+    updateAddress(id, { name: 'nick-4-jones' });
+  };
+
   return (
     <div class='card address shdw'>
       <h1 class='btn--auth--solid md sb cen xs-s'>
@@ -151,18 +164,30 @@ export default function AddressForm(props) {
             Address Type
           </label>
           <select id='type' name='type' class='input select sm-s' value={type}>
-            <option value='' class='primary--light' selected>
+            <option value='' class='primary--light' selected={!type}>
               -- Select a Type --
             </option>
-            <option value='Home'>Home</option>
-            <option value='Office'>Office</option>
-            <option value='Relative'>Relative</option>
+            <option value='Home' selected={'Home' === type}>
+              Home
+            </option>
+            <option value='Office' selected={'Office' === type}>
+              Office
+            </option>
+            <option value='Relative' selected={'Relative' === type}>
+              Relative
+            </option>
           </select>
         </div>
         <div class='flex-ct-sb'>
-          <button type='submit' class='btn btn--auth--solid sb'>
-            {update ? 'UPDATE' : 'ADD'} ADDRESS
-          </button>
+          {update ? (
+            <button class='btn btn--auth--solid sb' onClick={updateHandler}>
+              UPDATE ADDRESS
+            </button>
+          ) : (
+            <button class='btn btn--auth--solid sb' onClick={submitHandler}>
+              ADD ADDRESS
+            </button>
+          )}
           <button class='btn btn--auth sb' onClick={openForm.bind(this)}>
             CANCEL
           </button>

@@ -31,7 +31,7 @@
 }
 @media screen and (min-width: 768px) {
   .address {
-    max-width: 40rem;
+    width: 40rem;
   }
   .fields {
     flex-direction: row;

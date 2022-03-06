@@ -37,6 +37,7 @@ export default function Profile() {
         setComponent(<ProfileForm />);
         break;
     }
+    setOptionsOpen(false);
   };
 
   return (

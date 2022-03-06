@@ -42,7 +42,7 @@ export default function Deal(props) {
       <section class='content'>
         <h1 class='primary sm sb mg-half'>{title}</h1>
         <div class='price__ctr'>
-          <span class='primary sm sb price__val'>₹ {price}</span>
+          <span class='primary md sb price__val'>₹ {price}</span>
           <span class='tag sm'>
             <i class='fa-solid fa-tags'></i>
             Upto {discount}% Off

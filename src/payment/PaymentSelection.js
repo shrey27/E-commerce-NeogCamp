@@ -5,6 +5,7 @@ import Category from '../common/header/Category';
 import Footer from '../common/footer';
 import PaymentMode from './PaymentMode';
 import { PaymentProvider } from '../context/paymentContext';
+
 export default function PaymentSelection() {
   const [method, setMethod] = useState(null);
   const methodHandler = (name) => {
