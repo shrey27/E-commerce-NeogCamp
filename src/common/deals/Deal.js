@@ -62,12 +62,12 @@ export default function Deal(props) {
         </div>
 
         {nostock ? (
-          <button className={`btn--disabled btn btn--wide`} disabled={nostock}>
+          <button className={`btn--disabled btn btn--wide btn--margin`} disabled={nostock}>
             Out of Stock
           </button>
         ) : (
           <button
-            className='btn btn--auth--solid btn--wide'
+            className='btn btn--auth--solid btn--wide btn--margin'
             onClick={addToCart.bind(this, { ...props })}
           >
             Add to Cart

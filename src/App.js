@@ -22,20 +22,22 @@ function App() {
     <CartProvider>
       <AddressApiProvider>
         <AddressProvider>
-          <div className=''>
-            {/* <HomePage /> */}
-            {/* <Products /> */}
-            {/* <Product /> */}
-            {/* <Signin /> */}
-            {/* <Signup /> */}
-            {/* <Cart /> */}
-            {/* <AddressSelection /> */}
-            {/* <Wishlist/> */}
-            {/* <OrderSummary /> */}
-            {/* <Profile /> */}
-            {/* <PaymentSelection /> */}
-            {/* <Checkout /> */}
-          </div>
+          <ProductsContextProvider>
+            <div className=''>
+              {/* <HomePage /> */}
+              <Products />
+              {/* <Product /> */}
+              {/* <Signin /> */}
+              {/* <Signup /> */}
+              {/* <Cart /> */}
+              {/* <AddressSelection /> */}
+              {/* <Wishlist/> */}
+              {/* <OrderSummary /> */}
+              {/* <Profile /> */}
+              {/* <PaymentSelection /> */}
+              {/* <Checkout /> */}
+            </div>
+          </ProductsContextProvider>
         </AddressProvider>
       </AddressApiProvider>
     </CartProvider>

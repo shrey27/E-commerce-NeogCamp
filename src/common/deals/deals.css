@@ -108,6 +108,9 @@
   margin: 0.5rem auto;
   padding: 0 0.5rem;
 }
+.btn.btn--margin {
+  margin: 0 auto;
+}
 /* Media Queries */
 @media screen and (min-width: 300px) {
   .price__ctr {
