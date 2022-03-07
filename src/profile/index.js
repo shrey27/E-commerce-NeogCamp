@@ -7,8 +7,6 @@ import ProfileForm from './ProfileForm';
 import Address from '../address';
 import Payment from '../payment';
 import ChangePassword from '../authentication/ChangePassword';
-import { AddressProvider } from '../context/addressContext';
-import { PaymentProvider } from '../context/paymentContext';
 
 export default function Profile() {
   const [optionsOpen, setOptionsOpen] = useState(false);
@@ -17,18 +15,10 @@ export default function Profile() {
   const handleMainContent = (component) => {
     switch (component) {
       case 'ADDRESS':
-        setComponent(
-          <AddressProvider>
-            <Address />
-          </AddressProvider>
-        );
+        setComponent(<Address />);
         break;
       case 'PAYMENT':
-        setComponent(
-          <PaymentProvider>
-            <Payment />
-          </PaymentProvider>
-        );
+        setComponent(<Payment />);
         break;
       case 'PASSWORDS':
         setComponent(<ChangePassword />);
@@ -47,71 +37,74 @@ export default function Profile() {
       {/* Category header bar */}
       <Category />
       {/* Hamburger menu container */}
-      <div class='hb--box'>
+      <div className='hb--box'>
         {/* header */}
-        <header class='hb--header'>
-          <nav class='navbar'>
-            <section class='end xs-s'>
+        <header className='hb--header'>
+          <nav className='navbar'>
+            <section className='end xs-s'>
               <span
-                class='slider btn hb--btn'
+                className='slider btn hb--btn'
                 onClick={() => setOptionsOpen((e) => !e)}
               >
-                Account&nbsp;<i class='fas fa-chevron-down'></i>
+                Account&nbsp;<i className='fas fa-chevron-down'></i>
               </span>
             </section>
           </nav>
         </header>
 
         {/* aside container */}
-        <aside class={`hb--aside sm-s shadow ${optionsOpen ? 'hb--open' : ''}`}>
-          <div class='mg-full'>
-            <h1 class='primary sm reg aside__title'>MY ACCOUNT</h1>
-            <ul class='stack'>
+        <aside
+          className={`hb--aside sm-s shadow ${optionsOpen ? 'hb--open' : ''}`}
+        >
+          <div className='mg-full'>
+            <h1 className='primary sm reg aside__title'>MY ACCOUNT</h1>
+            <ul className='stack'>
               <li
-                class='stack__item primary sm'
+                className='stack__item primary sm'
                 onClick={handleMainContent.bind(this, 'PROFILE')}
               >
-                Profile Settings <i class='fa-solid fa-chevron-right'></i>
+                Profile Settings <i className='fa-solid fa-chevron-right'></i>
               </li>
               <li
-                class='stack__item primary sm'
+                className='stack__item primary sm'
                 onClick={handleMainContent.bind(this, 'ADDRESS')}
               >
-                Manage Address <i class='fa-solid fa-chevron-right'></i>
+                Manage Address <i className='fa-solid fa-chevron-right'></i>
               </li>
               <li
-                class='stack__item primary sm'
+                className='stack__item primary sm'
                 onClick={handleMainContent.bind(this, 'PAYMENT')}
               >
-                Manage Payment Info <i class='fa-solid fa-chevron-right'></i>
+                Manage Payment Info{' '}
+                <i className='fa-solid fa-chevron-right'></i>
               </li>
               <li
-                class='stack__item primary sm'
+                className='stack__item primary sm'
                 onClick={handleMainContent.bind(this, 'PASSWORDS')}
               >
-                Update Password <i class='fa-solid fa-chevron-right'></i>
+                Update Password <i className='fa-solid fa-chevron-right'></i>
               </li>
             </ul>
           </div>
-          <div class='mg-full'>
-            <h1 class='primary sm reg aside__title'>MY STUFF</h1>
-            <ul class='stack'>
-              <li class='stack__item primary sm'>
-                My Cart <i class='fa-solid fa-chevron-right'></i>
+          <div className='mg-full'>
+            <h1 className='primary sm reg aside__title'>MY STUFF</h1>
+            <ul className='stack'>
+              <li className='stack__item primary sm'>
+                My Cart <i className='fa-solid fa-chevron-right'></i>
               </li>
-              <li class='stack__item primary sm'>
-                My Orders <i class='fa-solid fa-chevron-right'></i>
+              <li className='stack__item primary sm'>
+                My Orders <i className='fa-solid fa-chevron-right'></i>
               </li>
-              <li class='stack__item primary sm'>
-                My Wishlist <i class='fa-solid fa-chevron-right'></i>
+              <li className='stack__item primary sm'>
+                My Wishlist <i className='fa-solid fa-chevron-right'></i>
               </li>
             </ul>
           </div>
-          <button class='btn btn--auth btn--wide'>Logout</button>
+          <button className='btn btn--auth btn--wide'>Logout</button>
         </aside>
 
         {/* main container */}
-        <main class='hb--main hb--open'>{component}</main>
+        <main className='hb--main hb--open'>{component}</main>
       </div>
 
       {/* Footer */}

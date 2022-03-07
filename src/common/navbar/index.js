@@ -9,69 +9,69 @@ export default function Navbar({ noDrawer }) {
   return (
     <div>
       <Drawer open={open} setOpen={setOpen} />
-      <nav class='navbar xs-s border--btm'>
+      <nav className='navbar xs-s border--btm'>
         {!noDrawer && (
-          <span class='nav__icons'>
+          <span className='nav__icons'>
             <i
-              class='fas fa-bars md sb show--drawer'
+              className='fas fa-bars md sb show--drawer'
               onClick={() => setOpen(true)}
             ></i>
           </span>
         )}
-        <section class='start'>
+        <section className='start'>
           <a href='/'>
-            <img class='box__image' src='lalogo.jpg' alt='logo' />
+            <img className='box__image' src='lalogo.jpg' alt='logo' />
           </a>
-          <span class='box-span'>
-            <span class='title primary'>LEGION ATHLETICS</span>
+          <span className='box-span'>
+            <span className='title primary'>LEGION ATHLETICS</span>
           </span>
         </section>
-        <section class='middle'>
-          <div class='search--ctr'>
-            <i class='fas fa-search search--btn'></i>
+        <section className='middle'>
+          <div className='search--ctr'>
+            <i className='fas fa-search search--btn'></i>
             <input
               type='text'
               placeholder='Search'
-              class='input no--bdr'
+              className='input no--bdr'
               id='user-name'
               name='user-name'
             />
           </div>
         </section>
-        <section class='end'>
-          <div class='menu'>
-            <span class='menu__btn lg sb primary'>
-              <i class='far fa-user-circle'></i>
-              <span class='menu__btn__name'>Account</span>
+        <section className='end'>
+          <div className='menu'>
+            <span className='menu__btn lg sb primary'>
+              <i className='far fa-user-circle'></i>
+              <span className='menu__btn__name'>Account</span>
             </span>
-            <div class='submenu shadow xs-s'>
-              <section class='submenu__btn'>
-                <button class='btn btn--float'>Sign In</button>
-                <button class='btn'>Sign Up</button>
+            <div className='submenu shadow xs-s'>
+              <section className='submenu__btn'>
+                <button className='btn btn--float'>Sign In</button>
+                <button className='btn'>Sign Up</button>
               </section>
-              <section class='submenu__items flex-st-ct flex-vertical'>
-                <span class='submenu__item sb'>My Account</span>
-                <span class='submenu__item sb'>My Order</span>
-                <span class='submenu__item sb'>
+              <section className='submenu__items flex-st-ct flex-vertical'>
+                <span className='submenu__item sb'>My Account</span>
+                <span className='submenu__item sb'>My Order</span>
+                <span className='submenu__item sb'>
                   Cart
                   <i
                     icon-badge={totalItems}
                     bdg-size='medium'
-                    class='fas fa-shopping-cart lg fl-rt'
+                    className='fas fa-shopping-cart lg fl-rt'
                   ></i>
                 </span>
-                <span class='submenu__item sb'>
+                <span className='submenu__item sb'>
                   Wishlist
                   <i
                     icon-badge='3'
                     bdg-size='medium'
-                    class='far fa-heart lg fl-rt'
+                    className='far fa-heart lg fl-rt'
                   ></i>
                 </span>
-                <span class='submenu__item sb'>Manage Account</span>
+                <span className='submenu__item sb'>Manage Account</span>
               </section>
-              <section class='submenu__btn flex-st-ct'>
-                <button class='btn btn--float btn--wide'>Log Out</button>
+              <section className='submenu__btn flex-st-ct'>
+                <button className='btn btn--float btn--wide'>Log Out</button>
               </section>
             </div>
           </div>

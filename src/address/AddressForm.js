@@ -30,17 +30,17 @@ export default function AddressForm(props) {
   };
 
   return (
-    <div class='card address shdw'>
-      <h1 class='btn--auth--solid md sb cen xs-s'>
+    <div className='card address shdw'>
+      <h1 className='btn--auth--solid md sb cen xs-s'>
         {update ? 'EDIT THE' : 'ENTER NEW'} DETAILS
       </h1>
-      <form action='#' class='sm-s'>
-        <div class='fields'>
-          <label for='name--field' class='label'>
+      <form action='#' className='sm-s'>
+        <div className='fields'>
+          <label for='name--field' className='label'>
             Name:
           </label>
           <input
-            class='input sm-s'
+            className='input sm-s'
             type='text'
             name='name'
             id='name--field'
@@ -48,12 +48,12 @@ export default function AddressForm(props) {
             value={name}
           />
         </div>
-        <div class='fields'>
-          <label for='email--field' class='label'>
+        <div className='fields'>
+          <label for='email--field' className='label'>
             Email:
           </label>
           <input
-            class='input sm-s'
+            className='input sm-s'
             type='email'
             name='email'
             id='email--field'
@@ -61,12 +61,12 @@ export default function AddressForm(props) {
             value={email}
           />
         </div>
-        <div class='fields'>
-          <label for='phone--field' class='label'>
+        <div className='fields'>
+          <label for='phone--field' className='label'>
             Phone:
           </label>
           <input
-            class='input sm-s'
+            className='input sm-s'
             type='number'
             name='phone'
             id='phone--field'
@@ -74,12 +74,12 @@ export default function AddressForm(props) {
             value={mobile}
           />
         </div>
-        <div class='fields'>
-          <label for='add_one' class='label'>
+        <div className='fields'>
+          <label for='add_one' className='label'>
             House No.
           </label>
           <input
-            class='input sm-s'
+            className='input sm-s'
             type='text'
             name='add_one'
             id='add_one'
@@ -87,12 +87,12 @@ export default function AddressForm(props) {
             value={line_1}
           />
         </div>
-        <div class='fields'>
-          <label for='add_two' class='label'>
+        <div className='fields'>
+          <label for='add_two' className='label'>
             Area
           </label>
           <input
-            class='input sm-s'
+            className='input sm-s'
             type='text'
             name='add_two'
             id='add_two'
@@ -100,12 +100,12 @@ export default function AddressForm(props) {
             value={line_2}
           />
         </div>
-        <div class='fields'>
-          <label for='landmark' class='label'>
+        <div className='fields'>
+          <label for='landmark' className='label'>
             Landmark
           </label>
           <input
-            class='input sm-s'
+            className='input sm-s'
             type='text'
             name='landmark'
             id='landmark'
@@ -113,17 +113,17 @@ export default function AddressForm(props) {
             value={landmark}
           />
         </div>
-        <div class='fields'>
-          <label for='state' class='label'>
+        <div className='fields'>
+          <label for='state' className='label'>
             State
           </label>
           <select
             id='state'
             name='state'
-            class='input select sm-s'
+            className='input select sm-s'
             value={state}
           >
-            <option value='' class='primary--light' selected>
+            <option value='' className='primary--light' selected>
               -- Select a State --
             </option>
             <option value='Rajasthan'>Rajasthan</option>
@@ -132,12 +132,17 @@ export default function AddressForm(props) {
             <option value='Kerala'>Kerala</option>
           </select>
         </div>
-        <div class='fields'>
-          <label for='city' class='label'>
+        <div className='fields'>
+          <label for='city' className='label'>
             City
           </label>
-          <select id='city' name='city' class='input select sm-s' value={city}>
-            <option value='' class='primary--light' selected>
+          <select
+            id='city'
+            name='city'
+            className='input select sm-s'
+            value={city}
+          >
+            <option value='' className='primary--light' selected>
               -- Select a City --
             </option>
             <option value='Jaipur'>Jaipur</option>
@@ -146,12 +151,12 @@ export default function AddressForm(props) {
             <option value='Jodhpur'>Jodhpur</option>
           </select>
         </div>
-        <div class='fields'>
-          <label for='pincode' class='label'>
+        <div className='fields'>
+          <label for='pincode' className='label'>
             Pincode
           </label>
           <input
-            class='input sm-s'
+            className='input sm-s'
             type='number'
             name='pincode'
             id='pincode'
@@ -159,12 +164,17 @@ export default function AddressForm(props) {
             value={pincode}
           />
         </div>
-        <div class='fields'>
-          <label for='type' class='label'>
+        <div className='fields'>
+          <label for='type' className='label'>
             Address Type
           </label>
-          <select id='type' name='type' class='input select sm-s' value={type}>
-            <option value='' class='primary--light' selected={!type}>
+          <select
+            id='type'
+            name='type'
+            className='input select sm-s'
+            value={type}
+          >
+            <option value='' className='primary--light' selected={!type}>
               -- Select a Type --
             </option>
             <option value='Home' selected={'Home' === type}>
@@ -178,17 +188,17 @@ export default function AddressForm(props) {
             </option>
           </select>
         </div>
-        <div class='flex-ct-sb'>
+        <div className='flex-ct-sb'>
           {update ? (
-            <button class='btn btn--auth--solid sb' onClick={updateHandler}>
+            <button className='btn btn--auth--solid sb' onClick={updateHandler}>
               UPDATE ADDRESS
             </button>
           ) : (
-            <button class='btn btn--auth--solid sb' onClick={submitHandler}>
+            <button className='btn btn--auth--solid sb' onClick={submitHandler}>
               ADD ADDRESS
             </button>
           )}
-          <button class='btn btn--auth sb' onClick={openForm.bind(this)}>
+          <button className='btn btn--auth sb' onClick={openForm.bind(this)}>
             CANCEL
           </button>
         </div>

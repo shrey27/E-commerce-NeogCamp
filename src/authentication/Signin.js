@@ -5,16 +5,16 @@ export default function Signin() {
   return (
     <>
       <Navbar noDrawer={true} />
-      <div class='card authentication shdw'>
-        <h1 class='lg sb cen xs-s mg-full'>LOGIN</h1>
+      <div className='card authentication shdw'>
+        <h1 className='lg sb cen xs-s mg-full'>LOGIN</h1>
         <hr />
-        <form action='#' class='sm-s'>
-          <div class='authentication__input'>
-            <label for='email__signin' class='label'>
+        <form action='#' className='sm-s'>
+          <div className='authentication__input'>
+            <label for='email__signin' className='label'>
               Enter Your Email ID
             </label>
             <input
-              class='input sm-s'
+              className='input sm-s'
               type='email'
               name='email__signin'
               id='email__signin'
@@ -23,12 +23,12 @@ export default function Signin() {
               required
             />
           </div>
-          <div class='authentication__input'>
-            <label for='password__signin' class='label'>
+          <div className='authentication__input'>
+            <label for='password__signin' className='label'>
               Enter Password
             </label>
             <input
-              class='input sm-s'
+              className='input sm-s'
               type='password'
               name='password__signin'
               id='password__signin'
@@ -37,26 +37,26 @@ export default function Signin() {
               required
             />
           </div>
-          <div class='flex-ct-ct signin__remember'>
+          <div className='flex-ct-ct signin__remember'>
             <input
-              class='sm-s'
+              className='sm-s'
               type='checkbox'
               name='remember__signin'
               id='remember__signin'
             />
-            <label for='remember__signin' class='label'>
+            <label for='remember__signin' className='label'>
               Remember me
             </label>
           </div>
-          <button type='submit' class='btn btn--wide btn--auth--solid sb'>
+          <button type='submit' className='btn btn--wide btn--auth--solid sb'>
             LOGIN
           </button>
         </form>
-        <div class='signin__links'>
-          <a href='/' class='forgot sm'>
+        <div className='signin__links'>
+          <a href='/' className='forgot sm'>
             Forgot Password?
           </a>
-          <a href='/' class='forgot sm fl-rt'>
+          <a href='/' className='forgot sm fl-rt'>
             Sign Up
           </a>
         </div>

@@ -14,26 +14,28 @@ import OrderSummary from './summary';
 import Profile from './profile';
 import ChangePassword from './authentication/ChangePassword';
 import { CartProvider } from './context/cartContext';
-import { AddressApiProvider } from './context/addressContext';
+import { AddressProvider, AddressApiProvider } from './context/addressContext';
 
 function App() {
   return (
     <CartProvider>
       <AddressApiProvider>
-        <div className=''>
-          {/* <HomePage /> */}
-          {/* <Products /> */}
-          {/* <Product /> */}
-          {/* <Signin /> */}
-          {/* <Signup /> */}
-          {/* <Cart /> */}
-          <AddressSelection />
-          {/* <Wishlist/> */}
-          {/* <OrderSummary /> */}
-          {/* <Profile /> */}
-          {/* <PaymentSelection /> */}
-          {/* <Checkout /> */}
-        </div>
+        <AddressProvider>
+          <div className='dark'>
+            {/* <HomePage /> */}
+            {/* <Products /> */}
+            {/* <Product /> */}
+            {/* <Signin /> */}
+            {/* <Signup /> */}
+            {/* <Cart /> */}
+            {/* <AddressSelection /> */}
+            {/* <Wishlist/> */}
+            {/* <OrderSummary /> */}
+            <Profile />
+            {/* <PaymentSelection /> */}
+            {/* <Checkout /> */}
+          </div>
+        </AddressProvider>
       </AddressApiProvider>
     </CartProvider>
   );

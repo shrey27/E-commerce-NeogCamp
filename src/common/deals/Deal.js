@@ -3,33 +3,25 @@ import './deals.css';
 import { useCartCtx } from '../../context/cartContext';
 
 export default function Deal(props) {
-  const {
-    source,
-    title,
-    price,
-    discount,
-    rating,
-    nostock,
-    wishlist,
-    close
-  } = props;
+  const { source, title, price, discount, rating, nostock, wishlist, close } =
+    props;
   const [added, setAdded] = useState(false);
   const { addToCart } = useCartCtx();
   return (
-    <div class='card ecom shadow'>
+    <div className='card ecom shadow'>
       {wishlist && (
-        <span class='card__dismiss' onClick={() => setAdded((e) => !e)}>
+        <span className='card__dismiss' onClick={() => setAdded((e) => !e)}>
           {added ? (
-            <i class='fa-solid fa-heart tag--clr'></i>
+            <i className='fa-solid fa-heart tag--clr'></i>
           ) : (
-            <i class='fa-regular fa-heart tertiary'></i>
+            <i className='fa-regular fa-heart tertiary'></i>
           )}
         </span>
       )}
       {close && (
-        <span class='card__dismiss'>
+        <span className='card__dismiss'>
           <i
-            class='fas fa-times-circle'
+            className='fas fa-times-circle'
             style={{ color: 'var(--tertiary)' }}
           ></i>
         </span>
@@ -37,24 +29,24 @@ export default function Deal(props) {
       <img
         src={source}
         alt='Banner'
-        class={`card__banner ${nostock && 'nostock'}`}
+        className={`card__banner ${nostock && 'nostock'}`}
       />
-      <section class='content'>
-        <h1 class='primary sm sb mg-half'>{title}</h1>
-        <div class='price__ctr'>
-          <span class='primary md sb price__val'>₹ {price}</span>
-          <span class='tag sm'>
-            <i class='fa-solid fa-tags'></i>
+      <section className='content'>
+        <h1 className='primary sm sb mg-half'>{title}</h1>
+        <div className='price__ctr'>
+          <span className='primary md sb price__val'>₹ {price}</span>
+          <span className='tag sm'>
+            <i className='fa-solid fa-tags'></i>
             Upto {discount}% Off
           </span>
         </div>
-        <span class='content__rating mg-half'>
+        <span className='content__rating mg-half'>
           {rating}
-          <i class='fas fa-star'></i>
+          <i className='fas fa-star'></i>
         </span>
       </section>
       <button
-        class='btn btn--wide cart__btn'
+        className='btn btn--wide cart__btn'
         disabled={nostock}
         onClick={addToCart.bind(this, { ...props })}
       >

@@ -20,10 +20,10 @@ export default function Address({ select }) {
         <Loader />
       ) : (
         <Fragment>
-          <h1 class='primary lg cen xs-s mg-full'>
+          <h1 className='primary lg cen xs-s mg-full'>
             {select ? 'SELECT AN ADDRESS' : 'MANAGE YOUR ADDRESS'}{' '}
           </h1>
-          <div class='flex-ct-ct flex-vertical'>
+          <div className='flex-ct-ct flex-vertical'>
             {addressList &&
               addressList.map((elem, index) => {
                 return (
@@ -33,13 +33,13 @@ export default function Address({ select }) {
             {formId === 0 ? (
               <AddressForm />
             ) : (
-              <div class='card address shdw'>
+              <div className='card address shdw'>
                 <div
-                  class='flex-ct-sb btn--auth xs-s'
+                  className='flex-ct-sb btn--auth xs-s'
                   onClick={() => openForm(0)}
                 >
-                  <h1 class='md'>Add New Address</h1>
-                  <i class='fas fa-chevron-right fl-rt'></i>
+                  <h1 className='md'>Add New Address</h1>
+                  <i className='fas fa-chevron-right fl-rt'></i>
                 </div>
               </div>
             )}

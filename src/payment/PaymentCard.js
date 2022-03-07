@@ -1,74 +1,80 @@
 import { Fragment } from 'react';
 import './payment.css';
-import { usePmtCtx } from '../context/paymentContext';
 import PaymentForm from './PaymentForm';
+import { useAddrCtx } from '../context/addressContext';
 
 export default function PaymentCard(props) {
   const { id, upiId, bank, name, number, type, month, year, noEdit, select } =
     props;
-  const { modeId, openModeForm } = usePmtCtx();
+
+  const { formId, openForm } = useAddrCtx();
+
   return (
     <Fragment>
       {upiId ? (
-        modeId === id ? (
+        formId === id ? (
           <PaymentForm {...props} update={true} />
         ) : (
-          <div class='card payment shdw'>
-            <div class='flex-ct-sb btn--auth--solid xs-s'>
-              <h1 class='lg sb'>UPI ID</h1>
-              {select && <button class='btn btn--icons btn--add sb'>SELECT</button>}
+          <div className='card payment shdw'>
+            <div className='flex-ct-sb btn--auth--solid xs-s'>
+              <h1 className='lg sb'>UPI ID</h1>
+              {select && (
+                <button className='btn btn--icons btn--add sb'>SELECT</button>
+              )}
             </div>
-            <div class='sm-s'>
-              <h2 class='primary sm mg-half'>
-                UPI ID: <span class='clr'>{upiId}</span>
+            <div className='sm-s'>
+              <h2 className='primary sm mg-half'>
+                UPI ID: <span className='clr'>{upiId}</span>
               </h2>
               {!noEdit && (
-                <div class='flex-ct-sb mg-half'>
+                <div className='flex-ct-sb mg-half'>
                   <button
-                    class='btn btn--auth--solid sb'
-                    onClick={openModeForm.bind(this, id)}
+                    className='btn btn--auth--solid sb'
+                    onClick={openForm.bind(this, id)}
                   >
                     UPDATE
                   </button>
-                  <button class='btn sb'>DELETE</button>
+                  <button className='btn sb'>DELETE</button>
                 </div>
               )}
             </div>
           </div>
         )
-      ) : modeId === id ? (
+      ) : formId === id ? (
         <PaymentForm {...props} update={true} />
       ) : (
-        <div class='card payment shdw'>
-          <div class='flex-ct-sb btn--auth--solid xs-s'>
-            <h1 class='lg sb'>{select ? 'Choose Card' : type}</h1>
-            {select && <button class='btn btn--icons btn--add sb'>SELECT</button>}
+        <div className='card payment shdw'>
+          <div className='flex-ct-sb btn--auth--solid xs-s'>
+            <h1 className='lg sb'>{select ? 'Choose Card' : type}</h1>
+            {select && (
+              <button className='btn btn--icons btn--add sb'>SELECT</button>
+            )}
           </div>
-          <div class='sm-s'>
-            <h2 class='primary sm'>
-              NAME: <span class='clr'>{name}</span>
+          <div className='sm-s'>
+            <h2 className='primary sm'>
+              NAME: <span className='clr'>{name}</span>
             </h2>
-            <h2 class='primary sm'>
-              BANK NAME: <span class='clr'>{bank}</span>
+            <h2 className='primary sm'>
+              BANK NAME: <span className='clr'>{bank}</span>
             </h2>
-            <h2 class='primary sm'>
-              CARD NO. <span class='clr'>{number}</span>
+            <h2 className='primary sm'>
+              CARD NO. <span className='clr'>{number}</span>
             </h2>
-            <h2 class='primary sm'>
+            <h2 className='primary sm'>
               EXPIRY:{' '}
-              <span class='clr'>
+              <span className='clr'>
                 {month}/{year}
               </span>
             </h2>
             {!noEdit && (
-              <div class='flex-ct-sb mg-half'>
+              <div className='flex-ct-sb mg-half'>
                 <button
-                  class='btn btn--auth--solid sb'
-                  onClick={openModeForm.bind(this, id)}
+                  className='btn btn--auth--solid sb'
+                  onClick={openForm.bind(this, id)}
                 >
                   UPDATE
                 </button>
-                <button class='btn sb'>DELETE</button>
+                <button className='btn sb'>DELETE</button>
               </div>
             )}
           </div>

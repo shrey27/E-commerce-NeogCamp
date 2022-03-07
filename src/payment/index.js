@@ -2,30 +2,30 @@ import { Fragment } from 'react';
 import './payment.css';
 import PaymentCard from './PaymentCard';
 import PaymentForm from './PaymentForm';
-import { usePmtCtx } from '../context/paymentContext';
+import { useAddrCtx } from '../context/addressContext';
 import { cardList, upiList } from '../common/constants';
 
 export default function Payment() {
-  const { modeId, openModeForm } = usePmtCtx();
+  const { formId, openForm } = useAddrCtx();
   return (
     <>
       <Fragment>
-        <h1 class='primary lg cen xs-s mg-full'>MANAGE YOUR CARDS</h1>
-        <div class='flex-ct-ct flex-vertical'>
+        <h1 className='primary lg cen xs-s mg-full'>MANAGE YOUR CARDS</h1>
+        <div className='flex-ct-ct flex-vertical'>
           {cardList &&
             cardList.map((elem, index) => {
               return <PaymentCard key={index * 2} {...elem} />;
             })}
-          {modeId === 0 ? (
+          {formId === 0 ? (
             <PaymentForm />
           ) : (
-            <div class='card payment shdw'>
+            <div className='card payment shdw'>
               <div
-                class='flex-ct-sb btn--auth xs-s'
-                onClick={openModeForm.bind(this, 0)}
+                className='flex-ct-sb btn--auth xs-s'
+                onClick={openForm.bind(this, 0)}
               >
-                <h1 class='md'>Add New Card</h1>
-                <i class='fas fa-chevron-right fl-rt'></i>
+                <h1 className='md'>Add New Card</h1>
+                <i className='fas fa-chevron-right fl-rt'></i>
               </div>
             </div>
           )}
@@ -33,22 +33,22 @@ export default function Payment() {
       </Fragment>
 
       <Fragment>
-        <h1 class='primary lg cen xs-s mg-full'>MANAGE YOUR UPI ID's</h1>
-        <div class='flex-ct-ct flex-vertical'>
+        <h1 className='primary lg cen xs-s mg-full'>MANAGE YOUR UPI ID's</h1>
+        <div className='flex-ct-ct flex-vertical'>
           {upiList &&
             upiList.map((elem, index) => {
               return <PaymentCard key={index * 2} {...elem} />;
             })}
-          {modeId === 100 ? (
+          {formId === 100 ? (
             <PaymentForm />
           ) : (
-            <div class='card payment shdw'>
+            <div className='card payment shdw'>
               <div
-                class='flex-ct-sb btn--auth xs-s'
-                onClick={openModeForm.bind(this, 100)}
+                className='flex-ct-sb btn--auth xs-s'
+                onClick={openForm.bind(this, 100)}
               >
-                <h1 class='md'>Add New UPI ID</h1>
-                <i class='fas fa-chevron-right fl-rt'></i>
+                <h1 className='md'>Add New UPI ID</h1>
+                <i className='fas fa-chevron-right fl-rt'></i>
               </div>
             </div>
           )}

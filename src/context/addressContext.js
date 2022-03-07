@@ -27,9 +27,10 @@ const AddressProvider = ({ children }) => {
 };
 const useAddrCtx = () => useContext(AddressContext);
 
+// API handling
+
 const AddressApiContext = createContext();
 
-// API handling
 const docRef = collection(db, 'address');
 
 const AddressApiProvider = ({ children }) => {

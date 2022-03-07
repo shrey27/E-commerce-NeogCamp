@@ -2,26 +2,26 @@ import './header.css';
 
 export default function Category() {
   return (
-    <section class='categories'>
-      <div class='category'>
+    <section className='categories'>
+      <div className='category'>
         <span>Protein</span>
       </div>
-      <div class='category'>
+      <div className='category'>
         <span>Gym Gear</span>
       </div>
-      <div class='category'>
+      <div className='category'>
         <span>Athletics</span>
       </div>
-      <div class='category'>
+      <div className='category'>
         <span>Nutrition</span>
       </div>
-      <div class='category'>
+      <div className='category'>
         <span>Vegan</span>
       </div>
-      <div class='category'>
+      <div className='category'>
         <span>Clothing</span>
       </div>
-      <div class='category'>
+      <div className='category'>
         <span>Limited-Edition</span>
       </div>
     </section>

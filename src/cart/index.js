@@ -39,37 +39,37 @@ export default function Cart() {
       <Navbar />
       <Category />
       {items.length === 0 ? (
-        <img src='empty.webp' alt='empty' class='image__empty img--md' />
+        <img src='empty.webp' alt='empty' className='image__empty img--md' />
       ) : (
-        <div class='cart sm-s'>
-          <div class='cart__container'>
+        <div className='cart sm-s'>
+          <div className='cart__container'>
             {items &&
               items.map((elem, index) => {
                 return <CartItem key={index * 2} {...elem} />;
               })}
           </div>
-          <div class='cart__box shdw md-s'>
-            <h1 class='md sb'>CART ITEMS</h1>
+          <div className='cart__box shdw md-s'>
+            <h1 className='md sb'>CART ITEMS</h1>
             <hr />
-            <p class='mg-half'>
-              <span class='sm sb'>Price</span>
-              <span class='sm sb fl-rt'>₹{cartPrice.total}</span>
+            <p className='mg-half'>
+              <span className='sm sb'>Price</span>
+              <span className='sm sb fl-rt'>₹{cartPrice.total}</span>
             </p>
-            <p class='mg-half'>
-              <span class='sm sb'>Discount</span>
-              <span class='sm sb fl-rt'>₹{cartPrice.discount}</span>
+            <p className='mg-half'>
+              <span className='sm sb'>Discount</span>
+              <span className='sm sb fl-rt'>₹{cartPrice.discount}</span>
             </p>
-            <p class='mg-half'>
-              <span class='sm sb'>Delivery</span>
-              <span class='sm sb fl-rt'>₹{cartPrice.delivery}</span>
-            </p>
-            <hr />
-            <p class='mg-half'>
-              <span class='sm sb'>TOTAL</span>
-              <span class='sm sb fl-rt'>₹{cartPrice.net}</span>
+            <p className='mg-half'>
+              <span className='sm sb'>Delivery</span>
+              <span className='sm sb fl-rt'>₹{cartPrice.delivery}</span>
             </p>
             <hr />
-            <button class='btn btn--wide btn--dark mg-half bd'>
+            <p className='mg-half'>
+              <span className='sm sb'>TOTAL</span>
+              <span className='sm sb fl-rt'>₹{cartPrice.net}</span>
+            </p>
+            <hr />
+            <button className='btn btn--wide btn--dark mg-half bd'>
               Place Order
             </button>
           </div>

@@ -1,26 +1,25 @@
 import { Fragment } from 'react';
 import './payment.css';
-import { usePmtCtx } from '../context/paymentContext';
+import { useAddrCtx } from '../context/addressContext';
 
 export default function PaymentForm(props) {
   const { upiId, bank, name, number, type, month, year, update } = props;
-  const { openModeForm } = usePmtCtx();
-
+  const { openForm } = useAddrCtx();
   return (
     <Fragment>
       {upiId ? (
-        <div class='card payment shdw'>
-          <h1 class='tertiary md sb cen xs-s'>
+        <div className='card payment shdw'>
+          <h1 className='tertiary md sb cen xs-s'>
             {update ? 'EDIT THE DETAILS' : 'ENTER UPI ID'}
           </h1>
           <hr />
-          <form class='sm-s'>
-            <div class='fields'>
-              <label for='owner' class='label'>
+          <form className='sm-s'>
+            <div className='fields'>
+              <label for='owner' className='label'>
                 UPI ID
               </label>
               <input
-                class='input sm-s'
+                className='input sm-s'
                 type='text'
                 name='upi'
                 id='upi'
@@ -30,13 +29,13 @@ export default function PaymentForm(props) {
                 required
               />
             </div>
-            <div class='flex-ct-sb xs-s'>
-              <button type='submit' class='btn btn--auth--solid sb'>
+            <div className='flex-ct-sb xs-s'>
+              <button type='submit' className='btn btn--auth--solid sb'>
                 {update ? 'UPDATE' : 'ADD'} UPI ID
               </button>
               <button
-                class='btn btn--auth sb'
-                onClick={openModeForm.bind(this)}
+                className='btn btn--auth sb'
+                onClick={openForm.bind(this)}
               >
                 CANCEL
               </button>
@@ -44,17 +43,17 @@ export default function PaymentForm(props) {
           </form>
         </div>
       ) : (
-        <div class='card payment shdw'>
-          <h1 class='btn--auth--solid md sb cen xs-s'>
+        <div className='card payment shdw'>
+          <h1 className='btn--auth--solid md sb cen xs-s'>
             {update ? 'EDIT THE DETAILS' : 'ENTER CARD DETAILS'}
           </h1>
-          <form action='#' class='sm-s'>
-            <div class='fields'>
-              <label for='owner' class='label'>
+          <form action='#' className='sm-s'>
+            <div className='fields'>
+              <label for='owner' className='label'>
                 CARD NAME
               </label>
               <input
-                class='input sm-s'
+                className='input sm-s'
                 type='text'
                 name='owner'
                 id='owner'
@@ -64,12 +63,12 @@ export default function PaymentForm(props) {
                 required
               />
             </div>
-            <div class='fields'>
-              <label for='bank' class='label'>
+            <div className='fields'>
+              <label for='bank' className='label'>
                 BANK NAME
               </label>
               <input
-                class='input sm-s'
+                className='input sm-s'
                 type='text'
                 name='bank'
                 id='bank'
@@ -79,12 +78,12 @@ export default function PaymentForm(props) {
                 required
               />
             </div>
-            <div class='fields'>
-              <label for='card_no' class='label'>
+            <div className='fields'>
+              <label for='card_no' className='label'>
                 CARD NUMBER
               </label>
               <input
-                class='input sm-s'
+                className='input sm-s'
                 type='number'
                 name='card_no'
                 id='card_no'
@@ -94,12 +93,12 @@ export default function PaymentForm(props) {
                 required
               />
             </div>
-            <div class='fields'>
-              <label for='expiry' class='label'>
+            <div className='fields'>
+              <label for='expiry' className='label'>
                 EXPIRY DATE
               </label>
               <input
-                class='input sm-s'
+                className='input sm-s'
                 type='month'
                 name='expiry'
                 id='expiry'
@@ -107,31 +106,31 @@ export default function PaymentForm(props) {
                 required
               />
             </div>
-            <div class='fields'>
-              <label for='type' class='label'>
+            <div className='fields'>
+              <label for='type' className='label'>
                 CARD TYPE
               </label>
               <select
                 id='type'
                 name='type'
-                class='input select sm-s'
+                className='input select sm-s'
                 value={type}
                 required
               >
-                <option value='' class='primary--light' selected>
+                <option value='' className='primary--light' selected>
                   -- Select a Type --
                 </option>
                 <option value='cc'>Credit Card</option>
                 <option value='dc'>Debit Card</option>
               </select>
             </div>
-            <div class='flex-ct-sb xs-s'>
-              <button type='submit' class='btn btn--auth--solid sb'>
+            <div className='flex-ct-sb xs-s'>
+              <button type='submit' className='btn btn--auth--solid sb'>
                 {update ? 'UPDATE' : 'ADD'} CARD
               </button>
               <button
-                class='btn btn--auth sb'
-                onClick={openModeForm.bind(this)}
+                className='btn btn--auth sb'
+                onClick={openForm.bind(this)}
               >
                 CANCEL
               </button>

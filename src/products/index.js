@@ -13,32 +13,32 @@ export default function Products() {
     <div className='container'>
       <Navbar />
       <Category />
-      <div class='hb--box'>
+      <div className='hb--box'>
         {/* Header */}
-        <header class='hb--header'>
-          <nav class='navbar'>
-            <section class='end xs-s'>
+        <header className='hb--header'>
+          <nav className='navbar'>
+            <section className='end xs-s'>
               <span
-                class='slider btn hb--btn'
+                className='slider btn hb--btn'
                 onClick={() => setFilterOpen((e) => !e)}
               >
-                Filter <i class='fas fa-chevron-down'></i>
+                Filter <i className='fas fa-chevron-down'></i>
               </span>
             </section>
           </nav>
         </header>
 
         {/* Filters */}
-        <aside class={`hb--aside sm-s ${filterOpen ? 'hb--open' : ''}`}>
-          <span class='primary sm sb'>FILTERS</span>
-          <span class='primary sm reg fl-rt clear__btn'>Clear All</span>
+        <aside className={`hb--aside sm-s ${filterOpen ? 'hb--open' : ''}`}>
+          <span className='primary sm sb'>FILTERS</span>
+          <span className='primary sm reg fl-rt clear__btn'>Clear All</span>
 
-          <h1 class='primary sm sb mg-full'>Price</h1>
+          <h1 className='primary sm sb mg-full'>Price</h1>
 
-          <span class='primary sm sb'>₹ 2000</span>
-          <span class='primary sm sb fl-rt'>₹ 25000</span>
+          <span className='primary sm sb'>₹ 2000</span>
+          <span className='primary sm sb fl-rt'>₹ 25000</span>
           <input
-            class='filter__slider mg-full'
+            className='filter__slider mg-full'
             type='range'
             id='price'
             name='price'
@@ -46,11 +46,11 @@ export default function Products() {
             min='2000'
             max='25000'
           />
-          <div class='filter__category mg-full'>
-            <h1 class='primary sm sb'>Category</h1>
+          <div className='filter__category mg-full'>
+            <h1 className='primary sm sb'>Category</h1>
             <label for='mens'>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='checkbox'
                 name='mens'
                 id='mens'
@@ -60,7 +60,7 @@ export default function Products() {
             </label>
             <label for='womens'>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='checkbox'
                 name='womens'
                 id='womens'
@@ -70,7 +70,7 @@ export default function Products() {
             </label>
             <label for='kids'>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='checkbox'
                 name='kids'
                 id='kids'
@@ -80,11 +80,11 @@ export default function Products() {
             </label>
           </div>
 
-          <div class='filter__rating mg-full'>
-            <h1 class='primary sm sb'>Rating</h1>
+          <div className='filter__rating mg-full'>
+            <h1 className='primary sm sb'>Rating</h1>
             <label for='4star--above'>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='radio'
                 name='rating'
                 id='4star--above'
@@ -94,7 +94,7 @@ export default function Products() {
             </label>
             <label for='3star--above'>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='radio'
                 name='rating'
                 id='3star--above'
@@ -104,7 +104,7 @@ export default function Products() {
             </label>
             <label for='2star--above'>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='radio'
                 name='rating'
                 id='2star--above'
@@ -114,7 +114,7 @@ export default function Products() {
             </label>
             <label for='1star--above'>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='radio'
                 name='rating'
                 id='1star--above'
@@ -124,11 +124,11 @@ export default function Products() {
             </label>
           </div>
 
-          <div class='filter__sorting mg-full'>
-            <h1 class='primary sm sb'>Sort By</h1>
+          <div className='filter__sorting mg-full'>
+            <h1 className='primary sm sb'>Sort By</h1>
             <label>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='radio'
                 name='sorting'
                 id='hightolow'
@@ -138,7 +138,7 @@ export default function Products() {
             </label>
             <label>
               <input
-                class='filter__ip'
+                className='filter__ip'
                 type='radio'
                 name='sorting'
                 id='lowtohigh'
@@ -150,8 +150,8 @@ export default function Products() {
         </aside>
 
         {/* Products Listing */}
-        <main class='hb--main sm-s'>
-          <Deals items={items} name='Products' wishlist={true}/>
+        <main className='hb--main sm-s'>
+          <Deals items={items} name='Products' wishlist={true} />
         </main>
       </div>
       <Footer />

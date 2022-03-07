@@ -4,7 +4,6 @@ import Navbar from '../common/navbar';
 import Category from '../common/header/Category';
 import Footer from '../common/footer';
 import PaymentMode from './PaymentMode';
-import { PaymentProvider } from '../context/paymentContext';
 
 export default function PaymentSelection() {
   const [method, setMethod] = useState(null);
@@ -17,54 +16,54 @@ export default function PaymentSelection() {
       <Category />
       {!method ? (
         <div>
-          <h1 class='primary lg sb xs-s cen mg-half'>
+          <h1 className='primary lg sb xs-s cen mg-half'>
             SELECT A PAYMENT OPTION
           </h1>
-          <div class='card payment shdw'>
-            <div class='sm-s mg-half'>
-              <ul class='stack'>
+          <div className='card payment shdw'>
+            <div className='sm-s mg-half'>
+              <ul className='stack'>
                 <li
-                  class='stack__payment__item flex-ct-sb shadow xs-s mg-full'
+                  className='stack__payment__item flex-ct-sb shadow xs-s mg-full'
                   name='CARD'
                   onClick={methodHandler.bind(this, 'CARD')}
                 >
-                  <div class='flex-ct-st'>
+                  <div className='flex-ct-st'>
                     <img
                       src='card.png'
                       alt='Avatar'
-                      class='avatar avatar--sm sq'
+                      className='avatar avatar--sm sq'
                     />
-                    <h1 class='primary sm sb'>Debit Card/ Credit Card</h1>
+                    <h1 className='primary sm sb'>Debit Card/ Credit Card</h1>
                   </div>
-                  <i class='fas fa-chevron-right fl-rt'></i>
+                  <i className='fas fa-chevron-right fl-rt'></i>
                 </li>
 
                 <li
-                  class='stack__payment__item flex-ct-sb shadow xs-s mg-full'
+                  className='stack__payment__item flex-ct-sb shadow xs-s mg-full'
                   name='upi'
                   onClick={methodHandler.bind(this, 'UPI')}
                 >
-                  <div class='flex-ct-st'>
+                  <div className='flex-ct-st'>
                     <img
                       src='upi.png'
                       alt='Avatar'
-                      class='avatar avatar--sm sq'
+                      className='avatar avatar--sm sq'
                     />
-                    <h1 class='primary sm sb'>UPI</h1>
+                    <h1 className='primary sm sb'>UPI</h1>
                   </div>
-                  <i class='fas fa-chevron-right fl-rt'></i>
+                  <i className='fas fa-chevron-right fl-rt'></i>
                 </li>
 
-                <li class='stack__payment__item flex-ct-sb shadow xs-s mg-full'>
-                  <div class='flex-ct-st'>
+                <li className='stack__payment__item flex-ct-sb shadow xs-s mg-full'>
+                  <div className='flex-ct-st'>
                     <img
                       src='cash.png'
                       alt='Avatar'
-                      class='avatar avatar--sm sq'
+                      className='avatar avatar--sm sq'
                     />
-                    <h1 class='primary sm sb'>Cash on Delivery</h1>
+                    <h1 className='primary sm sb'>Cash on Delivery</h1>
                   </div>
-                  <i class='fas fa-chevron-right fl-rt'></i>
+                  <i className='fas fa-chevron-right fl-rt'></i>
                 </li>
               </ul>
             </div>
@@ -72,12 +71,13 @@ export default function PaymentSelection() {
         </div>
       ) : (
         <div>
-          <h1 class='pageheader shadow' onClick={methodHandler.bind(this, '')}>
-            <i class='fa-solid fa-chevron-left'></i>Change Mode of Payment
+          <h1
+            className='pageheader shadow'
+            onClick={methodHandler.bind(this, '')}
+          >
+            <i className='fa-solid fa-chevron-left'></i>Change Mode of Payment
           </h1>
-          <PaymentProvider>
-            <PaymentMode upi={method === 'UPI'} />
-          </PaymentProvider>
+          <PaymentMode upi={method === 'UPI'} />
         </div>
       )}
       <Footer />
