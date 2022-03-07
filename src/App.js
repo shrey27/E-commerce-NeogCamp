@@ -15,20 +15,21 @@ import Profile from './profile';
 import ChangePassword from './authentication/ChangePassword';
 import { CartProvider } from './context/cartContext';
 import { AddressProvider, AddressApiProvider } from './context/addressContext';
+import { ProductsContextProvider } from './context/productsContext';
 
 function App() {
   return (
     <CartProvider>
       <AddressApiProvider>
         <AddressProvider>
-          <div className='dark'>
+          <div className=''>
             {/* <HomePage /> */}
             {/* <Products /> */}
             {/* <Product /> */}
             {/* <Signin /> */}
             {/* <Signup /> */}
             {/* <Cart /> */}
-            <AddressSelection />
+            {/* <AddressSelection /> */}
             {/* <Wishlist/> */}
             {/* <OrderSummary /> */}
             {/* <Profile /> */}

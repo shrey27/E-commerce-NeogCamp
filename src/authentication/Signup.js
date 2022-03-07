@@ -7,7 +7,7 @@ export default function Signup() {
     <>
       <Navbar noDrawer={true} />
       <div className='card authentication shdw'>
-        <h1 className='lg sb cen xs-s mg-full'>LOGIN</h1>
+        <h1 className='lg sb cen xs-s mg-full'>SIGN UP</h1>
         <hr />
         <form action='#' className='sm-s'>
           <div className='authentication__input'>

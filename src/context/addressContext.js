@@ -2,8 +2,7 @@ import {
   createContext,
   useContext,
   useEffect,
-  useState,
-  useReducer
+  useState
 } from 'react';
 import { db } from '../firebase';
 import {
@@ -34,7 +33,6 @@ const AddressProvider = ({ children }) => {
 const useAddrCtx = () => useContext(AddressContext);
 
 // API handling
-
 const AddressApiContext = createContext();
 
 const docRef = collection(db, 'address');

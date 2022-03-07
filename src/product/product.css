@@ -14,6 +14,9 @@
   border: none;
   display: flex;
 }
+.card.card__product {
+  border: none;
+}
 .card__product .card__banner {
   width: 60%;
 }
@@ -21,7 +24,7 @@
   width: 90%;
   margin: 0;
 }
-.content__rating {
+.content__rating__span {
   background-color: var(--rating);
   color: var(--primary);
 }

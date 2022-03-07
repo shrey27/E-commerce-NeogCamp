@@ -20,7 +20,7 @@
   max-width: 400px;
 }
 .checkout__address > .payment {
-  margin: 1rem;
+  margin: 1rem auto;
 }
 .checkout__cart {
   grid-area: cart;

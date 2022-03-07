@@ -40,7 +40,7 @@ export default function Product() {
                 <span className='tag lg sb'>
                   <i className='fa-solid fa-tags'></i>Upto 30% Off
                 </span>
-                <span className='content__rating sb fl-rt'>
+                <span className='content__rating__span sb fl-rt'>
                   4.2<i className='fas fa-star'></i>
                 </span>
               </li>

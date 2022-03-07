@@ -3,8 +3,17 @@ import './deals.css';
 import { useCartCtx } from '../../context/cartContext';
 
 export default function Deal(props) {
-  const { source, title, price, discount, rating, nostock, wishlist, close } =
-    props;
+  const {
+    source,
+    title,
+    price,
+    discount,
+    rating,
+    fastdelivery,
+    nostock,
+    wishlist,
+    close
+  } = props;
   const [added, setAdded] = useState(false);
   const { addToCart } = useCartCtx();
   return (
@@ -31,27 +40,40 @@ export default function Deal(props) {
         alt='Banner'
         className={`card__banner ${nostock && 'nostock'}`}
       />
-      <section className='content'>
+      <section className='deal__content'>
         <h1 className='primary sm sb mg-half'>{title}</h1>
         <div className='price__ctr'>
-          <span className='primary md sb price__val'>₹ {price}</span>
+          <span className='md sb price__val'>₹ {price}</span>
           <span className='tag sm'>
             <i className='fa-solid fa-tags'></i>
             Upto {discount}% Off
           </span>
         </div>
-        <span className='content__rating mg-half'>
-          {rating}
-          <i className='fas fa-star'></i>
-        </span>
+        <div className='price__ctr'>
+          <span className='content__rating__span mg-half'>
+            {rating}
+            <i className='fas fa-star'></i>
+          </span>
+          {fastdelivery && (
+            <span className='delivery sm'>
+              <i className='fa-solid fa-truck'></i>Express-Delivery
+            </span>
+          )}
+        </div>
+
+        {nostock ? (
+          <button className={`btn--disabled btn btn--wide`} disabled={nostock}>
+            Out of Stock
+          </button>
+        ) : (
+          <button
+            className='btn btn--auth--solid btn--wide'
+            onClick={addToCart.bind(this, { ...props })}
+          >
+            Add to Cart
+          </button>
+        )}
       </section>
-      <button
-        className='btn btn--wide cart__btn'
-        disabled={nostock}
-        onClick={addToCart.bind(this, { ...props })}
-      >
-        {nostock ? 'Out of Stock' : 'Add to Cart'}
-      </button>
     </div>
   );
 }
