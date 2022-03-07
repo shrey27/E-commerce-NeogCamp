@@ -6,13 +6,8 @@ import { useAddrCtx, useAddrApiCtx } from '../context/addressContext';
 import Loader from '../common/Loader';
 
 export default function Address({ select }) {
-  const [addressList, setAddressList] = useState([]);
   const { formId, openForm } = useAddrCtx();
-  const { loading, adrList } = useAddrApiCtx();
-
-  useEffect(() => {
-    setAddressList(adrList);
-  }, [adrList]);
+  const { loading, listItems } = useAddrApiCtx();
 
   return (
     <>
@@ -24,8 +19,8 @@ export default function Address({ select }) {
             {select ? 'SELECT AN ADDRESS' : 'MANAGE YOUR ADDRESS'}{' '}
           </h1>
           <div className='flex-ct-ct flex-vertical'>
-            {addressList &&
-              addressList.map((elem, index) => {
+            {listItems &&
+              listItems.map((elem, index) => {
                 return (
                   <AddressCard key={index * 2} {...elem} select={select} />
                 );

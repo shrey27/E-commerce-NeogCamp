@@ -28,10 +28,10 @@ function App() {
             {/* <Signin /> */}
             {/* <Signup /> */}
             {/* <Cart /> */}
-            {/* <AddressSelection /> */}
+            <AddressSelection />
             {/* <Wishlist/> */}
             {/* <OrderSummary /> */}
-            <Profile />
+            {/* <Profile /> */}
             {/* <PaymentSelection /> */}
             {/* <Checkout /> */}
           </div>

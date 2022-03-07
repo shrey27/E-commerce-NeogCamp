@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useReducer
+} from 'react';
 import { db } from '../firebase';
 import {
   collection,
@@ -32,9 +38,10 @@ const useAddrCtx = () => useContext(AddressContext);
 const AddressApiContext = createContext();
 
 const docRef = collection(db, 'address');
+const collectionName = 'address';
 
 const AddressApiProvider = ({ children }) => {
-  const [adrList, setAdrList] = useState([]);
+  const [listItems, setListItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getAddress = async () => {
@@ -42,13 +49,13 @@ const AddressApiProvider = ({ children }) => {
     const data = await getDocs(docRef);
     const dataList = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     console.log(dataList);
-    setAdrList(dataList);
+    setListItems(dataList);
     setLoading(false);
   };
 
   const deleteAddress = async (id) => {
     setLoading(true);
-    const addrDoc = doc(db, 'address', id);
+    const addrDoc = doc(db, collectionName, id);
     await deleteDoc(addrDoc);
     getAddress();
   };
@@ -61,7 +68,7 @@ const AddressApiProvider = ({ children }) => {
 
   const updateAddress = async (id, payload) => {
     setLoading(true);
-    const userDoc = doc(db, 'address', id);
+    const userDoc = doc(db, collectionName, id);
     await updateDoc(userDoc, { ...payload });
     getAddress();
   };
@@ -74,9 +81,7 @@ const AddressApiProvider = ({ children }) => {
     <AddressApiContext.Provider
       value={{
         loading,
-        getDocs,
-        docRef,
-        adrList,
+        listItems,
         addNewAddress,
         deleteAddress,
         getAddress,
