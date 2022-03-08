@@ -33,7 +33,7 @@
   text-align: center;
 }
 .quantity {
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 1.25rem;
   font-weight: 600;
   border: 2px solid var(--primary--light);
   border-radius: 5px;

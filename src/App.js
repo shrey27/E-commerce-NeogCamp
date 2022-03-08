@@ -21,17 +21,17 @@ function App() {
     <CartProvider>
       <AddressApiProvider>
         <ProductsContextProvider>
-          <div className='dark'>
+          <div className=''>
             {/* <HomePage /> */}
             {/* <Products /> */}
             {/* <Product /> */}
             {/* <Signin /> */}
             {/* <Signup /> */}
             {/* <Cart /> */}
-            <AddressSelection />
+            {/* <AddressSelection /> */}
             {/* <Wishlist/> */}
             {/* <OrderSummary /> */}
-            {/* <Profile /> */}
+            <Profile />
             {/* <PaymentSelection /> */}
             {/* <Checkout /> */}
           </div>

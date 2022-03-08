@@ -20,7 +20,7 @@ export default function OrderSummary(props) {
         <img
           src='https://m.media-amazon.com/images/I/413GuC4J4FL.jpg'
           alt='Banner'
-          className='card__banner'
+          className='summary card__banner'
         />
         <section className='card__status xs-s border--bottom'>
           <h1 className='price--ter md sb cen'>Status: {status}</h1>

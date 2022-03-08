@@ -1,15 +1,17 @@
-export const addressFormFields = [
-  'name',
-  'email',
-  'mobile',
-  'line_1',
-  'line_2',
-  'landmark',
-  'city',
-  'state',
-  'pincode',
-  'type'
-];
+export const formFields = {
+  addressFormFields: [
+    'name',
+    'email',
+    'mobile',
+    'line_1',
+    'line_2',
+    'landmark',
+    'city',
+    'state',
+    'pincode',
+    'type'
+  ]
+};
 export const validationList = {
   name: {
     pattern: /^[a-zA-Z ]+$/,

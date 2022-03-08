@@ -14,7 +14,7 @@ import {
   deleteDoc,
   updateDoc
 } from 'firebase/firestore';
-import { validationList, addressFormFields } from '../common/validations';
+import { validationList, formFields } from '../common/validations';
 
 // To handle Form open dynamics of multiple address forms
 const AddressContext = createContext();
@@ -40,7 +40,7 @@ const AddressFormContext = createContext();
 
 //Form validation
 const validateInput = (name, value) => {
-  console.log(validationList[name])
+  console.log(validationList[name]);
   const { pattern, errorMsg } = validationList[name];
   if (!value || value.trim() === '')
     return { hasError: true, error: 'Please provide this detail' };
@@ -198,13 +198,13 @@ const formsReducer = (state, action) => {
   }
 };
 
-const AddressFormProvider = ({ children, formData }) => {
+const AddressFormProvider = ({ children, fieldSet, formData }) => {
   const [showError, setShowError] = useState(false);
   const { addNewAddress, updateAddress } = useAddrApiCtx();
   const { openForm } = useAddrCtx();
 
   const initialValues = () => {
-    return addressFormFields.reduce((prev, curr) => {
+    return formFields[fieldSet].reduce((prev, curr) => {
       return {
         ...prev,
         [curr]: {

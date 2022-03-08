@@ -17,7 +17,7 @@ export default function CartItem(props) {
         <h1 className='cart__align'>
           {count === 1 ? (
             <i
-              className='fa-regular fa-trash-can btn qty--btn'
+              className='fa-regular fa-trash-can'
               name='del'
               onClick={decQty.bind(this, id)}
             ></i>
