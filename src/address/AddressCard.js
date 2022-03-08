@@ -1,12 +1,8 @@
 import { Fragment } from 'react';
 import './address.css';
-import {
-  useAddrCtx,
-  useAddrApiCtx,
-  AddressFormProvider
-} from '../context/addressContext';
+import { useAddrCtx, useAddrApiCtx } from '../context/addressContext';
 import AddressForm from './AddressForm';
-
+import { FormProvider } from '../context/formContext';
 export default function AddressCard(props) {
   const {
     id,
@@ -34,9 +30,12 @@ export default function AddressCard(props) {
   return (
     <Fragment>
       {formId && formId === id ? (
-        <AddressFormProvider fieldSet='addressFormFields' formData={{ ...props, update:true }}>
+        <FormProvider
+          fieldSet='addressFormFields'
+          formData={{ ...props, update: true }}
+        >
           <AddressForm update={true} />
-        </AddressFormProvider>
+        </FormProvider>
       ) : (
         <div className='card address shdw'>
           <div className='flex-ct-sb btn--auth--solid xs-s'>

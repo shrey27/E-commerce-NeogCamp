@@ -1,10 +1,11 @@
 import './address.css';
-import { useAddrCtx, useAddrFormCtx } from '../context/addressContext';
+import { useAddrCtx } from '../context/addressContext';
+import { useFormCtx } from '../context/formContext';
 
 export default function AddressForm({ update }) {
   const { openForm } = useAddrCtx();
   const { showError, form, onFocusOut, handleFormChange, formSubmitHandler } =
-    useAddrFormCtx();
+    useFormCtx();
 
   return (
     <div className='card address shdw'>

@@ -13,13 +13,13 @@ import PaymentSelection from './payment/PaymentSelection';
 import OrderSummary from './summary';
 import Profile from './profile';
 import { CartProvider } from './context/cartContext';
-import { AddressApiProvider } from './context/addressContext';
+import { AddressProvider } from './context/addressContext';
 import { ProductsContextProvider } from './context/productsContext';
 
 function App() {
   return (
     <CartProvider>
-      <AddressApiProvider>
+      <AddressProvider>
         <ProductsContextProvider>
           <div className=''>
             {/* <HomePage /> */}
@@ -36,7 +36,7 @@ function App() {
             {/* <Checkout /> */}
           </div>
         </ProductsContextProvider>
-      </AddressApiProvider>
+      </AddressProvider>
     </CartProvider>
   );
 }
