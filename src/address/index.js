@@ -2,7 +2,11 @@ import { Fragment, useEffect, useState } from 'react';
 import './address.css';
 import AddressCard from './AddressCard';
 import AddressForm from './AddressForm';
-import { useAddrCtx, useAddrApiCtx } from '../context/addressContext';
+import {
+  useAddrCtx,
+  useAddrApiCtx,
+  AddressFormProvider
+} from '../context/addressContext';
 import Loader from '../common/Loader';
 
 export default function Address({ select }) {
@@ -26,7 +30,9 @@ export default function Address({ select }) {
                 );
               })}
             {formId === 0 ? (
-              <AddressForm />
+              <AddressFormProvider>
+                <AddressForm />
+              </AddressFormProvider>
             ) : (
               <div className='card address shdw'>
                 <div

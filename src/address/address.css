@@ -5,7 +5,7 @@
   margin: 1rem auto 2.5rem;
   cursor: pointer;
 }
-.fields {
+.address__fields {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -13,10 +13,10 @@
   margin: 0.5rem 0;
   width: 100%;
 }
-.fields .label {
+.address__fields > .label {
   width: auto;
 }
-.fields .input {
+.address__fields > .input {
   width: 100%;
 }
 .select {
@@ -28,6 +28,13 @@
 .address__line {
   display: inline-flex;
   align-items: flex-start;
+}
+.input__error {
+  display: block;
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--button-error);
 }
 @media screen and (min-width: 768px) {
   .address {

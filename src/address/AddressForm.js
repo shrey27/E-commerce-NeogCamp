@@ -1,275 +1,10 @@
 import './address.css';
-import { useAddrCtx, useAddrApiCtx } from '../context/addressContext';
-import { useState, useReducer } from 'react';
+import { useAddrCtx, useAddrFormCtx } from '../context/addressContext';
 
-const formsReducer = (state, action) => {
-  switch (action.type) {
-    case 'UPDATE_FORM':
-      const { name, value, hasError, error, touched, isFormValid } =
-        action.data;
-      return {
-        ...state,
-        [name]: { ...state[name], value, hasError, error, touched },
-        isFormValid
-      };
-    default:
-      return state;
-  }
-};
-
-export default function AddressForm(props) {
-  const {
-    id,
-    name,
-    email,
-    mobile,
-    type,
-    line_1,
-    line_2,
-    landmark,
-    city,
-    state,
-    pincode,
-    update
-  } = props;
-
-  const [form, dispatch] = useReducer(formsReducer, {
-    name: {
-      value: name || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    email: {
-      value: email || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    mobile: {
-      value: mobile || null,
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    line_1: {
-      value: line_1 || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    line_2: {
-      value: line_2 || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    landmark: {
-      value: landmark || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    city: {
-      value: city || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    state: {
-      value: state || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    pincode: {
-      value: pincode || null,
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    type: {
-      value: type || '',
-      touched: false,
-      hasError: true,
-      error: ''
-    },
-    isFormValid: false
-  });
-  const [showError, setShowError] = useState(false);
-
+export default function AddressForm({ update }) {
   const { openForm } = useAddrCtx();
-  const { addNewAddress, updateAddress } = useAddrApiCtx();
-
-  const validateInput = (name, value) => {
-    let hasError = false,
-      error = '';
-    if (!value || value.trim() === '')
-      return { hasError: true, error: 'Field cannot be empty' };
-    switch (name) {
-      case 'name':
-        if (!/^[a-zA-Z ]+$/.test(value)) {
-          hasError = true;
-          error = 'Invalid Name. Avoid Special characters';
-        }
-        break;
-      case 'email':
-        if (
-          !/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(
-            value
-          )
-        ) {
-          hasError = true;
-          error = 'Invalid Email. Use valid email format';
-        }
-        break;
-      case 'mobile':
-        if (!/^[0-9]{10}$/.test(value)) {
-          hasError = true;
-          error =
-            'Invalid Mobile number. Mobile number should be 10 digits long';
-        }
-        break;
-      case 'line_1':
-        if (!/^[a-zA-Z0-9]+$/.test(value)) {
-          hasError = true;
-          error =
-            'Invalid Address. Address can contain alphabets or numbers only';
-        }
-        break;
-      case 'line_2':
-        if (!/^[a-zA-Z0-9]+$/.test(value)) {
-          hasError = true;
-          error =
-            'Invalid Address. Address can contain alphabets or numbers only';
-        }
-        break;
-      case 'landmark':
-        if (!/^[a-zA-Z0-9]+$/.test(value)) {
-          hasError = true;
-          error =
-            'Invalid Address. Address can contain alphabets or numbers only';
-        }
-        break;
-      case 'pincode':
-        if (!/^[1-9]{6}$/.test(value)) {
-          hasError = true;
-          error = 'Invalid Pincode. Pincode must be 6 digits long ';
-        }
-        break;
-      default:
-        break;
-    }
-    return { hasError, error };
-  };
-
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-
-    const { hasError, error } = validateInput(name, value);
-    let isFormValid = true;
-
-    for (const key in form) {
-      const item = form[key];
-      // Check if the current field has error
-      if (key === name && hasError) {
-        isFormValid = false;
-        break;
-      } else if (key !== name && item.hasError) {
-        // Check if any other field has error
-        isFormValid = false;
-        break;
-      }
-    }
-
-    dispatch({
-      type: 'UPDATE_FORM',
-      data: {
-        name,
-        value,
-        hasError,
-        error,
-        touched: false,
-        isFormValid
-      }
-    });
-  };
-
-  const onFocusOut = (e) => {
-    const { name, value } = e.target;
-    const { hasError, error } = validateInput(name, value);
-
-    let isFormValid = true;
-
-    for (const key in form) {
-      const item = form[key];
-      if (key === name && hasError) {
-        isFormValid = false;
-        break;
-      } else if (key !== name && item.hasError) {
-        isFormValid = false;
-        break;
-      }
-    }
-
-    dispatch({
-      type: 'UPDATE_FORM',
-      data: { name, value, hasError, error, touched: true, isFormValid }
-    });
-  };
-
-  const submitHandler = (isUpdate) => {
-    const arrayofKeys = Object.keys(form);
-    const formObject = arrayofKeys.reduce((prev, curr) => {
-      return curr === 'isFormValid'
-        ? { ...prev }
-        : { ...prev, [curr]: form[curr].value };
-    }, {});
-    console.log(formObject);
-    isUpdate ? updateAddress(id, formObject) : addNewAddress(formObject);
-    openForm();
-  };
-
-  const formSubmitHandler = (e, isUpdate) => {
-    e.preventDefault(); //prevents the form from submitting
-    let isFormValid = true;
-    for (const name in form) {
-      if (name === 'isFormValid') continue;
-      const item = form[name];
-      const { value } = item;
-      const { hasError, error } = validateInput(name, value);
-      if (hasError) {
-        isFormValid = false;
-      }
-      if (name) {
-        dispatch({
-          type: 'UPDATE_FORM',
-          data: {
-            name,
-            value,
-            hasError,
-            error,
-            touched: true,
-            isFormValid
-          }
-        });
-      }
-    }
-    if (!isFormValid) {
-      for (const key in form) {
-        const item = form[key];
-        console.table({ [key]: item });
-      }
-      setShowError(true);
-    } else {
-      submitHandler(isUpdate);
-    }
-
-    // Hide the error message after 5 seconds
-    setTimeout(() => {
-      setShowError(false);
-    }, 3000);
-  };
+  const { showError, form, onFocusOut, handleFormChange, formSubmitHandler } =
+    useAddrFormCtx();
 
   return (
     <div className='card address shdw'>
@@ -284,7 +19,7 @@ export default function AddressForm(props) {
       )}
 
       <form className='sm-s'>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='name--field' className='label'>
             Name:
           </label>
@@ -299,9 +34,9 @@ export default function AddressForm(props) {
           />
         </div>
         {form.name.touched && form.name.hasError && (
-          <span className='input__error'>{form.name.error}</span>
+          <h1 className='input__error'>{form.name.error}</h1>
         )}
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='email--field' className='label'>
             Email:
           </label>
@@ -315,10 +50,10 @@ export default function AddressForm(props) {
             onBlur={(e) => onFocusOut(e)}
           />
           {form.email.touched && form.email.hasError && (
-            <span className='input__error'>{form.email.error}</span>
+            <h1 className='input__error'>{form.email.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='mobile--field' className='label'>
             Phone:
           </label>
@@ -332,10 +67,10 @@ export default function AddressForm(props) {
             onBlur={(e) => onFocusOut(e)}
           />
           {form.mobile.touched && form.mobile.hasError && (
-            <span className='input__error'>{form.mobile.error}</span>
+            <h1 className='input__error'>{form.mobile.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='line_1' className='label'>
             House No.
           </label>
@@ -349,10 +84,10 @@ export default function AddressForm(props) {
             onBlur={(e) => onFocusOut(e)}
           />
           {form.line_1.touched && form.line_1.hasError && (
-            <span className='input__error'>{form.line_1.error}</span>
+            <h1 className='input__error'>{form.line_1.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='line_2' className='label'>
             Area
           </label>
@@ -366,10 +101,10 @@ export default function AddressForm(props) {
             onBlur={(e) => onFocusOut(e)}
           />
           {form.line_2.touched && form.line_2.hasError && (
-            <span className='input__error'>{form.line_2.error}</span>
+            <h1 className='input__error'>{form.line_2.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='landmark' className='label'>
             Landmark
           </label>
@@ -383,10 +118,10 @@ export default function AddressForm(props) {
             onBlur={(e) => onFocusOut(e)}
           />
           {form.landmark.touched && form.landmark.hasError && (
-            <span className='input__error'>{form.landmark.error}</span>
+            <h1 className='input__error'>{form.landmark.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='state' className='label'>
             State
           </label>
@@ -406,10 +141,10 @@ export default function AddressForm(props) {
             <option value='Kerala'>Kerala</option>
           </select>
           {form.state.touched && form.state.hasError && (
-            <span className='input__error'>{form.state.error}</span>
+            <h1 className='input__error'>{form.state.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='city' className='label'>
             City
           </label>
@@ -429,10 +164,10 @@ export default function AddressForm(props) {
             <option value='Jodhpur'>Jodhpur</option>
           </select>
           {form.city.touched && form.city.hasError && (
-            <span className='input__error'>{form.city.error}</span>
+            <h1 className='input__error'>{form.city.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='pincode' className='label'>
             Pincode
           </label>
@@ -446,10 +181,10 @@ export default function AddressForm(props) {
             onBlur={(e) => onFocusOut(e)}
           />
           {form.pincode.touched && form.pincode.hasError && (
-            <span className='input__error'>{form.pincode.error}</span>
+            <h1 className='input__error'>{form.pincode.error}</h1>
           )}
         </div>
-        <div className='fields'>
+        <div className='address__fields'>
           <label htmlFor='type' className='label'>
             Address Type
           </label>
@@ -463,36 +198,21 @@ export default function AddressForm(props) {
             <option value='' className='primary--light'>
               -- Select a Type --
             </option>
-            <option value='Home' selected={'Home' === type}>
-              Home
-            </option>
-            <option value='Office' selected={'Office' === type}>
-              Office
-            </option>
-            <option value='Relative' selected={'Relative' === type}>
-              Relative
-            </option>
+            <option value='HOME'>Home</option>
+            <option value='OFFICE'>Office</option>
+            <option value='OTHERS'>Relative</option>
           </select>
           {form.type.touched && form.type.hasError && (
-            <span className='input__error'>{form.type.error}</span>
+            <h1 className='input__error'>{form.type.error}</h1>
           )}
         </div>
         <div className='flex-ct-sb'>
-          {update ? (
-            <button
-              className='btn btn--auth--solid sb'
-              onClick={(e) => formSubmitHandler(e, true)}
-            >
-              UPDATE ADDRESS
-            </button>
-          ) : (
-            <button
-              className='btn btn--auth--solid sb'
-              onClick={formSubmitHandler}
-            >
-              ADD ADDRESS
-            </button>
-          )}
+          <button
+            className='btn btn--auth--solid sb'
+            onClick={(e) => formSubmitHandler(e, 'isFormValid')}
+          >
+            {update ? 'UPDATE' : 'ADD'} ADDRESS
+          </button>
           <button className='btn btn--auth sb' onClick={openForm.bind(this)}>
             CANCEL
           </button>

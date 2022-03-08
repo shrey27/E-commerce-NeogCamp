@@ -1,6 +1,10 @@
 import { Fragment } from 'react';
 import './address.css';
-import { useAddrCtx, useAddrApiCtx } from '../context/addressContext';
+import {
+  useAddrCtx,
+  useAddrApiCtx,
+  AddressFormProvider
+} from '../context/addressContext';
 import AddressForm from './AddressForm';
 
 export default function AddressCard(props) {
@@ -23,10 +27,16 @@ export default function AddressCard(props) {
   const { formId, openForm } = useAddrCtx();
   const { deleteAddress } = useAddrApiCtx();
 
+  const handleOpenForm = () => {
+    openForm(id);
+  };
+
   return (
     <Fragment>
       {formId && formId === id ? (
-        <AddressForm {...props} update={true} />
+        <AddressFormProvider formData={{ ...props, update:true }}>
+          <AddressForm update={true} />
+        </AddressFormProvider>
       ) : (
         <div className='card address shdw'>
           <div className='flex-ct-sb btn--auth--solid xs-s'>
@@ -35,8 +45,8 @@ export default function AddressCard(props) {
             </h1>
             {select && <button className='btn btn--icons sb'>SELECT</button>}
           </div>
-          <div className='sm-s'>
-            <h1 className='lg sb'>{type}</h1>
+          <div className='md-s'>
+            <h1 className='primary lg sb'>{type}</h1>
             <h1 className='primary md sb mg-half'>{name}</h1>
             <div className='address__line'>
               <span className='primary md sb'>
@@ -62,7 +72,7 @@ export default function AddressCard(props) {
               <div className='flex-ct-sb mg-half'>
                 <button
                   className='btn btn--auth--solid sb'
-                  onClick={openForm.bind(this, id)}
+                  onClick={handleOpenForm}
                 >
                   UPDATE
                 </button>
