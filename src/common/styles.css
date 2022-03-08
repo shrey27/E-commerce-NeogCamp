@@ -50,7 +50,11 @@ body {
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
     0 0 0 1px rgba(129, 113, 113, 0.02);
 }
-
+.input__error {
+  margin: 0.25rem 0.25rem 0;
+  font-size: 1rem;
+  color: var(--button-error);
+}
 /* Scrollbar */
 /* width */
 ::-webkit-scrollbar {

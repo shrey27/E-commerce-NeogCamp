@@ -25,12 +25,12 @@ function App() {
           <ProductsContextProvider>
             <div className=''>
               {/* <HomePage /> */}
-              <Products />
+              {/* <Products /> */}
               {/* <Product /> */}
               {/* <Signin /> */}
               {/* <Signup /> */}
               {/* <Cart /> */}
-              {/* <AddressSelection /> */}
+              <AddressSelection />
               {/* <Wishlist/> */}
               {/* <OrderSummary /> */}
               {/* <Profile /> */}

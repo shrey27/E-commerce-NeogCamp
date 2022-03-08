@@ -45,7 +45,7 @@ const AddressApiProvider = ({ children }) => {
   const getAddress = async () => {
     setLoading(true);
     const data = await getDocs(docRef);
-    const dataList = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    const dataList = await data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
     console.log(dataList);
     setListItems(dataList);
     setLoading(false);
