@@ -18,16 +18,16 @@ export default function Deal(props) {
     close
   } = props;
   const { addToCart } = useCartCtx();
-  const { addToWishlist, deleteFromWishlist, addedId } = useWishlistCtx();
-  const [added, setAdded] = useState(false);
+  const { addToWishlist, deleteFromWishlist, addedPID } = useWishlistCtx();
+  const [addedToWishlist, setAddedToWishlist] = useState(false);
 
   useEffect(() => {
-    if (addedId.includes(pid)) setAdded(true);
-    else setAdded(false);
-  }, [addedId, pid]);
+    if (addedPID && addedPID.includes(pid)) setAddedToWishlist(true);
+    else setAddedToWishlist(false);
+  }, [addedPID, pid]);
 
   const handleAddToWishlistClick = () => {
-    if (!added) {
+    if (!addedToWishlist) {
       const productToAdd = {
         pid,
         source,
@@ -38,7 +38,7 @@ export default function Deal(props) {
         nostock
       };
       addToWishlist(pid, productToAdd);
-      setAdded(true);
+      setAddedToWishlist(true);
     }
   };
 
@@ -46,7 +46,7 @@ export default function Deal(props) {
     <div className='card ecom shadow'>
       {wishlist && !close && (
         <span className='card__dismiss' onClick={handleAddToWishlistClick}>
-          {added ? (
+          {addedToWishlist ? (
             <i className='fa-solid fa-heart tag--clr'></i>
           ) : (
             <i className='fa-regular fa-heart tertiary'></i>

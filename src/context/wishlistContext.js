@@ -13,7 +13,7 @@ const WishListContext = createContext();
 const collectionName = 'wishlist';
 const docRef = collection(db, collectionName);
 
-const profileApiReducerFunc = (state, action) => {
+const wishlistApiReducerFunc = (state, action) => {
   switch (action.type) {
     case 'API_REQUEST':
       return {
@@ -26,15 +26,11 @@ const profileApiReducerFunc = (state, action) => {
         wishlistLoading: false,
         wishlistData: [...action.payload]
       };
-    case 'ADD_NEW_ID':
+    case 'UPDATE_WISHLIST_PID':
+      const pidArray = state.wishlistData;
       return {
         ...state,
-        addedId: [...state.addedId, action.payload]
-      };
-    case 'REMOVE_AN_ID':
-      return {
-        ...state,
-        addedId: state.addedId.filter((elem) => elem !== action.payload)
+        addedPID: pidArray.map((elem) => elem.pid)
       };
     default:
       return { ...state };
@@ -42,12 +38,12 @@ const profileApiReducerFunc = (state, action) => {
 };
 
 const WishlistProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(profileApiReducerFunc, {
+  const [state, dispatch] = useReducer(wishlistApiReducerFunc, {
     wishlistLoading: false,
     wishlistData: [],
-    addedId: []
+    addedPID: []
   });
-  const { wishlistLoading, wishlistData, addedId } = state;
+  const { wishlistLoading, wishlistData, addedPID } = state;
 
   const getWishlist = async () => {
     const data = await getDocs(docRef);
@@ -56,14 +52,16 @@ const WishlistProvider = ({ children }) => {
       id: doc.id
     }));
     dispatch({ type: 'API_RESPONSE', payload: dataList });
+    dispatch({ type: 'UPDATE_WISHLIST_PID' });
   };
 
   const addToWishlist = async (pid, objectData) => {
-    console.log(pid, objectData);
     dispatch({ type: 'API_REQUEST' });
-    await addDoc(docRef, objectData);
+    const index = wishlistData.findIndex((e) => e.pid === pid);
+    if (index < 0) {
+      await addDoc(docRef, objectData);
+    }
     getWishlist();
-    dispatch({ type: 'ADD_NEW_ID', payload: pid });
   };
 
   const deleteFromWishlist = async (pid, id) => {
@@ -71,7 +69,6 @@ const WishlistProvider = ({ children }) => {
     const addrDoc = doc(db, collectionName, id);
     await deleteDoc(addrDoc);
     getWishlist();
-    dispatch({ type: 'REMOVE_AN_ID', payload: pid });
   };
 
   useEffect(() => {
@@ -83,7 +80,7 @@ const WishlistProvider = ({ children }) => {
   return (
     <WishListContext.Provider
       value={{
-        addedId,
+        addedPID,
         wishlistLoading,
         wishlistData,
         addToWishlist,
