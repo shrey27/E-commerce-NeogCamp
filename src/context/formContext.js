@@ -155,11 +155,23 @@ const formsReducer = (state, action) => {
   }
 };
 
+const selectHook = (fieldSet) => {
+  switch (fieldSet) {
+    case 'addressFormFields':
+      return useAddrApiCtx;
+    case 'profileFormField':
+      return useFormOpenCtx;
+    default:
+      return usePmtApiCtx;
+  }
+};
 const FormProvider = ({ children, fieldSet, formData }) => {
   const [showError, setShowError] = useState(false);
-  const { addNewAddress, updateAddress } = useAddrApiCtx();
-  const { addNewOption, updateOptions } = usePmtApiCtx();
-  const { addNewProfile, updateProfile } = useFormOpenCtx();
+  // const { addNewAddress, updateAddress } = useAddrApiCtx();
+  // const { addNewOption, updateOptions } = usePmtApiCtx();
+  // const { addNewProfile, updateProfile } = useFormOpenCtx();
+
+  const { addNewData, updateData } = selectHook(fieldSet)();
 
   const { openForm } = useFormOpenCtx();
 
@@ -194,16 +206,18 @@ const FormProvider = ({ children, fieldSet, formData }) => {
       setShowError,
       formData?.id,
       openForm,
-      fieldSet === 'addressFormFields'
-        ? updateAddress
-        : fieldSet === 'profileFormField'
-        ? updateProfile
-        : updateOptions,
-      fieldSet === 'addressFormFields'
-        ? addNewAddress
-        : fieldSet === 'profileFormField'
-        ? addNewProfile
-        : addNewOption
+      // fieldSet === 'addressFormFields'
+      //   ? updateAddress
+      //   : fieldSet === 'profileFormField'
+      //   ? updateProfile
+      //   : updateOptions,
+      // fieldSet === 'addressFormFields'
+      //   ? addNewAddress
+      //   : fieldSet === 'profileFormField'
+      //   ? addNewProfile
+      //   : addNewOption
+      updateData,
+      addNewData
     );
   };
 

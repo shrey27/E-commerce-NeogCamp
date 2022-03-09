@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   height: auto;
-  width: max-content;
+  width: 70%;
   border-radius: 0;
   margin: 1rem auto;
   padding: 0 1rem;
@@ -74,6 +74,8 @@
 @media screen and (min-width: 400px) {
   .cart__landscape {
     flex-direction: row;
+    width: 100%;
+    max-width: 30rem;
   }
   .cart__landscape .card__banner {
     border-radius: 0;
@@ -83,6 +85,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .cart__landscape {
+    width: 30rem;
+  }
   .cart__align {
     text-align: start;
     margin-bottom: 0.5rem;

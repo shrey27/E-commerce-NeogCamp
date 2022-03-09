@@ -1,9 +1,19 @@
 import './cart.css';
 import { useCartCtx } from '../context/cartContext';
+import { useWishlistCtx } from '../context/wishlistContext';
+import { useCartAPICtx } from '../context/cartContext';
 
 export default function CartItem(props) {
-  const { id, source, title, price, mrp, discount, count } = props;
+  const { id, pid, source, title, price, mrp, discount, count } = props;
   const { incQty, decQty } = useCartCtx();
+  const { addToWishlist } = useWishlistCtx();
+  const { deleteFromCart } = useCartAPICtx();
+  
+  const handleMoveToWishlist = () => {
+    addToWishlist(pid, { ...props });
+    deleteFromCart(id);
+  };
+
   return (
     <div className='cart__landscape shdw'>
       <img src={source} alt='Banner' className='card__banner' />
@@ -17,26 +27,28 @@ export default function CartItem(props) {
         <h1 className='cart__align'>
           {count === 1 ? (
             <i
-              className='fa-regular fa-trash-can'
+              className='fa-regular fa-trash-can btn qty--btn'
               name='del'
-              onClick={decQty.bind(this, id)}
+              onClick={decQty.bind(this, id, pid)}
             ></i>
           ) : (
             <i
               className='fas fa-minus btn qty--btn'
               name='dec'
-              onClick={decQty.bind(this, id)}
+              onClick={decQty.bind(this, id, pid)}
             ></i>
           )}
           <span className='quantity'>{count}</span>
           <i
             className='fas fa-plus btn qty--btn'
             name='inc'
-            onClick={incQty.bind(this, id)}
+            onClick={incQty.bind(this, id, pid)}
           ></i>
         </h1>
         <div className='btn--shift'>
-          <button className='btn btn--auth'>Move to Wishlist</button>
+          <button className='btn btn--auth' onClick={handleMoveToWishlist}>
+            Move to Wishlist
+          </button>
         </div>
       </section>
     </div>

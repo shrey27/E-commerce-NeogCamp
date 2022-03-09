@@ -12,7 +12,7 @@ import Payment from './payment';
 import PaymentSelection from './payment/PaymentSelection';
 import OrderSummary from './summary';
 import Profile from './profile';
-import { CartProvider } from './context/cartContext';
+import { CartAPIProvider } from './context/cartContext';
 import { FormOpenProvider } from './context/formOpenContext';
 import { AddressApiProvider } from './context/addressContext';
 import { ProductsContextProvider } from './context/productsContext';
@@ -21,7 +21,7 @@ import { WishlistProvider } from './context/wishlistContext';
 
 function App() {
   return (
-    <CartProvider>
+    <CartAPIProvider>
       <FormOpenProvider>
         <AddressApiProvider>
           <PaymentApiProvider>
@@ -33,9 +33,9 @@ function App() {
                   {/* <Product /> */}
                   {/* <Signin /> */}
                   {/* <Signup /> */}
-                  {/* <Cart /> */}
+                  <Cart />
                   {/* <AddressSelection /> */}
-                  {/* <Wishlist /> */}
+                  <Wishlist />
                   {/* <OrderSummary /> */}
                   {/* <Profile /> */}
                   {/* <PaymentSelection /> */}
@@ -46,7 +46,7 @@ function App() {
           </PaymentApiProvider>
         </AddressApiProvider>
       </FormOpenProvider>
-    </CartProvider>
+    </CartAPIProvider>
   );
 }
 

@@ -56,17 +56,16 @@ const FormOpenProvider = ({ children }) => {
       ...doc.data(),
       id: doc.id
     }));
-    console.log(dataList);
     dispatch({ type: 'API_RESPONSE', payload: dataList });
   };
 
-  const addNewProfile = async (payload) => {
+  const addNewData = async (payload) => {
     dispatch({ type: 'API_REQUEST' });
     await addDoc(docRef, payload);
     getProfile();
   };
 
-  const updateProfile = async (id, payload) => {
+  const updateData = async (id, payload) => {
     dispatch({ type: 'API_REQUEST' });
     const userDoc = doc(db, collectionName, id);
     await updateDoc(userDoc, { ...payload });
@@ -87,8 +86,8 @@ const FormOpenProvider = ({ children }) => {
         profileLoading,
         profileData,
         getProfile,
-        addNewProfile,
-        updateProfile
+        addNewData,
+        updateData
       }}
     >
       {children}

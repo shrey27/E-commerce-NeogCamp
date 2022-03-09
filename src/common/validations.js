@@ -86,7 +86,7 @@ export const validationList = {
     errorMsg: 'Invalid Card Number. Enter valid 12 digits long card number '
   },
   cardtype: {
-    pattern: /^[a-zA-Z]+$/,
+    pattern: /^[a-zA-Z ]+$/,
     errorMsg: 'Invalid Card Type. Choose an option from the list'
   },
   month: {

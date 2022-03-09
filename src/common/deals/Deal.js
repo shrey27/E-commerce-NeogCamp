@@ -1,5 +1,5 @@
 import './deals.css';
-import { useCartCtx } from '../../context/cartContext';
+import { useCartCtx, useCartAPICtx } from '../../context/cartContext';
 import { useWishlistCtx } from '../../context/wishlistContext';
 import { useEffect, useState } from 'react';
 
@@ -13,18 +13,26 @@ export default function Deal(props) {
     discount,
     rating,
     fastdelivery,
+    count,
     nostock,
     wishlist,
     close
   } = props;
+
   const { addToCart } = useCartCtx();
   const { addToWishlist, deleteFromWishlist, addedPID } = useWishlistCtx();
+  const { addedCartPID } = useCartAPICtx();
+
   const [addedToWishlist, setAddedToWishlist] = useState(false);
+  const [addedToCart, setAddedToCart] = useState(false);
 
   useEffect(() => {
     if (addedPID && addedPID.includes(pid)) setAddedToWishlist(true);
     else setAddedToWishlist(false);
-  }, [addedPID, pid]);
+
+    if (addedCartPID && addedCartPID.includes(pid)) setAddedToCart(true);
+    else setAddedToCart(false);
+  }, [addedCartPID, addedPID, pid]);
 
   const handleAddToWishlistClick = () => {
     if (!addedToWishlist) {
@@ -39,6 +47,23 @@ export default function Deal(props) {
       };
       addToWishlist(pid, productToAdd);
       setAddedToWishlist(true);
+    }
+  };
+
+  const handleAddToCartClick = () => {
+    if (!addedToCart) {
+      const productToAdd = {
+        pid,
+        source,
+        title,
+        price,
+        discount,
+        rating,
+        count,
+        nostock
+      };
+      addToCart(productToAdd);
+      setAddedToCart(true);
     }
   };
 
@@ -99,10 +124,12 @@ export default function Deal(props) {
           </button>
         ) : (
           <button
-            className='btn btn--auth--solid btn--wide btn--margin'
-            onClick={addToCart.bind(this, { ...props })}
+            className={`btn ${
+              addedToCart ? 'btn--auth' : 'btn--auth--solid'
+            } btn--wide btn--margin`}
+            onClick={handleAddToCartClick}
           >
-            Add to Cart
+            {addedToCart ? 'Added To Cart' : 'Add to Cart'}
           </button>
         )}
       </section>

@@ -55,13 +55,13 @@ const PaymentApiProvider = ({ children }) => {
     getOptions();
   };
 
-  const addNewOption = async (payload) => {
+  const addNewData = async (payload) => {
     dispatch({ type: 'API_REQUEST' });
     await addDoc(docRef, payload);
     getOptions();
   };
 
-  const updateOptions = async (id, payload) => {
+  const updateData = async (id, payload) => {
     dispatch({ type: 'API_REQUEST' });
     const userDoc = doc(db, collectionName, id);
     await updateDoc(userDoc, { ...payload });
@@ -78,10 +78,10 @@ const PaymentApiProvider = ({ children }) => {
       value={{
         paymentLoading,
         paymentOptions,
-        addNewOption,
+        addNewData,
         deleteOption,
         getOptions,
-        updateOptions
+        updateData
       }}
     >
       {children}

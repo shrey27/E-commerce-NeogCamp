@@ -286,13 +286,13 @@ const AddressApiProvider = ({ children }) => {
     getAddress();
   };
 
-  const addNewAddress = async (payload) => {
+  const addNewData = async (payload) => {
     dispatch({ type: 'API_REQUEST' });
     await addDoc(docRef, payload);
     getAddress();
   };
 
-  const updateAddress = async (id, payload) => {
+  const updateData = async (id, payload) => {
     dispatch({ type: 'API_REQUEST' });
     const userDoc = doc(db, collectionName, id);
     await updateDoc(userDoc, { ...payload });
@@ -310,10 +310,10 @@ const AddressApiProvider = ({ children }) => {
       value={{
         loading,
         listItems,
-        addNewAddress,
+        addNewData,
         deleteAddress,
         getAddress,
-        updateAddress
+        updateData
       }}
     >
       {children}
