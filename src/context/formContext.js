@@ -1,8 +1,5 @@
 import { createContext, useContext, useState, useReducer } from 'react';
-import {
-  validationList,
-  formFields
-} from '../common/validations';
+import { validationList, formFields } from '../common/validations';
 import { useAddrApiCtx } from './addressContext';
 import { useFormOpenCtx } from '../context/formOpenContext';
 import { usePmtApiCtx } from '../context/paymentContext';
@@ -162,6 +159,8 @@ const FormProvider = ({ children, fieldSet, formData }) => {
   const [showError, setShowError] = useState(false);
   const { addNewAddress, updateAddress } = useAddrApiCtx();
   const { addNewOption, updateOptions } = usePmtApiCtx();
+  const { addNewProfile, updateProfile } = useFormOpenCtx();
+
   const { openForm } = useFormOpenCtx();
 
   const initialValues = () => {
@@ -195,8 +194,16 @@ const FormProvider = ({ children, fieldSet, formData }) => {
       setShowError,
       formData?.id,
       openForm,
-      fieldSet === 'addressFormFields' ? updateAddress : updateOptions,
-      fieldSet === 'addressFormFields' ? addNewAddress : addNewOption
+      fieldSet === 'addressFormFields'
+        ? updateAddress
+        : fieldSet === 'profileFormField'
+        ? updateProfile
+        : updateOptions,
+      fieldSet === 'addressFormFields'
+        ? addNewAddress
+        : fieldSet === 'profileFormField'
+        ? addNewProfile
+        : addNewOption
     );
   };
 

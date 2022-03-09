@@ -3,14 +3,14 @@ import './profile.css';
 import Navbar from '../common/navbar';
 import Category from '../common/header/Category';
 import Footer from '../common/footer';
-import ProfileForm from './ProfileForm';
+import ProfileFormCtr from './profileCtr';
 import Address from '../address';
 import Payment from '../payment';
 import ChangePassword from '../authentication/ChangePassword';
 
 export default function Profile() {
   const [optionsOpen, setOptionsOpen] = useState(false);
-  const [component, setComponent] = useState(<ProfileForm />);
+  const [component, setComponent] = useState(<ProfileFormCtr />);
 
   const handleMainContent = (component) => {
     switch (component) {
@@ -24,7 +24,7 @@ export default function Profile() {
         setComponent(<ChangePassword />);
         break;
       default:
-        setComponent(<ProfileForm />);
+        setComponent(<ProfileFormCtr />);
         break;
     }
     setOptionsOpen(false);
@@ -32,11 +32,8 @@ export default function Profile() {
 
   return (
     <Fragment>
-      {/* Navbar */}
       <Navbar />
-      {/* Category header bar */}
       <Category />
-      {/* Hamburger menu container */}
       <div className='hb--box'>
         {/* header */}
         <header className='hb--header'>

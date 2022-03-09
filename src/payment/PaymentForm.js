@@ -195,8 +195,8 @@ export default function PaymentForm(props) {
                 <option value='' className='primary--light'>
                   -- Select a Type --
                 </option>
-                <option value='Credit'>Credit Card</option>
-                <option value='Debit'>Debit Card</option>
+                <option value='CREDIT CARD'>Credit Card</option>
+                <option value='DEBIT CARD'>Debit Card</option>
               </select>
               {form.cardtype.touched && form.cardtype.hasError && (
                 <h1 className='input__error'>{form.cardtype.error}</h1>

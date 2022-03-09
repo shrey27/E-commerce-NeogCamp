@@ -12,7 +12,8 @@ export const formFields = {
     'type'
   ],
   cardFormFields: ['name', 'bank', 'number', 'cardtype', 'month', 'year'],
-  upiFormField: ['upiId']
+  upiFormField: ['upiId'],
+  profileFormField: ['name', 'email', 'mobile', 'dob']
 };
 
 export const months = [
@@ -99,5 +100,9 @@ export const validationList = {
   upiId: {
     pattern: /^[a-z]+@[a-z]+$/,
     errorMsg: 'Invalid type. Enter a valid UPI ID'
+  },
+  dob: {
+    pattern: /^[0-9]{4}[-]([0-9]){2}[-]([0-9]){2}$/,
+    errorMsg: 'Invalid Date. Enter a valid Date of Birth'
   }
 };
