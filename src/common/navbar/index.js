@@ -2,10 +2,12 @@ import './navbar.css';
 import Drawer from './Drawer';
 import { useState } from 'react';
 import { useCartCtx } from '../../context/cartContext';
+import { useWishlistCtx } from '../../context/wishlistContext';
 
 export default function Navbar({ noDrawer }) {
   const [open, setOpen] = useState(false);
   const { totalItems } = useCartCtx();
+  const { wishlistData } = useWishlistCtx();
   return (
     <div>
       <Drawer open={open} setOpen={setOpen} />
@@ -63,7 +65,7 @@ export default function Navbar({ noDrawer }) {
                 <span className='submenu__item sb'>
                   Wishlist
                   <i
-                    icon-badge='3'
+                    icon-badge={wishlistData.length}
                     bdg-size='medium'
                     className='far fa-heart lg fl-rt'
                   ></i>

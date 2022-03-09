@@ -32,8 +32,7 @@
   opacity: 0.5;
   position: relative;
 }
-.btn.btn--disabled,
-.btn.btn--disabled:hover {
+.btn.btn--disabled {
   background-color: var(--white);
   border: 1px solid var(--primary--light);
   color: var(--primary);
@@ -45,7 +44,10 @@
   outline: none;
   margin: 0.25rem;
 }
-
+.btn.btn--disabled:hover {
+  border: 1px solid var(--primary--light);
+  cursor: default;
+}
 .ecom .card__banner {
   border-radius: 0;
   height: 60%;

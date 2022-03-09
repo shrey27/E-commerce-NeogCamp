@@ -17,6 +17,7 @@ import { FormOpenProvider } from './context/formOpenContext';
 import { AddressApiProvider } from './context/addressContext';
 import { ProductsContextProvider } from './context/productsContext';
 import { PaymentApiProvider } from './context/paymentContext';
+import { WishlistProvider } from './context/wishlistContext';
 
 function App() {
   return (
@@ -24,22 +25,24 @@ function App() {
       <FormOpenProvider>
         <AddressApiProvider>
           <PaymentApiProvider>
-            <ProductsContextProvider>
-              <div className='dark'>
-                {/* <HomePage /> */}
-                {/* <Products /> */}
-                {/* <Product /> */}
-                {/* <Signin /> */}
-                {/* <Signup /> */}
-                {/* <Cart /> */}
-                {/* <AddressSelection /> */}
-                {/* <Wishlist/> */}
-                {/* <OrderSummary /> */}
-                <Profile />
-                {/* <PaymentSelection /> */}
-                {/* <Checkout /> */}
-              </div>
-            </ProductsContextProvider>
+            <WishlistProvider>
+              <ProductsContextProvider>
+                <div className=''>
+                  {/* <HomePage /> */}
+                  <Products />
+                  {/* <Product /> */}
+                  {/* <Signin /> */}
+                  {/* <Signup /> */}
+                  {/* <Cart /> */}
+                  {/* <AddressSelection /> */}
+                  {/* <Wishlist /> */}
+                  {/* <OrderSummary /> */}
+                  {/* <Profile /> */}
+                  {/* <PaymentSelection /> */}
+                  {/* <Checkout /> */}
+                </div>
+              </ProductsContextProvider>
+            </WishlistProvider>
           </PaymentApiProvider>
         </AddressApiProvider>
       </FormOpenProvider>

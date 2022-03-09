@@ -1,9 +1,12 @@
-import { useState } from 'react';
 import './deals.css';
 import { useCartCtx } from '../../context/cartContext';
+import { useWishlistCtx } from '../../context/wishlistContext';
+import { useEffect, useState } from 'react';
 
 export default function Deal(props) {
   const {
+    id,
+    pid,
     source,
     title,
     price,
@@ -14,12 +17,35 @@ export default function Deal(props) {
     wishlist,
     close
   } = props;
-  const [added, setAdded] = useState(false);
   const { addToCart } = useCartCtx();
+  const { addToWishlist, deleteFromWishlist, addedId } = useWishlistCtx();
+  const [added, setAdded] = useState(false);
+
+  useEffect(() => {
+    if (addedId.includes(pid)) setAdded(true);
+    else setAdded(false);
+  }, [addedId, pid]);
+
+  const handleAddToWishlistClick = () => {
+    if (!added) {
+      const productToAdd = {
+        pid,
+        source,
+        title,
+        price,
+        discount,
+        rating,
+        nostock
+      };
+      addToWishlist(pid, productToAdd);
+      setAdded(true);
+    }
+  };
+
   return (
     <div className='card ecom shadow'>
-      {wishlist && (
-        <span className='card__dismiss' onClick={() => setAdded((e) => !e)}>
+      {wishlist && !close && (
+        <span className='card__dismiss' onClick={handleAddToWishlistClick}>
           {added ? (
             <i className='fa-solid fa-heart tag--clr'></i>
           ) : (
@@ -28,7 +54,10 @@ export default function Deal(props) {
         </span>
       )}
       {close && (
-        <span className='card__dismiss'>
+        <span
+          className='card__dismiss'
+          onClick={deleteFromWishlist.bind(this, pid, id)}
+        >
           <i
             className='fas fa-times-circle'
             style={{ color: 'var(--tertiary)' }}
@@ -62,7 +91,10 @@ export default function Deal(props) {
         </div>
 
         {nostock ? (
-          <button className={`btn--disabled btn btn--wide btn--margin`} disabled={nostock}>
+          <button
+            className={`btn--disabled btn btn--wide btn--margin`}
+            disabled={nostock}
+          >
             Out of Stock
           </button>
         ) : (

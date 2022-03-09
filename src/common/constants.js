@@ -67,7 +67,7 @@ export const homepageItems = [
 
 export const items = [
   {
-    id: 'P1',
+    pid: 'P1',
     source:
       'https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg',
     title: 'Fuel Ambition Gift Box',
@@ -76,11 +76,12 @@ export const items = [
     discount: 30,
     rating: 3.9,
     count: 1,
+    nostock: false,
     fastdelivery: true,
     category: 'combo'
   },
   {
-    id: 'P2',
+    pid: 'P2',
     source:
       'https://s1.thcdn.com/productimg/300/300/13598922-1394929380171673.jpg',
     title: 'Vegan Bundle',
@@ -93,7 +94,7 @@ export const items = [
     category: 'supplements'
   },
   {
-    id: 'P3',
+    pid: 'P3',
     source:
       'https://static.thcdn.com/images/xsmall/webp//productimg/original/12949455-1834924183341159.jpg',
     title: 'Vegan Brownie',
@@ -103,10 +104,11 @@ export const items = [
     rating: 4.2,
     count: 1,
     fastdelivery: true,
-    category: 'supplements'
+    category: 'supplements',
+    nostock: false
   },
   {
-    id: 'P4',
+    pid: 'P4',
     source:
       'https://s1.thcdn.com/productimg/300/300/12708205-7894888116404280.jpg',
     title: 'Protein Starter Pack',
@@ -115,10 +117,11 @@ export const items = [
     discount: 30,
     rating: 3.9,
     count: 1,
-    category: 'combo'
+    category: 'combo',
+    nostock: false
   },
   {
-    id: 'P5',
+    pid: 'P5',
     source:
       'https://static.thcdn.com/images/xsmall/webp//productimg/original/10530943-1224889444460882.jpg',
     title: 'Impact Whey Protein',
@@ -127,10 +130,11 @@ export const items = [
     discount: 30,
     rating: 4.5,
     count: 1,
-    category: 'supplements'
+    category: 'supplements',
+    nostock: false
   },
   {
-    id: 'P6',
+    pid: 'P6',
     source:
       'https://static.thcdn.com/images/xsmall/webp//productimg/original/12764004-1754853136850314.jpg',
     title: "MP Men's Gym T-Shirt",
@@ -139,10 +143,11 @@ export const items = [
     discount: 30,
     rating: 3.9,
     count: 1,
-    category: 'clothing'
+    category: 'clothing',
+    nostock: false
   },
   {
-    id: 'P7',
+    pid: 'P7',
     source:
       'https://s1.thcdn.com/productimg/300/300/13598910-1234929379752087.jpg',
     title: 'Travel Bundle',
@@ -155,7 +160,7 @@ export const items = [
     category: 'combo'
   },
   {
-    id: 'P8',
+    pid: 'P8',
     source:
       'https://s1.thcdn.com/productimg/300/300/12708205-7894888116404280.jpg',
     title: 'Protein Starter Pack',
@@ -164,10 +169,11 @@ export const items = [
     discount: 30,
     rating: 4.2,
     count: 1,
-    category: 'combo'
+    category: 'combo',
+    nostock: false
   },
   {
-    id: 'P9',
+    pid: 'P9',
     source:
       'https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg',
     title: 'Fuel Ambition Gift Box',
@@ -177,10 +183,11 @@ export const items = [
     rating: 3.9,
     count: 1,
     fastdelivery: true,
-    category: 'combo'
+    category: 'combo',
+    nostock: false
   },
   {
-    id: 'P10',
+    pid: 'P10',
     source:
       'https://s1.thcdn.com/productimg/300/300/13598922-1394929380171673.jpg',
     title: 'Vegan Bundle',
@@ -190,10 +197,11 @@ export const items = [
     rating: 4.2,
     count: 1,
     fastdelivery: true,
-    category: 'supplements'
+    category: 'supplements',
+    nostock: false
   },
   {
-    id: 'P11',
+    pid: 'P11',
     source:
       'https://static.thcdn.com/images/xsmall/webp//productimg/original/12949455-1834924183341159.jpg',
     title: 'Vegan Brownie',
@@ -203,10 +211,11 @@ export const items = [
     rating: 4.2,
     count: 1,
     fastdelivery: true,
-    category: 'supplements'
+    category: 'supplements',
+    nostock: false
   },
   {
-    id: 'P12',
+    pid: 'P12',
     source:
       'https://s1.thcdn.com/productimg/300/300/12708205-7894888116404280.jpg',
     title: 'Protein Starter Pack',
@@ -215,10 +224,11 @@ export const items = [
     discount: 30,
     rating: 4.5,
     count: 1,
-    category: 'combo'
+    category: 'combo',
+    nostock: false
   },
   {
-    id: 'P13',
+    pid: 'P13',
     source:
       'https://static.thcdn.com/images/xsmall/webp//productimg/original/10530943-1224889444460882.jpg',
     title: 'Impact Whey Protein',
@@ -227,10 +237,11 @@ export const items = [
     discount: 30,
     rating: 4.2,
     count: 1,
-    category: 'supplements'
+    category: 'supplements',
+    nostock: false
   },
   {
-    id: 'P14',
+    pid: 'P14',
     source:
       'https://static.thcdn.com/images/xsmall/webp//productimg/original/12764004-1754853136850314.jpg',
     title: "MP Men's Gym T-Shirt",
@@ -243,7 +254,7 @@ export const items = [
     category: 'clothing'
   },
   {
-    id: 'P15',
+    pid: 'P15',
     source:
       'https://s1.thcdn.com/productimg/300/300/13598910-1234929379752087.jpg',
     title: 'Travel Bundle',
@@ -256,7 +267,7 @@ export const items = [
     category: 'combo'
   },
   {
-    id: 'P16',
+    pid: 'P16',
     source:
       'https://s1.thcdn.com/productimg/300/300/12708205-7894888116404280.jpg',
     title: 'Protein Starter Pack',
