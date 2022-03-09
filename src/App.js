@@ -13,30 +13,36 @@ import PaymentSelection from './payment/PaymentSelection';
 import OrderSummary from './summary';
 import Profile from './profile';
 import { CartProvider } from './context/cartContext';
-import { AddressProvider } from './context/addressContext';
+import { FormOpenProvider } from './context/formOpenContext';
+import { AddressApiProvider } from './context/addressContext';
 import { ProductsContextProvider } from './context/productsContext';
+import { PaymentApiProvider } from './context/paymentContext';
 
 function App() {
   return (
     <CartProvider>
-      <AddressProvider>
-        <ProductsContextProvider>
-          <div className=''>
-            {/* <HomePage /> */}
-            {/* <Products /> */}
-            {/* <Product /> */}
-            {/* <Signin /> */}
-            {/* <Signup /> */}
-            {/* <Cart /> */}
-            {/* <AddressSelection /> */}
-            {/* <Wishlist/> */}
-            {/* <OrderSummary /> */}
-            <Profile />
-            {/* <PaymentSelection /> */}
-            {/* <Checkout /> */}
-          </div>
-        </ProductsContextProvider>
-      </AddressProvider>
+      <FormOpenProvider>
+        <AddressApiProvider>
+          <PaymentApiProvider>
+            <ProductsContextProvider>
+              <div className='dark'>
+                {/* <HomePage /> */}
+                {/* <Products /> */}
+                {/* <Product /> */}
+                {/* <Signin /> */}
+                {/* <Signup /> */}
+                {/* <Cart /> */}
+                {/* <AddressSelection /> */}
+                {/* <Wishlist/> */}
+                {/* <OrderSummary /> */}
+                <Profile />
+                {/* <PaymentSelection /> */}
+                {/* <Checkout /> */}
+              </div>
+            </ProductsContextProvider>
+          </PaymentApiProvider>
+        </AddressApiProvider>
+      </FormOpenProvider>
     </CartProvider>
   );
 }

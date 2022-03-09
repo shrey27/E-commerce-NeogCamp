@@ -1,13 +1,15 @@
 import { createContext, useContext, useState, useReducer } from 'react';
-import { validationList, formFields } from '../common/validations';
-import { useAddrCtx, useAddrApiCtx } from './addressContext';
+import {
+  validationList,
+  formFields
+} from '../common/validations';
+import { useAddrApiCtx } from './addressContext';
+import { useFormOpenCtx } from '../context/formOpenContext';
+import { usePmtApiCtx } from '../context/paymentContext';
 
-// Form Validation and Form Submission handling
 const FormContext = createContext();
 
-//Form validation
 const validateInput = (name, value) => {
-  // console.log(validationList[name]);
   const { pattern, errorMsg } = validationList[name];
   if (!value || value.trim() === '')
     return { hasError: true, error: 'Please provide this detail' };
@@ -21,7 +23,6 @@ const validateInput = (name, value) => {
   }
 };
 
-//handle Form Input change
 const handleFormChangeFunc = (e, form, dispatch) => {
   const { name, value } = e.target;
 
@@ -78,14 +79,7 @@ const onFocusOutFunc = (e, form, dispatch) => {
   });
 };
 
-const submitHandler = (
-  id,
-  openForm,
-  toUpdate,
-  form,
-  updateAddress,
-  addNewAddress
-) => {
+const submitHandler = (id, openForm, toUpdate, form, updateFunc, addFunc) => {
   const arrayofKeys = Object.keys(form);
   const formObject = arrayofKeys.reduce((prev, curr) => {
     return curr === 'isFormValid'
@@ -93,7 +87,7 @@ const submitHandler = (
       : { ...prev, [curr]: form[curr].value };
   }, {});
   // console.log(formObject);
-  toUpdate ? updateAddress(id, formObject) : addNewAddress(formObject);
+  toUpdate ? updateFunc(id, formObject) : addFunc(formObject);
   openForm();
 };
 
@@ -106,10 +100,10 @@ const formSubmitHandlerFunc = (
   setShowError,
   id,
   openForm,
-  updateAddress,
-  addNewAddress
+  updateFunc,
+  addFunc
 ) => {
-  e.preventDefault(); //prevents the form from submitting
+  e.preventDefault();
   // console.log('------toUpdate-------' + toUpdate);
   let isFormValid = true;
   for (const name in form) {
@@ -135,16 +129,15 @@ const formSubmitHandlerFunc = (
     }
   }
   if (!isFormValid) {
-    // for (const key in form) {
-    //   const item = form[key];
-    //   console.table({ [key]: item });
-    // }
+    for (const key in form) {
+      const item = form[key];
+      console.table({ [key]: item });
+    }
     setShowError(true);
   } else {
-    submitHandler(id, openForm, toUpdate, form, updateAddress, addNewAddress);
+    submitHandler(id, openForm, toUpdate, form, updateFunc, addFunc);
   }
 
-  // Hide the error message after 5 seconds
   setTimeout(() => {
     setShowError(false);
   }, 3000);
@@ -168,10 +161,12 @@ const formsReducer = (state, action) => {
 const FormProvider = ({ children, fieldSet, formData }) => {
   const [showError, setShowError] = useState(false);
   const { addNewAddress, updateAddress } = useAddrApiCtx();
-  const { openForm } = useAddrCtx();
+  const { addNewOption, updateOptions } = usePmtApiCtx();
+  const { openForm } = useFormOpenCtx();
 
   const initialValues = () => {
-    return formFields[fieldSet].reduce((prev, curr) => {
+    const initializeFieldsArray = formFields[fieldSet];
+    return initializeFieldsArray.reduce((prev, curr) => {
       return {
         ...prev,
         [curr]: {
@@ -183,6 +178,7 @@ const FormProvider = ({ children, fieldSet, formData }) => {
       };
     }, {});
   };
+
   const [form, dispatch] = useReducer(formsReducer, initialValues());
 
   const handleFormChange = (e) => {
@@ -199,8 +195,8 @@ const FormProvider = ({ children, fieldSet, formData }) => {
       setShowError,
       formData?.id,
       openForm,
-      updateAddress,
-      addNewAddress
+      fieldSet === 'addressFormFields' ? updateAddress : updateOptions,
+      fieldSet === 'addressFormFields' ? addNewAddress : addNewOption
     );
   };
 

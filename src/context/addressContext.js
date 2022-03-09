@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState
+} from 'react';
 import { db } from '../firebase';
 import {
   collection,
@@ -176,7 +182,7 @@ import {
 // const AddressFormProvider = ({ children, fieldSet, formData }) => {
 //   const [showError, setShowError] = useState(false);
 //   const { addNewAddress, updateAddress } = useAddrApiCtx();
-//   const { openForm } = useAddrCtx();
+//   const { openForm } = useFormOpenCtx();
 
 //   const initialValues = () => {
 //     return formFields[fieldSet].reduce((prev, curr) => {
@@ -236,45 +242,65 @@ import {
 // API handling
 const AddressApiContext = createContext();
 
-const docRef = collection(db, 'address');
 const collectionName = 'address';
+const docRef = collection(db, collectionName);
+
+const addressApiReducerFunc = (state, action) => {
+  switch (action.type) {
+    case 'API_REQUEST':
+      return {
+        ...state,
+        loading: true
+      };
+    case 'API_RESPONSE':
+      return {
+        ...state,
+        loading: false,
+        listItems: [...action.payload]
+      };
+    default:
+      return { ...state };
+  }
+};
 
 const AddressApiProvider = ({ children }) => {
-  const [listItems, setListItems] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [state, dispatch] = useReducer(addressApiReducerFunc, {
+    loading: false,
+    listItems: []
+  });
+  const { loading, listItems } = state;
 
   const getAddress = async () => {
-    setLoading(true);
     const data = await getDocs(docRef);
     const dataList = await data.docs.map((doc) => ({
       ...doc.data(),
       id: doc.id
     }));
-    setListItems(dataList);
-    setLoading(false);
+    dispatch({ type: 'API_RESPONSE', payload: dataList });
   };
 
   const deleteAddress = async (id) => {
-    setLoading(true);
+    dispatch({ type: 'API_REQUEST' });
     const addrDoc = doc(db, collectionName, id);
     await deleteDoc(addrDoc);
     getAddress();
   };
 
   const addNewAddress = async (payload) => {
-    setLoading(true);
+    dispatch({ type: 'API_REQUEST' });
     await addDoc(docRef, payload);
     getAddress();
   };
 
   const updateAddress = async (id, payload) => {
-    setLoading(true);
+    dispatch({ type: 'API_REQUEST' });
     const userDoc = doc(db, collectionName, id);
     await updateDoc(userDoc, { ...payload });
     getAddress();
   };
 
   useEffect(() => {
+    dispatch({ type: 'API_REQUEST' });
     getAddress();
     return () => console.log('clean up');
   }, []);
@@ -296,22 +322,4 @@ const AddressApiProvider = ({ children }) => {
 };
 const useAddrApiCtx = () => useContext(AddressApiContext);
 
-// To handle Form open dynamics of multiple address forms
-const AddressContext = createContext();
-
-const AddressProvider = ({ children }) => {
-  const [formId, setFormId] = useState(null);
-
-  const openForm = (value) => {
-    setFormId(value);
-  };
-
-  return (
-    <AddressContext.Provider value={{ formId, openForm }}>
-      <AddressApiProvider>{children}</AddressApiProvider>
-    </AddressContext.Provider>
-  );
-};
-const useAddrCtx = () => useContext(AddressContext);
-
-export { useAddrCtx, useAddrApiCtx, AddressProvider };
+export { useAddrApiCtx, AddressApiProvider };

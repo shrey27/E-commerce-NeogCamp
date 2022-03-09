@@ -307,7 +307,7 @@ export const cardList = [
     number: '123412341234',
     month: '08',
     year: '22',
-    type: 'debit'
+    cardtype: 'debit'
   },
   {
     id: 2,
@@ -316,7 +316,7 @@ export const cardList = [
     number: '432143214321',
     month: '09',
     year: '25',
-    type: 'credit'
+    cardtype: 'credit'
   }
 ];
 export const upiList = [

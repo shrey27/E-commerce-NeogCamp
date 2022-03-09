@@ -1,12 +1,11 @@
 @import '../common/styles.css';
 
-.payment {
-  max-width: 400px;
-  width: 90%;
-  margin: 1rem auto 2.5rem;
+.card.payment {
+  width: 100%;
+  margin: 1rem 0;
   cursor: pointer;
 }
-.fields {
+.payment__fields {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -47,17 +46,24 @@
 .btn--space {
   margin: 0 1rem;
 }
+.payment__select {
+  width: 90%;
+  max-width: 40rem;
+  margin: 1rem auto;
+}
+@media screen and (min-width: 350px) {
+  .card.payment {
+    width: 25rem;
+    margin: 1rem 0.25rem 2.5rem;
+  }
+}
 @media screen and (min-width: 1024px) {
-  .payment {
-    max-width: 50%;
+  .card.payment {
+    width: 30rem;
+    margin: 1rem 0.5rem;
   }
-  .fields {
-    flex-direction: row;
-  }
-  .fields .label {
-    width: 18%;
-  }
-  .fields .input {
-    width: 82%;
+  .payment__select {
+    width: 40rem;
+    margin: 1rem auto;
   }
 }

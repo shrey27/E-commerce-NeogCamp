@@ -1,29 +1,52 @@
 import { Fragment } from 'react';
 import './payment.css';
 import PaymentForm from './PaymentForm';
-import { useAddrCtx } from '../context/addressContext';
+import { useFormOpenCtx } from '../context/formOpenContext';
+import { FormProvider } from '../context/formContext';
+import { usePmtApiCtx } from '../context/paymentContext';
 
 export default function PaymentCard(props) {
-  const { id, upiId, bank, name, number, type, month, year, noEdit, select } =
-    props;
+  const {
+    id,
+    upiId,
+    bank,
+    name,
+    number,
+    cardtype,
+    month,
+    year,
+    noEdit,
+    select
+  } = props;
 
-  const { formId, openForm } = useAddrCtx();
+  const { formId, openForm } = useFormOpenCtx();
+  const { deleteOption } = usePmtApiCtx();
+
+  const addHyphen = (number) => {
+    const stringNumber = '' + number;
+    return stringNumber.match(/\d{4}/g).join('-');
+  };
 
   return (
     <Fragment>
       {upiId ? (
         formId === id ? (
-          <PaymentForm {...props} update={true} />
+          <FormProvider
+            fieldSet='upiFormField'
+            formData={{ ...props, update: true }}
+          >
+            <PaymentForm {...props} update={true} />
+          </FormProvider>
         ) : (
           <div className='card payment shdw'>
             <div className='flex-ct-sb btn--auth--solid xs-s'>
-              <h1 className='lg sb'>UPI ID</h1>
+              <h1 className='md sb'>UPI ID</h1>
               {select && (
                 <button className='btn btn--icons btn--add sb'>SELECT</button>
               )}
             </div>
-            <div className='sm-s'>
-              <h2 className='primary sm mg-half'>
+            <div className='md-s'>
+              <h2 className='primary md mg-half'>
                 UPI ID: <span className='clr'>{upiId}</span>
               </h2>
               {!noEdit && (
@@ -34,37 +57,48 @@ export default function PaymentCard(props) {
                   >
                     UPDATE
                   </button>
-                  <button className='btn sb'>DELETE</button>
+                  <button
+                    className='btn sb'
+                    onClick={deleteOption.bind(this, id)}
+                  >
+                    DELETE
+                  </button>
                 </div>
               )}
             </div>
           </div>
         )
       ) : formId === id ? (
-        <PaymentForm {...props} update={true} />
+        <FormProvider
+          fieldSet='cardFormFields'
+          formData={{ ...props, update: true }}
+        >
+          <PaymentForm {...props} update={true} />
+        </FormProvider>
       ) : (
         <div className='card payment shdw'>
           <div className='flex-ct-sb btn--auth--solid xs-s'>
-            <h1 className='lg sb'>{select ? 'Choose Card' : type}</h1>
+            <h1 className='md sb'>{select ? 'Choose Card' : cardtype}</h1>
             {select && (
               <button className='btn btn--icons btn--add sb'>SELECT</button>
             )}
           </div>
-          <div className='sm-s'>
-            <h2 className='primary sm'>
-              NAME: <span className='clr'>{name}</span>
+          <div className='md-s'>
+            <h2 className='primary md'>
+              Name on Card: <span className='clr fl-rt'> {name}</span>
             </h2>
-            <h2 className='primary sm'>
-              BANK NAME: <span className='clr'>{bank}</span>
+            <h2 className='primary md mg-half'>
+              Name of Bank: <span className='clr fl-rt'> {bank}</span>
             </h2>
-            <h2 className='primary sm'>
-              CARD NO. <span className='clr'>{number}</span>
+            <h2 className='primary md mg-half'>
+              Card Number
+              <span className='clr fl-rt'>{addHyphen(number)}</span>
             </h2>
-            <h2 className='primary sm'>
-              EXPIRY:{' '}
-              <span className='clr'>
-                {month}/{year}
-              </span>
+            <h2 className='primary md mg-half'>
+              Month of Expiry: <span className='clr fl-rt'> {month}</span>
+            </h2>
+            <h2 className='primary md mg-half'>
+              Year of Expiry: <span className='clr fl-rt'> {year}</span>
             </h2>
             {!noEdit && (
               <div className='flex-ct-sb mg-half'>
@@ -74,7 +108,12 @@ export default function PaymentCard(props) {
                 >
                   UPDATE
                 </button>
-                <button className='btn sb'>DELETE</button>
+                <button
+                  className='btn sb'
+                  onClick={deleteOption.bind(this, id)}
+                >
+                  DELETE
+                </button>
               </div>
             )}
           </div>

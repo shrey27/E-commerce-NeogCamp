@@ -19,7 +19,7 @@ export default function PaymentSelection() {
           <h1 className='primary lg sb xs-s cen mg-half'>
             SELECT A PAYMENT OPTION
           </h1>
-          <div className='card payment shdw'>
+          <div className='card payment__select shdw'>
             <div className='sm-s mg-half'>
               <ul className='stack'>
                 <li
