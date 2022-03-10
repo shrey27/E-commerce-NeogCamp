@@ -337,28 +337,77 @@ export const upiList = [
 
 export const orders = [
   {
-    status: 'Processing Order',
-    title: 'Whey Protein Concentrate',
-    date: '28th June, 2022',
-    name: 'Shrey Pandey',
-    address: '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
-    mobile: '9090909090',
-    email: 'abc@jkjk.com',
-    price: 8000,
-    discount: 1000,
-    delivery: 500
+    id: 'dojfjfldsjflkdmc',
+    ordersList: [
+      {
+        status: 'Delivered',
+        source:
+          'https://s1.thcdn.com/productimg/300/300/13598922-1394929380171673.jpg',
+        title: 'Vegan Bundle',
+        date: '02-25-2022',
+        name: 'Shrey Pandey',
+        address:
+          '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
+        mobile: '9090909090',
+        email: 'abc@jkjk.com',
+        cardtype: 'CREDIT CARD',
+        price: 8000,
+        discount: 1000,
+        delivery: 500
+      },
+      {
+        status: 'Delivered',
+        source:
+          'https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg',
+        title: 'Fuel Ambition Gift Box',
+        date: '03-08-2022',
+        name: 'Shrey Pandey',
+        address:
+          '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
+        mobile: '9090909090',
+        email: 'abc@jkjk.com',
+        cardtype: 'CREDIT CARD',
+        price: 8000,
+        discount: 1000,
+        delivery: 500
+      }
+    ]
   },
   {
-    status: 'Processing Order',
-    title: 'Whey Protein Concentrate',
-    date: '28th June, 2022',
-    name: 'Shrey Pandey',
-    address: '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
-    mobile: '9090909090',
-    email: 'abc@jkjk.com',
-    price: 8000,
-    discount: 1000,
-    delivery: 500
+    id: 'joidsjoncosdd',
+    ordersList: [
+      {
+        status: 'Processing',
+        source:
+          'https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg',
+        title: 'Fuel Ambition Gift Box',
+        date: '03-11-2022',
+        name: 'Shrey Pandey',
+        address:
+          '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
+        mobile: '9090909090',
+        email: 'abc@jkjk.com',
+        cardtype: 'CREDIT CARD',
+        price: 8000,
+        discount: 1000,
+        delivery: 500
+      },
+      {
+        status: 'In Transit',
+        title: 'Whey Protein Concentrate',
+        source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
+        date: '03-14-2022',
+        name: 'Shrey Pandey',
+        address:
+          '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
+        mobile: '9090909090',
+        email: 'abc@jkjk.com',
+        cardtype: 'CREDIT CARD',
+        price: 4000,
+        discount: 800,
+        delivery: 500
+      }
+    ]
   }
 ];
 

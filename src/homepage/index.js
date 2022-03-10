@@ -12,11 +12,19 @@ export default function HomePage() {
     <React.Fragment>
       <Navbar />
       <Header />
-      <Deals items={[...homepageItems].slice(0, 5)} name='Top Deals' />
+      <Deals
+        items={[...homepageItems].slice(0, 5)}
+        name='Top Deals'
+        noButton={true}
+      />
       <Banner source='carousal-3.jpeg' />
-      <Deals items={[...homepageItems].slice(-5)} name='Best-Sellers' />
+      <Deals
+        items={[...homepageItems].slice(-5)}
+        name='Best-Sellers'
+        noButton={true}
+      />
       <div className='flex-ct-ct xs-s'>
-        <button className='btn btn--all btn--lg sb cen'>View All</button>
+        <button className='btn btn--auth--solid btn--lg sb cen'>View All</button>
       </div>
       <Footer />
     </React.Fragment>

@@ -16,7 +16,8 @@ export default function Deal(props) {
     count,
     nostock,
     wishlist,
-    close
+    close,
+    noButton
   } = props;
 
   const { addToCart } = useCartCtx();
@@ -123,14 +124,26 @@ export default function Deal(props) {
             Out of Stock
           </button>
         ) : (
-          <button
-            className={`btn ${
-              addedToCart ? 'btn--auth' : 'btn--auth--solid'
-            } btn--wide btn--margin`}
-            onClick={handleAddToCartClick}
-          >
-            {addedToCart ? 'Added To Cart' : 'Add to Cart'}
-          </button>
+          <>
+            {noButton ? (
+              <button
+                className={`btn ${
+                  addedToCart ? 'btn--auth' : 'btn--auth--solid'
+                } btn--wide btn--margin`}
+              >
+                Get Details
+              </button>
+            ) : (
+              <button
+                className={`btn ${
+                  addedToCart ? 'btn--auth' : 'btn--auth--solid'
+                } btn--wide btn--margin`}
+                onClick={handleAddToCartClick}
+              >
+                {addedToCart ? 'Added To Cart' : 'Add to Cart'}
+              </button>
+            )}
+          </>
         )}
       </section>
     </div>

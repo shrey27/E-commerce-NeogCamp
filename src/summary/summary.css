@@ -8,6 +8,13 @@
   gap: 1rem;
   width: 100%;
 }
+.address__summary {
+  display: flex;
+  align-items: flex-start;
+}
+.add__align{
+  text-align: center;
+}
 .card__summary {
   width: 98%;
 }
@@ -29,14 +36,17 @@
 }
 .card__status,
 .card__payment {
-  margin: 0.25rem 0;
-  width: 100%;
+  margin: 0.25rem auto;
+  width: 50%;
 }
 .card__payment p {
   width: 100%;
 }
 .card__address {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .border--bottom {
   border-bottom: 2px solid var(--primary);
@@ -64,6 +74,10 @@
   }
   .card__address {
     width: 30%;
+    align-items: flex-start;
+  }
+  .add__align{
+    text-align: start;
   }
   .border--bottom {
     border-bottom: none;

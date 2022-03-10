@@ -10,8 +10,9 @@ import Checkout from './checkout';
 import Wishlist from './wishlist';
 import Payment from './payment';
 import PaymentSelection from './payment/PaymentSelection';
-import OrderSummary from './summary';
+import OrderSummarySelection from './summary';
 import Profile from './profile';
+
 import { CartAPIProvider } from './context/cartContext';
 import { FormOpenProvider } from './context/formOpenContext';
 import { AddressApiProvider } from './context/addressContext';
@@ -27,19 +28,19 @@ function App() {
           <PaymentApiProvider>
             <WishlistProvider>
               <ProductsContextProvider>
-                <div className=''>
+                <div className='dark'>
                   {/* <HomePage /> */}
-                  <Products />
-                  {/* <Product /> */}
+                  {/* <Products /> */}
                   {/* <Signin /> */}
                   {/* <Signup /> */}
-                  <Cart />
+                  {/* <Product /> */}
+                  {/* <Cart /> */}
+                  {/* <Wishlist /> */}
                   {/* <AddressSelection /> */}
-                  <Wishlist />
-                  {/* <OrderSummary /> */}
-                  {/* <Profile /> */}
                   {/* <PaymentSelection /> */}
                   {/* <Checkout /> */}
+                  <OrderSummarySelection />
+                  {/* <Profile /> */}
                 </div>
               </ProductsContextProvider>
             </WishlistProvider>

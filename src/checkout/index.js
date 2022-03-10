@@ -6,6 +6,7 @@ import Footer from '../common/footer';
 import AddressCard from '../address/AddressCard';
 import PaymentCard from '../payment/PaymentCard';
 import CartItem from '../cart/CartItem';
+
 const address = {
   name: 'Shrey Pandey',
   email: 'abc@xyz.com',
@@ -18,6 +19,7 @@ const address = {
   state: 'lorem ipsum',
   pincode: 122112
 };
+
 const cartList = [
   {
     source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
@@ -65,7 +67,9 @@ export default function Checkout(props) {
           <AddressCard {...address} title='Delivery Address' noEdit={true} />
           {paymentType === 'CARD' && <PaymentCard {...card} noEdit={true} />}
           {paymentType === 'UPI' && (
-            <PaymentCard {...card} upiId='abc@okcdc' noEdit={true} />
+            <div style={{padding: '0 15%'}}>
+              <PaymentCard {...card} upiId='abc@okcdc' noEdit={true} />
+            </div>
           )}
           {paymentType === 'CASH' && (
             <div className='card payment shdw'>
