@@ -3,15 +3,20 @@
 @import '../summary/summary.css';
 /* Same css styling as the order summary card */
 
-.checkout__container {
- 
+.final__payment,
+.final__payment__mobile {
+  width: max-content;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (min-width: 1024px) {
-  .checkout__container {
-   
+@media screen and (min-width: 768px) {
+  .final__payment {
+    justify-content: flex-end;
   }
- 
+  .final__payment__mobile {
+    display: none;
+  }
 }
-
-

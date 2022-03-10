@@ -6,39 +6,46 @@ export default function SummaryCard(props) {
     status,
     source,
     title,
-    date,
+    orderDate,
+    eta,
     name,
     address,
     mobile,
     email,
-    cardtype,
+    cardtype = 'CASH',
     price,
     discount,
     delivery
   } = props;
   const [eligibleForReturn, setEligibleForReturn] = useState(false);
-  const [orderDate, setOrderDate] = useState({ date: 0, month: 0, year: 0 });
+  const [dateOfOrder, setDateOfOrder] = useState({
+    date: 0,
+    month: 0,
+    year: 0
+  });
   const [etaDate, setEtaDate] = useState({ date: 0, month: 0, year: 0 });
 
   useEffect(() => {
-    const date1 = new Date();
-    const date2 = new Date(date);
-    const diffTime = date1 - date2;
-    console.log(new Date(date), diffTime);
-    const diffDays = Math.ceil(Math.abs(diffTime) / (1000 * 60 * 60 * 24));
-    if (diffTime < 0 || diffDays < 7) setEligibleForReturn(true);
-    // console.log(diffDays);
-    setOrderDate({
-      date: date1.getDate(),
-      month: date1.getMonth() + 1,
-      year: date1.getFullYear()
-    });
-    setEtaDate({
-      date: date2.getDate(),
-      month: date2.getMonth() + 1,
-      year: date2.getFullYear()
-    });
-  }, [date]);
+    // const date1 = new Date(
+    //   orderDate.seconds * 1000 + orderDate.nanoseconds * 1000
+    // );
+    // const date2 = new Date(eta.seconds * 1000 + eta.nanoseconds * 1000);
+
+    // // const diffDays = Math.ceil(Math.abs(diffSeconds) / (60 * 60 * 24));
+    // if (date1.getDate() - date2.getDate() < 0 || date1.getDate() - date2.getDate() < 7)
+    //   setEligibleForReturn(true);
+
+    // setDateOfOrder({
+    //   date: date1.getDate(),
+    //   month: date1.getMonth() + 1,
+    //   year: date1.getFullYear()
+    // });
+    // setEtaDate({
+    //   date: date2.getDate(),
+    //   month: date2.getMonth() + 1,
+    //   year: date2.getFullYear()
+    // });
+  }, [orderDate, eta]);
 
   return (
     <Fragment>
@@ -49,9 +56,13 @@ export default function SummaryCard(props) {
           <h1 className='primary md sb mg-half cen'>{title}</h1>
           <h1 className='md sb primary mg-half cen'>
             Order placed on:{' '}
-            {`${orderDate.date < 10 ? '0' + orderDate.date : orderDate.date}-${
-              orderDate.month < 10 ? '0' + orderDate.month : orderDate.month
-            }-${orderDate.year}`}
+            {`${
+              dateOfOrder.date < 10 ? '0' + dateOfOrder.date : dateOfOrder.date
+            }-${
+              dateOfOrder.month < 10
+                ? '0' + dateOfOrder.month
+                : dateOfOrder.month
+            }-${dateOfOrder.year}`}
           </h1>
           <h1 className='md sb primary mg-half cen'>OrderId: {2922}</h1>
           <h1 className='md sb price--ter mg-half cen'>

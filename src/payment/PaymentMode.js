@@ -23,10 +23,10 @@ export default function PaymentMode({ upi }) {
               <div className='flex-ct-ct flex-vertical'>
                 {paymentOptions &&
                   paymentOptions.map((elem, index) => {
-                    return elem.cardtype !== 'UPI' ? (
-                      <PaymentCard key={index * 2} {...elem} />
-                    ) : (
-                      <></>
+                    return (
+                      elem.cardtype && (
+                        <PaymentCard key={index * 2} {...elem} select={true} />
+                      )
                     );
                   })}
                 {formId === 0 ? (
@@ -52,10 +52,10 @@ export default function PaymentMode({ upi }) {
               <div className='flex-ct-ct flex-vertical'>
                 {paymentOptions &&
                   paymentOptions.map((elem, index) => {
-                    return elem.cardtype === 'UPI' ? (
-                      <PaymentCard key={index * 2} {...elem} />
-                    ) : (
-                      <></>
+                    return (
+                      !elem.cardtype && (
+                        <PaymentCard key={index * 2} {...elem} select={true} />
+                      )
                     );
                   })}
                 {formId === 100 ? (

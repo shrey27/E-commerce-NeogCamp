@@ -7,14 +7,17 @@ export default function CheckoutCard(props) {
     address,
     mobile,
     email,
-    cardtype,
+    cardtype = 'CASH',
+    number,
+    month,
+    year,
     source,
+    upiId,
     title,
-    remainingAmount,
+    productTotal,
+    discountOnProduct,
     count,
-    price,
-    discount,
-    delivery = 500
+    delivery
   } = props;
 
   return (
@@ -25,13 +28,39 @@ export default function CheckoutCard(props) {
           <h1 className='tertiary lg sb cen mg-half'>{title}</h1>
           <h1 className='primary md sb mg-half cen'>Quantity: {count}</h1>
           <h1 className='card__status__mode sm cen mg-half xs-s'>
-            Mode of Payment: {cardtype}
+            Mode of Payment: {cardtype ?? upiId ? 'UPI ID' : 'CASH'}
           </h1>
+
+          {upiId ? (
+            <div>
+              <p className='mg-half'>
+                <span className='sm sb'>UPI ID:</span>
+                <span className='sm sb fl-rt'>{upiId}</span>
+              </p>
+            </div>
+          ) : (
+            <div>
+              {cardtype && (
+                <div>
+                  <p className='mg-half'>
+                    <span className='md sb'>Card Number:</span>
+                    <span className='md sb fl-rt'>{number}</span>
+                  </p>
+                  <p className='mg-half'>
+                    <span className='md sb'>Expiry</span>
+                    <span className='md sb fl-rt'>
+                      {month}/{year}
+                    </span>
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
         </section>
 
         <section className='card__address sm-s'>
           <h1 className='price lg sb cen'>Delivery Address</h1>
-          <h1 className='primary sm mg-half'>
+          <h1 className='primary md mg-half'>
             <i class='fa-solid fa-user'></i>
             {name}
           </h1>
@@ -60,24 +89,22 @@ export default function CheckoutCard(props) {
           <div className='align'>
             <p className='mg-half'>
               <span className='sm sb'>Price</span>
-              <span className='sm sb fl-rt'>₹{price}</span>
+              <span className='sm sb fl-rt'>₹{productTotal}</span>
             </p>
             <p className='mg-half'>
               <span className='sm sb'>Discount</span>
-              <span className='sm sb fl-rt'>₹{discount}</span>
+              <span className='sm sb fl-rt'>₹{discountOnProduct}</span>
             </p>
             <p className='mg-half'>
               <span className='sm sb'>Delivery</span>
               <span className='sm sb fl-rt'>₹{delivery}</span>
             </p>
-
             <p className='mg-half'>
               <span className='tag md sb'>Total</span>
-              <span className='tag md sb fl-rt'>₹2500</span>
+              <span className='tag md sb fl-rt'>
+                ₹{productTotal - discountOnProduct + delivery}
+              </span>
             </p>
-          </div>
-          <div className='flex-ct-ct'>
-            <button className='btn btn--dark btn--wide sb'>PLACE ORDER</button>
           </div>
         </section>
       </div>

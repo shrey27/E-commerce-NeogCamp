@@ -4,6 +4,7 @@ import PaymentForm from './PaymentForm';
 import { useFormOpenCtx } from '../context/formOpenContext';
 import { FormProvider } from '../context/formContext';
 import { usePmtApiCtx } from '../context/paymentContext';
+import { useCheckoutCtx } from '../context/cartContext';
 
 export default function PaymentCard(props) {
   const {
@@ -21,10 +22,15 @@ export default function PaymentCard(props) {
 
   const { formId, openForm } = useFormOpenCtx();
   const { deleteOption } = usePmtApiCtx();
+  const { dispatch } = useCheckoutCtx();
 
   const addHyphen = (number) => {
     const stringNumber = '' + number;
     return stringNumber.match(/\d{4}/g).join('-');
+  };
+
+  const handleSelect = () => {
+    dispatch({ type: 'UPDATE_PAYMENT_MODE', payload: { ...props } });
   };
 
   return (
@@ -42,7 +48,12 @@ export default function PaymentCard(props) {
             <div className='flex-ct-sb btn--auth--solid xs-s'>
               <h1 className='md sb'>UPI ID</h1>
               {select && (
-                <button className='btn btn--icons btn--add sb'>SELECT</button>
+                <button
+                  className='btn btn--icons btn--add sb'
+                  onClick={handleSelect}
+                >
+                  SELECT
+                </button>
               )}
             </div>
             <div className='md-s'>
@@ -80,7 +91,12 @@ export default function PaymentCard(props) {
           <div className='flex-ct-sb btn--auth--solid xs-s'>
             <h1 className='md sb'>{select ? 'Choose Card' : cardtype}</h1>
             {select && (
-              <button className='btn btn--icons btn--add sb'>SELECT</button>
+              <button
+                className='btn btn--icons btn--add sb'
+                onClick={handleSelect}
+              >
+                SELECT
+              </button>
             )}
           </div>
           <div className='md-s'>

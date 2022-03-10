@@ -64,9 +64,8 @@
   margin: 1rem auto;
 }
 .card__status__mode {
-  border: none;
-  color: var(--white);
-  background-color: var(--tertiary--light);
+  color: var(--price);
+  border: 2px solid var(--price);
 }
 @media screen and (min-width: 1200px) {
   .card__summary {

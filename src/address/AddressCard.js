@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import './address.css';
 import { useAddrApiCtx } from '../context/addressContext';
 import { useFormOpenCtx } from '../context/formOpenContext';
+import { useCheckoutCtx } from '../context/cartContext';
 import AddressForm from './AddressForm';
 import { FormProvider } from '../context/formContext';
 
@@ -24,9 +25,14 @@ export default function AddressCard(props) {
 
   const { formId, openForm } = useFormOpenCtx();
   const { deleteAddress } = useAddrApiCtx();
+  const { dispatch } = useCheckoutCtx();
 
   const handleOpenForm = () => {
     openForm(id);
+  };
+
+  const handleSelect = () => {
+    dispatch({ type: 'UPDATE_ADDRESS', payload: { ...props } });
   };
 
   return (
@@ -44,7 +50,11 @@ export default function AddressCard(props) {
             <h1 className='lg sb'>
               {select ? 'Select Address' : 'Edit Address'}
             </h1>
-            {select && <button className='btn btn--icons sb'>SELECT</button>}
+            {select && (
+              <button className='btn btn--icons sb' onClick={handleSelect}>
+                SELECT
+              </button>
+            )}
           </div>
           <div className='md-s'>
             <h1 className='primary lg sb'>{type}</h1>

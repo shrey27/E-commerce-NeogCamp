@@ -337,14 +337,13 @@ export const upiList = [
 
 export const orders = [
   {
-    id: 'dojfjfldsjflkdmc',
     ordersList: [
       {
         status: 'Delivered',
         source:
           'https://s1.thcdn.com/productimg/300/300/13598922-1394929380171673.jpg',
         title: 'Vegan Bundle',
-        date: '02-25-2022',
+        orderDate: '02-25-2022',
         name: 'Shrey Pandey',
         address:
           '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
@@ -360,7 +359,7 @@ export const orders = [
         source:
           'https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg',
         title: 'Fuel Ambition Gift Box',
-        date: '03-08-2022',
+        orderDate: '03-08-2022',
         name: 'Shrey Pandey',
         address:
           '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
@@ -374,14 +373,13 @@ export const orders = [
     ]
   },
   {
-    id: 'joidsjoncosdd',
     ordersList: [
       {
         status: 'Processing',
         source:
           'https://s1.thcdn.com/productimg/300/300/13598918-8744929379980696.jpg',
         title: 'Fuel Ambition Gift Box',
-        date: '03-11-2022',
+        orderDate: '03-11-2022',
         name: 'Shrey Pandey',
         address:
           '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
@@ -396,7 +394,7 @@ export const orders = [
         status: 'In Transit',
         title: 'Whey Protein Concentrate',
         source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
-        date: '03-14-2022',
+        orderDate: '03-14-2022',
         name: 'Shrey Pandey',
         address:
           '76, Gandhi Nagar, Behind Railway lines, Jaipur, Rajasthan 302006',
@@ -445,6 +443,10 @@ export const checkoutData = {
   mobile: 9090909090,
   address: '76, lorem ipsum, lorem ipsum, Ajmer, Rajasthan, 122122',
   cardtype: 'CREDIT CARD',
+  upiId: 'abc@okaxis',
+  number: '123412341234',
+  month: '08',
+  year: '22',
   remainingAmount: 0,
   cartList: [
     {

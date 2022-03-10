@@ -3,13 +3,14 @@ import Navbar from '../common/navbar';
 import Category from '../common/header/Category';
 import Footer from '../common/footer';
 import CartItem from './CartItem';
-import { useCartAPICtx } from '../context/cartContext';
+import { useCartAPICtx, useCheckoutCtx } from '../context/cartContext';
 import { Fragment, useEffect, useState } from 'react';
 import Loader from '../common/Loader';
 
 export default function Cart() {
   const { cartLoading, cartListData } = useCartAPICtx();
-  
+  const { dispatch } = useCheckoutCtx();
+
   const [cartPrice, setCartPrice] = useState({
     total: 0,
     discount: 0,
@@ -33,6 +34,19 @@ export default function Cart() {
 
     setCartPrice(cartPriceObject);
   }, [cartListData]);
+
+  const proceedFunction = () => {
+    const cartArray = cartListData.map((elem) => {
+      const productTotal = elem.price * elem.count;
+      const discountOnProduct = productTotal * (elem.discount / 100);
+      const delivery = productTotal > 10000? 0 : 500
+      return { ...elem, productTotal, discountOnProduct, delivery };
+    });
+    dispatch({
+      type: 'UPDATE_CART_LIST',
+      payload: { remainingAmount: cartPrice.net, cartList: [...cartArray] }
+    });
+  };
 
   return (
     <>
@@ -77,15 +91,18 @@ export default function Cart() {
                   <span className='sm sb fl-rt'>₹{cartPrice.net}</span>
                 </p>
                 <hr />
-                <button className='btn btn--wide btn--dark mg-half bd'>
-                  Place Order
+                <button
+                  className='btn btn--wide btn--dark mg-half bd'
+                  onClick={proceedFunction}
+                >
+                  Proceed To Checkout
                 </button>
               </div>
             </div>
           )}
         </Fragment>
       )}
-      <Footer fixed={cartListData} />
+      <Footer fixed={!cartListData} />
     </>
   );
 }

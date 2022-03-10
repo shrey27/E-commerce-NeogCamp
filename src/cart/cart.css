@@ -38,7 +38,7 @@
   border: 2px solid var(--primary--light);
   border-radius: 5px;
 }
-.qty--btn {
+.btn.qty--btn {
   font-size: 0.95rem;
   padding: 0.35rem;
   border-radius: 50%;

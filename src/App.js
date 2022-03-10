@@ -34,12 +34,12 @@ function App() {
                   {/* <Signin /> */}
                   {/* <Signup /> */}
                   {/* <Product /> */}
-                  {/* <Cart /> */}
+                  <Cart />
                   {/* <Wishlist /> */}
-                  {/* <AddressSelection /> */}
-                  {/* <PaymentSelection /> */}
+                  <AddressSelection />
+                  <PaymentSelection />
                   <Checkout />
-                  {/* <OrderSummarySelection /> */}
+                  <OrderSummarySelection />
                   {/* <Profile /> */}
                 </div>
               </ProductsContextProvider>
