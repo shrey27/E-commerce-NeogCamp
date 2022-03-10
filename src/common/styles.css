@@ -20,6 +20,9 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
+.price {
+  color: var(--price);
+}
 .dark {
   background-color: var(--primary);
   color: var(--white);

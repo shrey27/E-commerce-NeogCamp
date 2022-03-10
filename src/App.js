@@ -28,7 +28,7 @@ function App() {
           <PaymentApiProvider>
             <WishlistProvider>
               <ProductsContextProvider>
-                <div className='dark'>
+                <div className=''>
                   {/* <HomePage /> */}
                   {/* <Products /> */}
                   {/* <Signin /> */}
@@ -38,8 +38,8 @@ function App() {
                   {/* <Wishlist /> */}
                   {/* <AddressSelection /> */}
                   {/* <PaymentSelection /> */}
-                  {/* <Checkout /> */}
-                  <OrderSummarySelection />
+                  <Checkout />
+                  {/* <OrderSummarySelection /> */}
                   {/* <Profile /> */}
                 </div>
               </ProductsContextProvider>

@@ -1,7 +1,7 @@
 import './summary.css';
 import { Fragment, useEffect, useState } from 'react';
 
-export default function OrderSummary(props) {
+export default function SummaryCard(props) {
   const {
     status,
     source,
@@ -97,7 +97,7 @@ export default function OrderSummary(props) {
             {email}
           </h1>
 
-          <h1 className='btn--auth--solid sm cen mg-half xs-s'>
+          <h1 className='card__status__mode sm cen mg-half xs-s'>
             Mode of Payment: {cardtype}
           </h1>
         </section>

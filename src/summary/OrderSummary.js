@@ -3,7 +3,6 @@ import { Fragment } from 'react';
 import SummaryCard from './SummaryCard';
 
 export default function OrderSummary({ orders }) {
-  console.log(orders);
   return (
     <Fragment>
       <div className='mg-full'>

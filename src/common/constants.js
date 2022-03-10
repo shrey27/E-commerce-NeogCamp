@@ -438,3 +438,38 @@ export const wishlist = [
     rating: 4.2
   }
 ];
+
+export const checkoutData = {
+  name: 'Shrey Pandey',
+  email: 'abc@xyz.com',
+  mobile: 9090909090,
+  address: '76, lorem ipsum, lorem ipsum, Ajmer, Rajasthan, 122122',
+  cardtype: 'CREDIT CARD',
+  remainingAmount: 0,
+  cartList: [
+    {
+      source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
+      title: 'Whey Protein Concentrate',
+      price: 8000,
+      mrp: 18000,
+      discount: 30,
+      count: 1
+    },
+    {
+      source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
+      title: 'Whey Protein Concentrate',
+      price: 8000,
+      mrp: 18000,
+      discount: 30,
+      count: 1
+    },
+    {
+      source: 'https://m.media-amazon.com/images/I/413GuC4J4FL.jpg',
+      title: 'Whey Protein Concentrate',
+      price: 8000,
+      mrp: 18000,
+      discount: 30,
+      count: 1
+    }
+  ]
+};

@@ -20,7 +20,7 @@ export default function OrderSummarySelection() {
       {!ordersArray ? (
         <div>
           <h1 className='primary lg sb xs-s cen mg-half'>ORDER HISTORY</h1>
-          <div className='card payment__select shdw'>
+          <div className='card summary__select shdw'>
             <div className='sm-s mg-half'>
               <ul className='stack'>
                 {orders &&
@@ -31,7 +31,7 @@ export default function OrderSummarySelection() {
                       return (
                         <li
                           key={elem.id}
-                          className='stack__payment__item flex-ct-sb shadow xs-s mg-full'
+                          className='stack__summary__item flex-ct-sb shadow xs-s mg-full'
                           onClick={orderHandler.bind(this, elem.ordersList)}
                         >
                           <div className='flex-ct-st'>
