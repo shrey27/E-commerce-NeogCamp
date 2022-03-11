@@ -15,7 +15,7 @@ export default function Checkout() {
     if (checkoutState.remainingAmount) {
       const { address, name, email, mobile, cardtype } = checkoutState;
       const cartArray = cartList.map((elem) => {
-        const { source, title, price, delivery, discount } = elem;
+        const { source, title, price, delivery, discount, count } = elem;
         return {
           status: 'Processing',
           source,
@@ -25,6 +25,7 @@ export default function Checkout() {
           delivery,
           discount,
           address,
+          count,
           name,
           email,
           mobile,

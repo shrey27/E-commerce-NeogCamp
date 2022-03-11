@@ -29,7 +29,7 @@ const defaultState = {
       price: 0,
       mrp: 0,
       discount: 0,
-      delivery:0,
+      delivery: 0,
       count: 0,
       productTotal: 0,
       discountOnProduct: 0
@@ -204,9 +204,22 @@ const CartAPIProvider = ({ children }) => {
   };
 
   const addNewOrders = async (objectData) => {
-    console.log(objectData);
     dispatch({ type: 'ORDERS_API_REQUEST' });
     await addDoc(ordersDocRef, objectData);
+    getOrdersList();
+    cartListData.forEach((element) => {
+      deleteFromCart(element.id);
+    });
+  };
+
+  const updateAnOrder = async (id, index) => {
+    dispatch({ type: 'ORDERS_API_REQUEST' });
+    const orderDoc = ordersListData.filter((e) => e.id === id);
+    console.log(...orderDoc);
+    const objectToUpdate = orderDoc[0].ordersList[index];
+    objectToUpdate.status = 'Cancelled';
+    const userDoc = doc(db, 'orders', id);
+    await updateDoc(userDoc, { ordersList: orderDoc[0].ordersList });
     getOrdersList();
   };
 
@@ -262,6 +275,7 @@ const CartAPIProvider = ({ children }) => {
         ordersLoading,
         ordersListData,
         addNewOrders,
+        updateAnOrder,
         getCartList,
         addedCartPID,
         addItemToCart,

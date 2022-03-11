@@ -67,10 +67,7 @@
   align-items: center;
   justify-content: center;
 }
-.image__empty {
-  margin: 3rem auto;
-  display: block;
-}
+
 @media screen and (min-width: 400px) {
   .cart__landscape {
     flex-direction: row;

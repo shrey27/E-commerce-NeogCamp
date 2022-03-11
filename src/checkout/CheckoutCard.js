@@ -7,7 +7,7 @@ export default function CheckoutCard(props) {
     address,
     mobile,
     email,
-    cardtype = 'CASH',
+    cardtype,
     number,
     month,
     year,
@@ -19,7 +19,7 @@ export default function CheckoutCard(props) {
     count,
     delivery
   } = props;
-
+  console.log(props, cardtype ?? upiId);
   return (
     <Fragment>
       <div className='card card__summary landscape shdw xs-s'>
@@ -28,7 +28,7 @@ export default function CheckoutCard(props) {
           <h1 className='tertiary lg sb cen mg-half'>{title}</h1>
           <h1 className='primary md sb mg-half cen'>Quantity: {count}</h1>
           <h1 className='card__status__mode sm cen mg-half xs-s'>
-            Mode of Payment: {cardtype ?? upiId ? 'UPI ID' : 'CASH'}
+            Mode of Payment: {upiId ? 'UPI ID' : cardtype ? cardtype : 'CASH'}
           </h1>
 
           {upiId ? (
@@ -41,15 +41,15 @@ export default function CheckoutCard(props) {
           ) : (
             <div>
               {cardtype && (
-                <div>
+                <div className='align'>
                   <p className='mg-half'>
-                    <span className='md sb'>Card Number:</span>
-                    <span className='md sb fl-rt'>{number}</span>
+                    <span className='sm sb'>CARD NUMBER:&nbsp;</span>
+                    <span className='tertiary sm sb'>{number}</span>
                   </p>
                   <p className='mg-half'>
-                    <span className='md sb'>Expiry</span>
-                    <span className='md sb fl-rt'>
-                      {month}/{year}
+                    <span className='sm sb'>EXPIRY:&nbsp;</span>
+                    <span className='tertiary sm sb'>
+                      {month} {year}
                     </span>
                   </p>
                 </div>

@@ -1,5 +1,6 @@
 @import url('https://apolloui-neog.netlify.app/utility/common.css');
 @import url('https://apolloui-neog.netlify.app/components/drawer/drawer.css');
+@import url('https://apolloui-neog.netlify.app/components/modal/modal.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 :root {
@@ -53,7 +54,10 @@ body {
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
     0 0 0 1px rgba(129, 113, 113, 0.02);
 }
-
+.image__empty {
+  margin: 3rem auto;
+  display: block;
+}
 /* Scrollbar */
 /* width */
 ::-webkit-scrollbar {

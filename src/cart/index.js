@@ -26,7 +26,7 @@ export default function Cart() {
       const discount = cartListData.reduce((acc, curr) => {
         return acc + (curr.count * curr.price * curr.discount) / 100;
       }, 0);
-      const delivery = total - discount > 499 ? 500 : 0;
+      const delivery = total - discount > 10000 ? 0 : 500;
       const net = total - discount + delivery;
       return { total, discount, net, delivery };
     };

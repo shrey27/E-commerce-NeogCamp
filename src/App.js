@@ -34,11 +34,11 @@ function App() {
                   {/* <Signin /> */}
                   {/* <Signup /> */}
                   {/* <Product /> */}
-                  <Cart />
+                  {/* <Cart /> */}
                   {/* <Wishlist /> */}
-                  <AddressSelection />
-                  <PaymentSelection />
-                  <Checkout />
+                  {/* <AddressSelection /> */}
+                  {/* <PaymentSelection /> */}
+                  {/* <Checkout /> */}
                   <OrderSummarySelection />
                   {/* <Profile /> */}
                 </div>

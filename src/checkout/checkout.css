@@ -11,6 +11,11 @@
   align-items: center;
   justify-content: center;
 }
+.checkout__payment {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+}
 
 @media screen and (min-width: 768px) {
   .final__payment {
@@ -19,4 +24,9 @@
   .final__payment__mobile {
     display: none;
   }
+  .checkout__payment {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
 }
