@@ -60,7 +60,7 @@ export default function Deal(props) {
         price,
         discount,
         rating,
-        count,
+        count: count ?? 1,
         nostock
       };
       addToCart(productToAdd);

@@ -30,7 +30,7 @@ function App() {
               <ProductsContextProvider>
                 <div className=''>
                   {/* <HomePage /> */}
-                  {/* <Products /> */}
+                  <Products />
                   {/* <Signin /> */}
                   {/* <Signup /> */}
                   {/* <Product /> */}
@@ -39,7 +39,7 @@ function App() {
                   {/* <AddressSelection /> */}
                   {/* <PaymentSelection /> */}
                   {/* <Checkout /> */}
-                  <OrderSummarySelection />
+                  {/* <OrderSummarySelection /> */}
                   {/* <Profile /> */}
                 </div>
               </ProductsContextProvider>
