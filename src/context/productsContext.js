@@ -80,14 +80,24 @@ const sortAndFilterItems = (
   rating,
   priceLimit
 ) => {
-  const tempList = list
-    .filter((elem) => (includeOutOfStock ? true : !elem.nostock))
-    .filter((elem) => (onlyFastDelivery ? elem.fastdelivery : true))
-    .filter((elem) =>
-      category.length !== 0 ? category.includes(elem.category) : true
-    )
-    .filter((elem) => (rating ? elem.rating >= rating : true))
-    .filter((elem) => elem.price <= priceLimit);
+  let tempList = [...list];
+
+  tempList = [
+    ...tempList.filter((elem) => (includeOutOfStock ? true : !elem.nostock))
+  ];
+
+  if (onlyFastDelivery) {
+    tempList = [...tempList.filter((elem) => elem.fastdelivery)];
+  }
+  if (rating) {
+    tempList = [...tempList.filter((elem) => elem.rating >= rating)];
+  }
+  if (priceLimit) {
+    tempList = [...tempList.filter((elem) => elem.price <= priceLimit)];
+  }
+  if (category.length !== 0) {
+    tempList = [...tempList.filter((elem) => category.includes(elem.category))];
+  }
 
   if (sortingDirection) {
     return sortingDirection === 'LOW_TO_HIGH'
