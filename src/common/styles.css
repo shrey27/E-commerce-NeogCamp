@@ -95,7 +95,7 @@ body {
 }
 /* Card reset */
 .card {
-  max-width: none;
+  max-width: 18rem;
   max-height: none;
   height: auto;
   margin: 1rem auto;

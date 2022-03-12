@@ -3,11 +3,30 @@ import Drawer from './Drawer';
 import { useState } from 'react';
 import { useCartCtx } from '../../context/cartContext';
 import { useWishlistCtx } from '../../context/wishlistContext';
+import { useProductsCtx } from '../../context/productsContext';
 
-export default function Navbar({ noDrawer }) {
+export default function Navbar({ noDrawer, showSearchBar }) {
+  const [search, setSearch] = useState('');
   const [open, setOpen] = useState(false);
   const { totalItems } = useCartCtx();
   const { wishlistData } = useWishlistCtx();
+  const { dispatch } = useProductsCtx();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const { value } = e.target;
+    //route to products page
+    setSearch(value);
+    dispatch({
+      type: 'NAVBAR_ITEM_SEARCH',
+      payload: value.toLowerCase()
+    });
+  };
+
+  const handleSearchClear = () => {
+    dispatch({ type: 'NAVBAR_SEARCH_CLEAR' });
+    setSearch('');
+  };
   return (
     <div>
       <Drawer open={open} setOpen={setOpen} />
@@ -28,18 +47,27 @@ export default function Navbar({ noDrawer }) {
             <span className='title primary'>LEGION ATHLETICS</span>
           </span>
         </section>
-        <section className='middle'>
+        {showSearchBar && <section className='middle'>
           <div className='search--ctr'>
-            <i className='fas fa-search search--btn'></i>
+            {!search && <i className='fas fa-search search--btn'></i>}
             <input
               type='text'
               placeholder='Search'
               className='input no--bdr'
               id='user-name'
               name='user-name'
+              autoComplete='off'
+              value={search}
+              onChange={handleSearch}
             />
+            {search && (
+              <i
+                class='fa-solid fa-xmark search--btn'
+                onClick={handleSearchClear}
+              ></i>
+            )}
           </div>
-        </section>
+        </section>}
         <section className='end'>
           <div className='menu'>
             <span className='menu__btn lg sb primary'>
@@ -70,7 +98,6 @@ export default function Navbar({ noDrawer }) {
                     className='far fa-heart lg fl-rt'
                   ></i>
                 </span>
-                <span className='submenu__item sb'>Manage Account</span>
               </section>
               <section className='submenu__btn flex-st-ct'>
                 <button className='btn btn--float btn--wide'>Log Out</button>

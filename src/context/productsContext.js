@@ -11,6 +11,7 @@ const defaultState = {
   sortingDirection: '',
   rating: 0,
   priceLimit: 10000,
+  search: '',
   selectedInputs: []
 };
 
@@ -60,6 +61,16 @@ const reducerFunction = (state, action) => {
         priceLimit: action.payload,
         selectedInputs: [...state.selectedInputs, action.target]
       };
+    case 'NAVBAR_ITEM_SEARCH':
+      return {
+        ...state,
+        search: action.payload
+      };
+    case 'NAVBAR_SEARCH_CLEAR':
+      return {
+        ...state,
+        search: ''
+      };
     case 'CLEAR_ALL':
       return {
         ...defaultState
@@ -78,7 +89,8 @@ const sortAndFilterItems = (
   category,
   sortingDirection,
   rating,
-  priceLimit
+  priceLimit,
+  search
 ) => {
   let tempList = [...list];
 
@@ -86,6 +98,11 @@ const sortAndFilterItems = (
     ...tempList.filter((elem) => (includeOutOfStock ? true : !elem.nostock))
   ];
 
+  if (search) {
+    tempList = [
+      ...tempList.filter((elem) => elem.title.toLowerCase().includes(search))
+    ];
+  }
   if (onlyFastDelivery) {
     tempList = [...tempList.filter((elem) => elem.fastdelivery)];
   }
@@ -118,7 +135,8 @@ const ProductsContextProvider = ({ children }) => {
     sortingDirection,
     rating,
     priceLimit,
-    selectedInputs
+    selectedInputs,
+    search
   } = state;
 
   const filteredData = sortAndFilterItems(
@@ -128,7 +146,8 @@ const ProductsContextProvider = ({ children }) => {
     category,
     sortingDirection,
     rating,
-    priceLimit
+    priceLimit,
+    search
   );
 
   return (

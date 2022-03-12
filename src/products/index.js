@@ -26,7 +26,7 @@ export default function Products() {
 
   return (
     <div className='container'>
-      <Navbar />
+      <Navbar showSearchBar={true}/>
       <Category />
 
       <div className='hb--box'>
