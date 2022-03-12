@@ -127,6 +127,22 @@ export default function Products() {
               />{' '}
               Combos
             </label>
+            <label for='snacks'>
+              <input
+                className='filter__ip'
+                type='checkbox'
+                name='snacks'
+                id='snacks'
+                onChange={(e) =>
+                  handleChange({
+                    type: e.target.checked ? 'ADD_CATEGORY' : 'REMOVE_CATEGORY',
+                    payload: 'snacks',
+                    target: e
+                  })
+                }
+              />{' '}
+              Healthy Snacks
+            </label>
           </div>
 
           <div className='filter__rating mg-full'>

@@ -69,7 +69,7 @@ export default function Deal(props) {
   };
 
   return (
-    <div className='card ecom shadow'>
+    <div className='card ecom'>
       {wishlist && !close && (
         <span className='card__dismiss' onClick={handleAddToWishlistClick}>
           {addedToWishlist ? (
